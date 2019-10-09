@@ -19,3 +19,10 @@ m = re.match(pattern, text)
 print('Match  :', m)
 s = re.search(pattern, text)
 print('Search :', s)
+
+"""
+Text   : This is some text -- with punctuation.
+Pattern: is
+Match  : None
+Search : <_sre.SRE_Match object; span=(2, 4), match='is'>
+"""

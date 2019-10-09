@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Show all matches for a list of patterns.
+"""Repetition of patterns
 """
 
-#end_pymotw_header
 import re
 
 
@@ -30,7 +29,49 @@ def test_patterns(text, patterns):
     return
 
 
-if __name__ == '__main__':
-    test_patterns('abbaaabbbbaaaaa',
-                  [('ab', "'a' followed by 'b'"),
-                   ])
+
+
+test_patterns(
+    'abbaabbba',
+    [('ab*?', 'a followed by zero or more b'),
+     ('ab+?', 'a followed by one or more b'),
+     ('ab??', 'a followed by zero or one b'),
+     ('ab{3}?', 'a followed by three b'),
+     ('ab{2,3}?', 'a followed by two to three b')],
+)
+
+"""
+'ab*?' (a followed by zero or more b)
+
+  'abbaabbba'
+  'a'
+  ...'a'
+  ....'a'
+  ........'a'
+
+'ab+?' (a followed by one or more b)
+
+  'abbaabbba'
+  'ab'
+  ....'ab'
+
+'ab??' (a followed by zero or one b)
+
+  'abbaabbba'
+  'a'
+  ...'a'
+  ....'a'
+  ........'a'
+
+'ab{3}?' (a followed by three b)
+
+  'abbaabbba'
+  ....'abbb'
+
+'ab{2,3}?' (a followed by two to three b)
+
+  'abbaabbba'
+  'abb'
+  ....'abb'
+
+"""
