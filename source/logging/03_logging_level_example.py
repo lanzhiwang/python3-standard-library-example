@@ -24,3 +24,19 @@ logging.info('This is an info message')
 logging.warning('This is a warning message')
 logging.error('This is an error message')
 logging.critical('This is a critical error message')
+
+"""
+[root@huzhi-code logging]# python3 03_logging_level_example.py debug
+DEBUG:root:This is a debug message
+INFO:root:This is an info message
+WARNING:root:This is a warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is a critical error message
+[root@huzhi-code logging]#
+[root@huzhi-code logging]# python3 03_logging_level_example.py info
+INFO:root:This is an info message
+WARNING:root:This is a warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is a critical error message
+[root@huzhi-code logging]#
+"""

@@ -32,3 +32,22 @@ for i in range(20):
 logfiles = glob.glob('%s*' % LOG_FILENAME)
 for filename in sorted(logfiles):
     print(filename)
+
+"""
+[root@huzhi-code logging]# python3 02_logging_rotatingfile_example.py
+logging_rotatingfile_example.out
+logging_rotatingfile_example.out.1
+logging_rotatingfile_example.out.2
+logging_rotatingfile_example.out.3
+logging_rotatingfile_example.out.4
+logging_rotatingfile_example.out.5
+[root@huzhi-code logging]# cat logging_rotatingfile_example.out
+i = 19
+[root@huzhi-code logging]# cat logging_rotatingfile_example.out.1
+i = 17
+i = 18
+[root@huzhi-code logging]# cat logging_rotatingfile_example.out.2
+i = 15
+i = 16
+[root@huzhi-code logging]#
+"""

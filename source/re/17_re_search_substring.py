@@ -26,3 +26,10 @@ while True:
         s, e - 1, text[s:e]))
     # Move forward in text for the next search
     pos = e
+
+"""
+Text: This is some text -- with punctuation.
+
+   0 :  3 = "This"
+   5 :  6 = "is"
+"""

@@ -18,3 +18,13 @@ with open(LOG_FILENAME, 'rt') as f:
 
 print('FILE:')
 print(body)
+
+"""
+[root@huzhi-code logging]# python3 01_logging_file_example.py
+FILE:
+DEBUG:root:This message should go to the log file
+
+[root@huzhi-code logging]# cat logging_example.out
+DEBUG:root:This message should go to the log file
+[root@huzhi-code logging]#
+"""

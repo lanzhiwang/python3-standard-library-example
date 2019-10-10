@@ -14,3 +14,10 @@ logger2 = logging.getLogger('package2.module2')
 
 logger1.warning('This message comes from one module')
 logger2.warning('This comes from another module')
+
+"""
+[root@huzhi-code logging]# python3 04_logging_modules_example.py
+WARNING:package1.module1:This message comes from one module
+WARNING:package2.module2:This comes from another module
+[root@huzhi-code logging]#
+"""
