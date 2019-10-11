@@ -38,3 +38,10 @@ t.start()
 d.join(0.1)
 print('d.isAlive()', d.isAlive())
 t.join()
+
+"""
+(daemon    ) Starting
+(non-daemon) Starting
+(non-daemon) Exiting
+d.isAlive() True
+"""

@@ -35,3 +35,11 @@ time.sleep(0.2)
 logging.debug('canceling %s', t2.getName())
 t2.cancel()
 logging.debug('done')
+
+"""
+(MainThread) starting timers
+(MainThread) waiting before canceling t2
+(MainThread) canceling t2
+(MainThread) done
+(t1        ) worker running
+"""

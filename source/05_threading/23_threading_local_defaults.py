@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Keeping thread-local values
+"""Defaults for thread-local values
 """
 
 #end_pymotw_header
@@ -27,16 +27,33 @@ def worker(data):
     show_value(data)
 
 
+class MyLocal(threading.local):
+
+    def __init__(self, value):
+        super().__init__()
+        logging.debug('Initializing %r', self)
+        self.value = value
+
+
 logging.basicConfig(
     level=logging.DEBUG,
     format='(%(threadName)-10s) %(message)s',
 )
 
-local_data = threading.local()
-show_value(local_data)
-local_data.value = 1000
+local_data = MyLocal(1000)
 show_value(local_data)
 
 for i in range(2):
     t = threading.Thread(target=worker, args=(local_data,))
     t.start()
+
+"""
+(MainThread) Initializing <__main__.MyLocal object at 0x7f55ae992a08>
+(MainThread) value=1000
+(Thread-1  ) Initializing <__main__.MyLocal object at 0x7f55ae992a08>
+(Thread-1  ) value=1000
+(Thread-1  ) value=5
+(Thread-2  ) Initializing <__main__.MyLocal object at 0x7f55ae992a08>
+(Thread-2  ) value=1000
+(Thread-2  ) value=84
+"""

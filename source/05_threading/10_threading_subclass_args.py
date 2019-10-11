@@ -33,3 +33,11 @@ logging.basicConfig(
 for i in range(5):
     t = MyThreadWithArgs(args=(i,), kwargs={'a': 'A', 'b': 'B'})
     t.start()
+
+"""
+(Thread-1  ) running with (0,) and {'a': 'A', 'b': 'B'}
+(Thread-2  ) running with (1,) and {'a': 'A', 'b': 'B'}
+(Thread-3  ) running with (2,) and {'a': 'A', 'b': 'B'}
+(Thread-4  ) running with (3,) and {'a': 'A', 'b': 'B'}
+(Thread-5  ) running with (4,) and {'a': 'A', 'b': 'B'}
+"""

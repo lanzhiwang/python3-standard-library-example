@@ -36,3 +36,15 @@ for t in threading.enumerate():
         continue
     logging.debug('joining %s', t.getName())
     t.join()
+
+"""
+(Thread-1  ) sleeping 0.20
+(Thread-2  ) sleeping 0.20
+(Thread-3  ) sleeping 0.50
+(MainThread) joining Thread-1
+(Thread-1  ) ending
+(MainThread) joining Thread-2
+(Thread-2  ) ending
+(MainThread) joining Thread-3
+(Thread-3  ) ending
+"""

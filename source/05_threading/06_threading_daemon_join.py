@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Daemon vs. non-daemon threads.
+"""Joining daemon threads to prevent premature exit.
 """
 
 #end_pymotw_header
@@ -34,3 +34,13 @@ t = threading.Thread(name='non-daemon', target=non_daemon)
 
 d.start()
 t.start()
+
+d.join()
+t.join()
+
+"""
+(daemon    ) Starting
+(non-daemon) Starting
+(non-daemon) Exiting
+(daemon    ) Exiting
+"""

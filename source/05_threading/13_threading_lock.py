@@ -21,12 +21,12 @@ class Counter:
 
     def increment(self):
         logging.debug('Waiting for lock')
-        self.lock.acquire()
+        self.lock.acquire()  # 获取锁
         try:
             logging.debug('Acquired lock')
             self.value = self.value + 1
         finally:
-            self.lock.release()
+            self.lock.release()  # 释放锁
 
 
 def worker(c):
@@ -54,3 +54,22 @@ for t in threading.enumerate():
     if t is not main_thread:
         t.join()
 logging.debug('Counter: %d', counter.value)
+
+"""
+(Thread-1  ) Sleeping 0.59
+(Thread-2  ) Sleeping 0.34
+(MainThread) Waiting for worker threads
+(Thread-2  ) Waiting for lock
+(Thread-2  ) Acquired lock
+(Thread-2  ) Sleeping 0.80
+(Thread-1  ) Waiting for lock
+(Thread-1  ) Acquired lock
+(Thread-1  ) Sleeping 0.88
+(Thread-2  ) Waiting for lock
+(Thread-2  ) Acquired lock
+(Thread-2  ) Done
+(Thread-1  ) Waiting for lock
+(Thread-1  ) Acquired lock
+(Thread-1  ) Done
+(MainThread) Counter: 4
+"""

@@ -36,3 +36,12 @@ w2 = threading.Thread(target=worker)  # use default name
 w.start()
 w2.start()
 t.start()
+
+"""
+[DEBUG] (worker    ) Starting
+[DEBUG] (Thread-1  ) Starting
+[DEBUG] (my_service) Starting
+[DEBUG] (worker    ) Exiting
+[DEBUG] (Thread-1  ) Exiting
+[DEBUG] (my_service) Exiting
+"""

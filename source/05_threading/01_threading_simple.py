@@ -3,20 +3,28 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Passing arguments to threads when they are created
+"""Creating and waiting for a thread.
 """
 
 #end_pymotw_header
 import threading
 
 
-def worker(num):
+def worker():
     """thread worker function"""
-    print('Worker: %s' % num)
+    print('Worker')
 
 
 threads = []
 for i in range(5):
-    t = threading.Thread(target=worker, args=(i,))
+    t = threading.Thread(target=worker)
     threads.append(t)
     t.start()
+
+"""
+Worker
+Worker
+Worker
+Worker
+Worker
+"""
