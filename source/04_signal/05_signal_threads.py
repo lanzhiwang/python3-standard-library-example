@@ -15,16 +15,14 @@ import time
 
 
 def signal_handler(num, stack):
-    print('Received signal {} in {}'.format(
-        num, threading.currentThread().name))
+    print('Received signal {} in {}'.format(num, threading.currentThread().name))
 
 
 signal.signal(signal.SIGUSR1, signal_handler)
 
 
 def wait_for_signal():
-    print('Waiting for signal in',
-          threading.currentThread().name)
+    print('Waiting for signal in', threading.currentThread().name)
     signal.pause()
     print('Done waiting')
 
@@ -45,9 +43,17 @@ def send_signal():
 
 sender = threading.Thread(target=send_signal, name='sender')
 sender.start()
-sender.join()
 
 # Wait for the thread to see the signal (not going to happen!)
 print('Waiting for', receiver.name)
 signal.alarm(2)
 receiver.join()
+sender.join()
+
+"""
+('Waiting for signal in', 'receiver')
+('Sending signal in', 'sender')
+Received signal 10 in MainThread
+('Waiting for', 'receiver')
+Alarm clock
+"""

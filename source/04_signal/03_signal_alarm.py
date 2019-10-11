@@ -23,3 +23,9 @@ signal.alarm(2)
 print('Before:', time.ctime())
 time.sleep(4)
 print('After :', time.ctime())
+
+"""
+('Before:', 'Fri Oct 11 13:40:30 2019')
+('Alarm :', 'Fri Oct 11 13:40:32 2019')
+('After :', 'Fri Oct 11 13:40:32 2019')
+"""
