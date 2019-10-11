@@ -3,10 +3,15 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
+"""
+"""
 
 #end_pymotw_header
+import cProfile as profile
+import pstats
+
+
 import functools
-import profile
 
 
 @functools.lru_cache(maxsize=None)
@@ -28,6 +33,15 @@ def fib_seq(n):
     seq.append(fib(n))
     return seq
 
+# Read all 5 stats files into a single object
+stats = pstats.Stats('profile_stats_0.stats')
+for i in range(1, 5):
+    stats.add('profile_stats_{}.stats'.format(i))
+stats.strip_dirs()
+stats.sort_stats('cumulative')
 
-if __name__ == '__main__':
-    profile.run('print(fib_seq(20)); print()')
+print('INCOMING CALLERS:')
+stats.print_callers('\(fib')
+
+print('OUTGOING CALLEES:')
+stats.print_callees('\(fib')

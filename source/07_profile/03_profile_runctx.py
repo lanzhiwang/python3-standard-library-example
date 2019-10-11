@@ -3,11 +3,16 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
+"""
+"""
 
 #end_pymotw_header
+
+import functools
 import profile
 
 
+@functools.lru_cache(maxsize=None)
 def fib(n):
     # from literateprograms.org
     # http://bit.ly/hlOQ5m
@@ -27,4 +32,9 @@ def fib_seq(n):
     return seq
 
 
-profile.run('print(fib_seq(20)); print()')
+if __name__ == '__main__':
+    profile.runctx(
+        'print(fib_seq(n)); print()',
+        globals(),
+        {'n': 20},
+    )
