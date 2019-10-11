@@ -9,6 +9,7 @@
 #end_pymotw_header
 import subprocess
 
+# cat index.rst | grep ".. literalinclude" | cut -f 3 -d
 cat = subprocess.Popen(
     ['cat', 'index.rst'],
     stdout=subprocess.PIPE,

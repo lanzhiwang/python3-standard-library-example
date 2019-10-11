@@ -16,3 +16,10 @@ proc = subprocess.Popen(
     stdin=subprocess.PIPE,
 )
 proc.communicate('stdin: to stdin\n'.encode('utf-8'))
+
+"""
+[root@huzhi-code subprocess]# python3 10_subprocess_popen_write.py
+write:
+stdin: to stdin
+[root@huzhi-code subprocess]#
+"""

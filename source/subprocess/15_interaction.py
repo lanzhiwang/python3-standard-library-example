@@ -28,7 +28,17 @@ for i in range(5):
     output = stdout.readline()
     print(output.rstrip())
 remainder = proc.communicate()[0].decode('utf-8')
-print(remainder)
+# print(remainder)
+"""
+One line at a time:
+repeater.py: starting
+0
+1
+2
+3
+4
+repeater.py: exiting
+"""
 
 print()
 print('All output at once:')
@@ -49,3 +59,15 @@ stdin.flush()
 
 output = proc.communicate()[0].decode('utf-8')
 print(output)
+
+"""
+All output at once:
+repeater.py: starting
+repeater.py: exiting
+0
+1
+2
+3
+4
+
+"""
