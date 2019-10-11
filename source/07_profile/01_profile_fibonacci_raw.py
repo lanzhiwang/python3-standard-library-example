@@ -27,7 +27,23 @@ def fib_seq(n):
     return seq
 
 
-profile.run('print(fib_seq(20)); print()')
+# profile.run('print(fib_seq(20)); print()')
+
+profile.run('print(fib_seq(20)); print()', __file__ + '_stats')
+# ./gprof2dot.py -f pstats 01_profile_fibonacci_raw.py_stats | dot -Tpng -o output.png
+
+if __name__ == '__main__':
+    # 方法一
+    # profile.run('print(fib_seq(20)); print()')
+
+    # 方法二
+    # profile.run('print(fib_seq(20)); print()', __file__ + '_stats')
+    # ./gprof2dot.py -f pstats 01_profile_fibonacci_raw.py_stats | dot -Tpng -o output.png
+
+    # 方法三
+    fib_seq(20)
+    # python3 -m profile -o output.pstats 01_profile_fibonacci_raw.py
+
 
 """
 调用次数 函数的总时间花费 每次调用的时间 函数的累积花费时间 累积时间在原生调用中所占比率
