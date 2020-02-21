@@ -18,3 +18,25 @@ r.add_header(
 response = request.urlopen(r)
 data = response.read().decode('utf-8')
 print(data)
+
+"""
+CLIENT VALUES:
+client_address=('127.0.0.1', 52586) (127.0.0.1)
+command=GET
+path=/
+real path=/
+query=
+request_version=HTTP/1.1
+
+SERVER VALUES:
+server_version=BaseHTTP/0.6
+sys_version=Python/3.7.3
+protocol_version=HTTP/1.0
+
+HEADERS RECEIVED:
+Accept-Encoding=identity
+Connection=close
+Host=localhost:8080
+User-Agent=PyMOTW (https://pymotw.com/)
+
+"""
