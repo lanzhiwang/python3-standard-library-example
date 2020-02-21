@@ -1,27 +1,18 @@
 #!/usr/bin/env python3
-"""Echo server example for socketserver
+"""Echo server example for SocketServer
 """
 
 #end_pymotw_header
-import os
 import socketserver
 
 
-class ForkingEchoRequestHandler(socketserver.BaseRequestHandler):
+class EchoRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         # Echo the back to the client
         data = self.request.recv(1024)
-        cur_pid = os.getpid()
-        response = b'%d: %s' % (cur_pid, data)
-        self.request.send(response)
+        self.request.send(data)
         return
-
-
-class ForkingEchoServer(socketserver.ForkingMixIn,
-                        socketserver.TCPServer,
-                        ):
-    pass
 
 
 if __name__ == '__main__':
@@ -29,14 +20,12 @@ if __name__ == '__main__':
     import threading
 
     address = ('localhost', 0)  # let the kernel assign a port
-    server = ForkingEchoServer(address,
-                               ForkingEchoRequestHandler)
+    server = socketserver.TCPServer(address, EchoRequestHandler)
     ip, port = server.server_address  # what port was assigned?
 
     t = threading.Thread(target=server.serve_forever)
     t.setDaemon(True)  # don't hang on exit
     t.start()
-    print('Server loop running in process:', os.getpid())
 
     # Connect to the server
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -48,10 +37,15 @@ if __name__ == '__main__':
     len_sent = s.send(message)
 
     # Receive a response
-    response = s.recv(1024)
+    response = s.recv(len_sent)
     print('Received: {!r}'.format(response))
 
     # Clean up
     server.shutdown()
     s.close()
     server.socket.close()
+
+"""
+Sending : b'Hello, world'
+Received: b'Hello, world'
+"""

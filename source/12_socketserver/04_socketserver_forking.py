@@ -3,49 +3,47 @@
 """
 
 #end_pymotw_header
-import threading
+import os
 import socketserver
 
 
-class ThreadedEchoRequestHandler(
-        socketserver.BaseRequestHandler,
-):
+class ForkingEchoRequestHandler(socketserver.BaseRequestHandler):
 
     def handle(self):
         # Echo the back to the client
         data = self.request.recv(1024)
-        cur_thread = threading.currentThread()
-        response = b'%s: %s' % (cur_thread.getName().encode(),
-                                data)
+        cur_pid = os.getpid()
+        response = b'%d: %s' % (cur_pid, data)
         self.request.send(response)
         return
 
 
-class ThreadedEchoServer(socketserver.ThreadingMixIn,
-                         socketserver.TCPServer,
-                         ):
+class ForkingEchoServer(socketserver.ForkingMixIn,
+                        socketserver.TCPServer,
+                        ):
     pass
 
 
 if __name__ == '__main__':
     import socket
+    import threading
 
     address = ('localhost', 0)  # let the kernel assign a port
-    server = ThreadedEchoServer(address,
-                                ThreadedEchoRequestHandler)
+    server = ForkingEchoServer(address,
+                               ForkingEchoRequestHandler)
     ip, port = server.server_address  # what port was assigned?
 
     t = threading.Thread(target=server.serve_forever)
     t.setDaemon(True)  # don't hang on exit
     t.start()
-    print('Server loop running in thread:', t.getName())
+    print('Server loop running in process:', os.getpid())
 
     # Connect to the server
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ip, port))
 
     # Send the data
-    message = b'Hello, world'
+    message = 'Hello, world'.encode()
     print('Sending : {!r}'.format(message))
     len_sent = s.send(message)
 
@@ -57,3 +55,9 @@ if __name__ == '__main__':
     server.shutdown()
     s.close()
     server.socket.close()
+
+"""
+Server loop running in process: 5117
+Sending : b'Hello, world'
+Received: b'5118: Hello, world'
+"""

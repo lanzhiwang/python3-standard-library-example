@@ -82,10 +82,6 @@ class EchoServer(socketserver.TCPServer):
             self, request, client_address,
         )
 
-    def server_close(self):
-        self.logger.debug('server_close')
-        return socketserver.TCPServer.server_close(self)
-
     def finish_request(self, request, client_address):
         self.logger.debug('finish_request(%s, %s)',
                           request, client_address)
@@ -98,10 +94,14 @@ class EchoServer(socketserver.TCPServer):
         return socketserver.TCPServer.close_request(
             self, request_address,
         )
-
+    
     def shutdown(self):
         self.logger.debug('shutdown()')
         return socketserver.TCPServer.shutdown(self)
+    
+    def server_close(self):
+        self.logger.debug('server_close')
+        return socketserver.TCPServer.server_close(self)
 
 
 if __name__ == '__main__':
@@ -142,3 +142,82 @@ if __name__ == '__main__':
     s.close()
     logger.debug('done')
     server.socket.close()
+
+"""
+EchoServer: __init__
+EchoServer: server_activate
+EchoServer: waiting for request
+client: Server on 127.0.0.1:52058
+client: creating socket
+EchoServer: Handling requests, press <Ctrl-C> to quit
+client: connecting to server
+client: sending data: b'Hello, world'
+EchoServer: verify_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+client: waiting for response
+EchoServer: process_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+EchoServer: finish_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+EchoRequestHandler: __init__
+EchoRequestHandler: setup
+EchoRequestHandler: handle
+EchoRequestHandler: recv()->"b'Hello, world'"
+EchoRequestHandler: finish
+client: response from server: b'Hello, world'
+EchoServer: close_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>)
+EchoServer: shutdown()
+client: closing socket
+client: done
+
+
+client: Server on 127.0.0.1:52058
+client: creating socket
+client: connecting to server
+client: sending data: b'Hello, world'
+client: waiting for response
+client: response from server: b'Hello, world'
+client: closing socket
+client: done
+
+EchoServer: __init__
+EchoServer: server_activate
+EchoServer: waiting for request
+EchoServer: Handling requests, press <Ctrl-C> to quit
+EchoServer: verify_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+EchoServer: process_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+EchoServer: finish_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>, ('127.0.0.1', 52059))
+EchoServer: close_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52058), raddr=('127.0.0.1', 52059)>)
+EchoServer: shutdown()
+
+EchoRequestHandler: __init__
+EchoRequestHandler: setup
+EchoRequestHandler: handle
+EchoRequestHandler: recv()->"b'Hello, world'"
+EchoRequestHandler: finish
+
+################################################
+
+client: Server on 127.0.0.1:52219
+client: creating socket
+client: connecting to server
+client: sending data: b'Hello, world'
+client: waiting for response
+client: response from server: b'Hello, world'
+client: closing socket
+client: done
+
+EchoServer: __init__
+EchoServer: server_activate
+EchoServer: waiting for request
+EchoServer: Handling requests, press <Ctrl-C> to quit
+EchoServer: verify_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52219), raddr=('127.0.0.1', 52220)>, ('127.0.0.1', 52220))
+EchoServer: process_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52219), raddr=('127.0.0.1', 52220)>, ('127.0.0.1', 52220))
+EchoServer: finish_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52219), raddr=('127.0.0.1', 52220)>, ('127.0.0.1', 52220))
+EchoServer: close_request(<socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 52219), raddr=('127.0.0.1', 52220)>)
+EchoServer: shutdown()
+
+EchoRequestHandler: __init__
+EchoRequestHandler: setup
+EchoRequestHandler: handle
+EchoRequestHandler: recv()->"b'Hello, world'"
+EchoRequestHandler: finish
+
+"""
