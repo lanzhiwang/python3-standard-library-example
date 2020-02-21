@@ -26,3 +26,22 @@ for host in HOSTS:
     except socket.error as msg:
         print('ERROR:', msg)
     print()
+
+"""
+apu
+ERROR: [Errno 8] nodename nor servname provided, or not known
+
+pymotw.com
+  Hostname: pymotw.com
+  Aliases : []
+ Addresses: ['66.33.211.242']
+
+www.python.org
+  Hostname: dualstack.python.map.fastly.net
+  Aliases : ['www.python.org']
+ Addresses: ['151.101.228.223']
+
+nosuchname
+ERROR: [Errno 8] nodename nor servname provided, or not known
+
+"""

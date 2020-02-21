@@ -13,3 +13,15 @@ from urllib.parse import urlunparse
 for port in [80, 443, 21, 70, 25, 143, 993, 110, 995]:
     url = '{}://example.com/'.format(socket.getservbyport(port))
     print(url)
+
+"""
+http://example.com/
+https://example.com/
+ftp://example.com/
+gopher://example.com/
+smtp://example.com/
+imap://example.com/
+imaps://example.com/
+pop3://example.com/
+pop3s://example.com/
+"""

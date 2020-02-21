@@ -26,3 +26,15 @@ for url in URLS:
     parsed_url = urlparse(url)
     port = socket.getservbyname(parsed_url.scheme)
     print('{:>6} : {}'.format(parsed_url.scheme, port))
+
+"""
+  http : 80
+ https : 443
+   ftp : 21
+gopher : 70
+  smtp : 25
+  imap : 143
+ imaps : 993
+  pop3 : 110
+ pop3s : 995
+"""

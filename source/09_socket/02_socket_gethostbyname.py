@@ -21,3 +21,10 @@ for host in HOSTS:
         print('{} : {}'.format(host, socket.gethostbyname(host)))
     except socket.error as msg:
         print('{} : {}'.format(host, msg))
+
+"""
+apu : [Errno 8] nodename nor servname provided, or not known
+pymotw.com : 66.33.211.242
+www.python.org : 151.101.228.223
+nosuchname : [Errno 8] nodename nor servname provided, or not known
+"""

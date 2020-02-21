@@ -44,3 +44,12 @@ for response in responses:
     print('Canonical name:', canonname)
     print('Socket address:', sockaddr)
     print()
+
+"""
+Family        : AF_INET
+Type          : SOCK_STREAM
+Protocol      : IPPROTO_TCP
+Canonical name: dualstack.python.map.fastly.net
+Socket address: ('151.101.228.223', 80)
+
+"""

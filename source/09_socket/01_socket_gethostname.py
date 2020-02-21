@@ -10,3 +10,9 @@
 import socket
 
 print(socket.gethostname())
+
+"""
+huzhi@huzhideMacBook-Pro 09_socket % python3 01_socket_gethostname.py
+huzhideMacBook-Pro.local
+huzhi@huzhideMacBook-Pro 09_socket %
+"""

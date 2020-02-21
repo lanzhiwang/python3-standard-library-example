@@ -9,7 +9,7 @@
 #end_pymotw_header
 import socket
 
-hostname, aliases, addresses = socket.gethostbyaddr('10.9.0.10')
+hostname, aliases, addresses = socket.gethostbyaddr('151.101.228.223')
 
 print('Hostname :', hostname)
 print('Aliases  :', aliases)
