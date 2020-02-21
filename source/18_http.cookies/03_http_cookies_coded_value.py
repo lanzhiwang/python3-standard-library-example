@@ -21,3 +21,16 @@ for name in ['integer', 'with_quotes']:
     print('  value={!r}'.format(c[name].value))
     print('  coded_value={!r}'.format(c[name].coded_value))
     print()
+
+"""
+integer
+  Set-Cookie: integer=5
+  value='5'
+  coded_value='5'
+
+with_quotes
+  Set-Cookie: with_quotes="He said\054 \"Hello\054 World!\""
+  value='He said, "Hello, World!"'
+  coded_value='"He said\\054 \\"Hello\\054 World!\\""'
+
+"""

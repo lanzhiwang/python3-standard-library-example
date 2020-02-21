@@ -47,3 +47,7 @@ if __name__ == '__main__':
     server = HTTPServer(('localhost', 8080), GetHandler)
     print('Starting server, use <Ctrl-C> to stop')
     server.serve_forever()
+
+"""
+curl -v -i http://127.0.0.1:8080/?foo=bar
+"""

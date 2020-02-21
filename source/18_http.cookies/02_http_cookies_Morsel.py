@@ -52,3 +52,32 @@ expires_at_time = expires.strftime('%a, %d %b %Y %H:%M:%S')
 c['expires_at_time']['expires'] = expires_at_time
 
 show_cookie(c)
+
+"""
+Set-Cookie: encoded_value_cookie="\"cookie\054value\073\""; Comment="Has escaped punctuation"
+Set-Cookie: expires_at_time=cookie_value; expires=Sat, 14 Feb 2009 19:30:14
+Set-Cookie: restricted_cookie=cookie_value; Domain=PyMOTW; Path=/sub/path; Secure
+Set-Cookie: with_max_age="expires in 5 minutes"; Max-Age=300
+
+key = encoded_value_cookie
+  value = "cookie,value;"
+  coded_value = "\"cookie\054value\073\""
+  comment = Has escaped punctuation
+
+key = restricted_cookie
+  value = cookie_value
+  coded_value = cookie_value
+  path = /sub/path
+  domain = PyMOTW
+  secure = True
+
+key = with_max_age
+  value = expires in 5 minutes
+  coded_value = "expires in 5 minutes"
+  max-age = 300
+
+key = expires_at_time
+  value = cookie_value
+  coded_value = cookie_value
+  expires = Sat, 14 Feb 2009 19:30:14
+"""

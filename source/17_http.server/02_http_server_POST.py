@@ -68,3 +68,7 @@ if __name__ == '__main__':
     server = HTTPServer(('localhost', 8080), PostHandler)
     print('Starting server, use <Ctrl-C> to stop')
     server.serve_forever()
+
+"""
+curl -v http://127.0.0.1:8080/ -F name=dhellmann -F foo=bar -F datafile=@http_server_GET.py
+"""

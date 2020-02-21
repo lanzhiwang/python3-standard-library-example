@@ -25,3 +25,13 @@ print('From load():')
 c = cookies.SimpleCookie()
 c.load(HTTP_COOKIE)
 print(c)
+
+"""
+From constructor:
+Set-Cookie: integer=5
+Set-Cookie: with_quotes="He said, \"Hello, World!\""
+
+From load():
+Set-Cookie: integer=5
+Set-Cookie: with_quotes="He said, \"Hello, World!\""
+"""
