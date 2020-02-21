@@ -34,3 +34,18 @@ for ip in ADDRESSES:
     else:
         print('{}\nis not on a known network'.format(ip))
     print()
+
+"""
+10.9.0.6
+is on 10.9.0.0/24
+
+10.7.0.31
+is not on a known network
+
+fdfd:87b5:b475:5e3e:b1bc:e121:a8eb:14aa
+is on fdfd:87b5:b475:5e3e::/64
+
+fe80::3840:c439:b25e:63b0
+is not on a known network
+
+"""

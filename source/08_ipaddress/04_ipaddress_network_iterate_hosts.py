@@ -18,10 +18,19 @@ NETWORKS = [
 for n in NETWORKS:
     net = ipaddress.ip_network(n)
     print('{!r}'.format(net))
-    print('     is private:', net.is_private)
-    print('      broadcast:', net.broadcast_address)
-    print('     compressed:', net.compressed)
-    print('   with netmask:', net.with_netmask)
-    print('  with hostmask:', net.with_hostmask)
-    print('  num addresses:', net.num_addresses)
+    for i, ip in zip(range(3), net.hosts()):
+        print(ip)
     print()
+
+"""
+IPv4Network('10.9.0.0/24')
+10.9.0.1
+10.9.0.2
+10.9.0.3
+
+IPv6Network('fdfd:87b5:b475:5e3e::/64')
+fdfd:87b5:b475:5e3e::1
+fdfd:87b5:b475:5e3e::2
+fdfd:87b5:b475:5e3e::3
+
+"""
