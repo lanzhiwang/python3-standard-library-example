@@ -27,3 +27,11 @@ try:
     result = f.result()
 except ValueError as e:
     print('main: saw error "{}" when accessing result'.format(e))
+
+"""
+main: starting
+5: starting
+main: error: the value 5 is no good
+main: saw error "the value 5 is no good" when accessing result
+
+"""

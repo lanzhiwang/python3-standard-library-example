@@ -43,3 +43,68 @@ if __name__ == '__main__':
             print('main: did not cancel {}'.format(i))
 
     ex.shutdown()
+
+"""
+main: starting
+main: submitting 10
+10: sleeping
+main: submitting 9
+9: sleeping
+main: submitting 8
+main: submitting 7
+main: submitting 6
+main: submitting 5
+main: submitting 4
+main: submitting 3
+main: submitting 2
+main: submitting 1
+1: canceled
+2: canceled
+3: canceled
+4: canceled
+5: canceled
+6: canceled
+7: canceled
+8: canceled
+main: did not cancel 9
+main: did not cancel 10
+10: done
+10: not canceled
+9: done
+9: not canceled
+
+
+
+main: starting
+main: submitting 10
+main: submitting 9
+main: submitting 8
+main: submitting 7
+main: submitting 6
+main: submitting 5
+main: submitting 4
+main: submitting 3
+main: submitting 2
+main: submitting 1
+
+10: sleeping
+10: done
+
+9: sleeping
+9: done
+
+1: canceled
+2: canceled
+3: canceled
+4: canceled
+5: canceled
+6: canceled
+7: canceled
+8: canceled
+
+main: did not cancel 9
+9: not canceled
+
+main: did not cancel 10
+10: not canceled
+"""

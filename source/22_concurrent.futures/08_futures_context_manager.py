@@ -23,3 +23,12 @@ with futures.ThreadPoolExecutor(max_workers=2) as ex:
     ex.submit(task, 4)
 
 print('main: done')
+
+"""
+main: starting
+1
+2
+3
+4
+main: done
+"""

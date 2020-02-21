@@ -40,3 +40,10 @@ if __name__ == '__main__':
     f.arg = 5
     f.add_done_callback(done)
     result = f.result()
+
+"""
+main: starting
+5: sleeping
+5: done
+5: value returned: 0.5
+"""
