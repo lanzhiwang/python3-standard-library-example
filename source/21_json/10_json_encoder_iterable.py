@@ -14,3 +14,23 @@ data = [{'a': 'A', 'b': (2, 4), 'c': 3.0}]
 
 for part in encoder.iterencode(data):
     print('PART:', part)
+
+"""
+PART: [
+PART: {
+PART: "a"
+PART: :
+PART: "A"
+PART: ,
+PART: "b"
+PART: :
+PART: [2
+PART: , 4
+PART: ]
+PART: ,
+PART: "c"
+PART: :
+PART: 3.0
+PART: }
+PART: ]
+"""

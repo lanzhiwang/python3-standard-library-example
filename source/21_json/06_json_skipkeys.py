@@ -20,3 +20,11 @@ except TypeError as err:
 print()
 print('Second attempt')
 print(json.dumps(data, skipkeys=True))
+
+"""
+First attempt
+ERROR: keys must be str, int, float, bool or None, not tuple
+
+Second attempt
+[{"a": "A", "b": [2, 4], "c": 3.0}]
+"""

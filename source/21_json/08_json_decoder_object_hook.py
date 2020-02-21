@@ -19,6 +19,7 @@ class MyDecoder(json.JSONDecoder):
         )
 
     def dict_to_object(self, d):
+        print('dict_to_object: ', d)
         if '__class__' in d:
             class_name = d.pop('__class__')
             module_name = d.pop('__module__')
@@ -38,9 +39,17 @@ class MyDecoder(json.JSONDecoder):
 
 
 encoded_object = '''
-[{"s": "instance value goes here",
-  "__module__": "json_myobj", "__class__": "MyObj"}]
+[{"a": "A", "b": [2, 4], "c": 3.0, "o": {"__class__": "MyObj", "__module__": "json_myobj", "s": "instance value goes here"}}]
 '''
 
 myobj_instance = MyDecoder().decode(encoded_object)
 print(myobj_instance)
+
+"""
+dict_to_object:  {'__class__': 'MyObj', '__module__': 'json_myobj', 's': 'instance value goes here'}
+MODULE: json_myobj
+CLASS: <class 'json_myobj.MyObj'>
+INSTANCE ARGS: {'s': 'instance value goes here'}
+dict_to_object:  {'a': 'A', 'b': [2, 4], 'c': 3.0, 'o': <MyObj(instance value goes here)>}
+[{'a': 'A', 'b': [2, 4], 'c': 3.0, 'o': <MyObj(instance value goes here)>}]
+"""

@@ -36,3 +36,13 @@ try:
     obj, end, remaining = get_decoded_and_remainder(data)
 except ValueError as err:
     print('ERROR:', err)
+
+"""
+JSON first:
+Object              : [{'a': 'A', 'c': 3.0, 'b': [2, 4]}]
+End of parsed input : 35
+Remaining text      : ' This text is not JSON.'
+
+JSON embedded:
+ERROR: Expecting value: line 1 column 1 (char 0)
+"""

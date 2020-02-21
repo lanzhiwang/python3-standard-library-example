@@ -27,3 +27,10 @@ class MyEncoder(json.JSONEncoder):
 obj = json_myobj.MyObj('internal data')
 print(obj)
 print(MyEncoder().encode(obj))
+
+"""
+<MyObj(internal data)>
+default( <MyObj(internal data)> )
+{"__class__": "MyObj", "__module__": "json_myobj", "s": "internal data"}
+
+"""

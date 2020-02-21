@@ -21,3 +21,11 @@ second = json.dumps(data, sort_keys=True)
 
 print('UNSORTED MATCH:', unsorted == first)
 print('SORTED MATCH  :', first == second)
+
+"""
+DATA: [{'a': 'A', 'b': (2, 4), 'c': 3.0}]
+JSON: [{"a": "A", "b": [2, 4], "c": 3.0}]
+SORT: [{"a": "A", "b": [2, 4], "c": 3.0}]
+UNSORTED MATCH: True
+SORTED MATCH  : True
+"""

@@ -10,9 +10,9 @@
 import io
 import json
 
-data = [{'a': 'A', 'b': (2, 4), 'c': 3.0}]
+f = io.StringIO('[{"a": "A", "c": 3.0, "b": [2, 4]}]')
+print(json.load(f))
 
-f = io.StringIO()
-json.dump(data, f)
-
-print(f.getvalue())
+"""
+[{'a': 'A', 'c': 3.0, 'b': [2, 4]}]
+"""

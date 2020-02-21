@@ -14,3 +14,18 @@ print('DATA:', repr(data))
 
 print('NORMAL:', json.dumps(data, sort_keys=True))
 print('INDENT:', json.dumps(data, sort_keys=True, indent=2))
+
+"""
+DATA: [{'a': 'A', 'b': (2, 4), 'c': 3.0}]
+NORMAL: [{"a": "A", "b": [2, 4], "c": 3.0}]
+INDENT: [
+  {
+    "a": "A",
+    "b": [
+      2,
+      4
+    ],
+    "c": 3.0
+  }
+]
+"""
