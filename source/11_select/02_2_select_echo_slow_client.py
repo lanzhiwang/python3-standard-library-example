@@ -15,7 +15,7 @@ import time
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-server_address = ('localhost', 10000)
+server_address = ('localhost', 10001)
 print('connecting to {} port {}'.format(*server_address),
       file=sys.stderr)
 sock.connect(server_address)
@@ -48,3 +48,13 @@ try:
 finally:
     print('closing socket', file=sys.stderr)
     sock.close()
+
+"""
+connecting to localhost port 10001
+sending b'Part one of the message.'
+sending b'Part two of the message.'
+received b'Part one of the '
+received b'message.Part two'
+received b' of the message.'
+closing socket
+"""

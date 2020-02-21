@@ -15,7 +15,7 @@ messages = [
     'It will be sent ',
     'in parts.',
 ]
-server_address = ('localhost', 10000)
+server_address = ('localhost', 10001)
 
 # Create a TCP/IP socket
 socks = [
@@ -49,3 +49,22 @@ for message in messages:
             print('closing socket', s.getsockname(),
                   file=sys.stderr)
             s.close()
+
+"""
+connecting to localhost port 10000
+('127.0.0.1', 61003): sending b'This is the message. '
+('127.0.0.1', 61004): sending b'This is the message. '
+('127.0.0.1', 61003): received b'This is the message. '
+('127.0.0.1', 61004): received b'This is the message. '
+
+('127.0.0.1', 61003): sending b'It will be sent '
+('127.0.0.1', 61004): sending b'It will be sent '
+('127.0.0.1', 61003): received b'It will be sent '
+('127.0.0.1', 61004): received b'It will be sent '
+
+('127.0.0.1', 61003): sending b'in parts.'
+('127.0.0.1', 61004): sending b'in parts.'
+('127.0.0.1', 61003): received b'in parts.'
+('127.0.0.1', 61004): received b'in parts.'
+
+"""
