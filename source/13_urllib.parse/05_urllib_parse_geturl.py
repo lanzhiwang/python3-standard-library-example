@@ -3,12 +3,14 @@
 """
 
 #end_pymotw_header
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse
 
 original = 'http://netloc/path;param?query=arg#frag'
 print('ORIG  :', original)
 parsed = urlparse(original)
-print('PARSED:', type(parsed), parsed)
-t = parsed[:]
-print('TUPLE :', type(t), t)
-print('NEW   :', urlunparse(t))
+print('PARSED:', parsed.geturl())
+
+"""
+ORIG  : http://netloc/path;param?query=arg#frag
+PARSED: http://netloc/path;param?query=arg#frag
+"""

@@ -15,3 +15,7 @@ query_args = {
 }
 encoded_args = urlencode(query_args)
 print('Encoded:', encoded_args)
+
+"""
+Encoded: q=query+string&foo=bar
+"""

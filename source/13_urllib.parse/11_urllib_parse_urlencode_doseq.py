@@ -14,3 +14,8 @@ query_args = {
 }
 print('Single  :', urlencode(query_args))
 print('Sequence:', urlencode(query_args, doseq=True))
+
+"""
+Single  : foo=%5B%27foo1%27%2C+%27foo2%27%5D
+Sequence: foo=foo1&foo=foo2
+"""

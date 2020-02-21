@@ -9,3 +9,8 @@ print(urljoin('http://www.example.com/path/file.html',
               'anotherfile.html'))
 print(urljoin('http://www.example.com/path/file.html',
               '../anotherfile.html'))
+
+"""
+http://www.example.com/path/anotherfile.html
+http://www.example.com/anotherfile.html
+"""

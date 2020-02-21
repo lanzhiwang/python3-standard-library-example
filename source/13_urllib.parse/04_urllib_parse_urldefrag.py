@@ -10,3 +10,9 @@ print('original:', original)
 d = urldefrag(original)
 print('url     :', d.url)
 print('fragment:', d.fragment)
+
+"""
+original: http://netloc/path;param?query=arg#frag
+url     : http://netloc/path;param?query=arg
+fragment: frag
+"""
