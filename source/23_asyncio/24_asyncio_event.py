@@ -45,3 +45,13 @@ try:
     event_loop.run_until_complete(main(event_loop))
 finally:
     event_loop.close()
+
+"""
+event start state: False
+coro1 waiting for event
+coro2 waiting for event
+setting event in callback
+coro1 triggered
+coro2 triggered
+event end state: True
+"""

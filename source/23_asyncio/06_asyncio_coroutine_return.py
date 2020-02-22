@@ -22,3 +22,8 @@ try:
     print('it returned: {!r}'.format(return_value))
 finally:
     event_loop.close()
+
+"""
+in coroutine
+it returned: 'result'
+"""

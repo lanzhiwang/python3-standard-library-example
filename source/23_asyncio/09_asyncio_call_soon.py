@@ -30,3 +30,11 @@ try:
 finally:
     print('closing event loop')
     event_loop.close()
+
+"""
+entering event loop
+registering callbacks
+callback invoked with 1 and default
+callback invoked with 2 and not default
+closing event loop
+"""

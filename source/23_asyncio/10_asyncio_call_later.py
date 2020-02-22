@@ -29,3 +29,12 @@ try:
 finally:
     print('closing event loop')
     event_loop.close()
+
+"""
+entering event loop
+registering callbacks
+callback 3 invoked
+callback 2 invoked
+callback 1 invoked
+closing event loop
+"""

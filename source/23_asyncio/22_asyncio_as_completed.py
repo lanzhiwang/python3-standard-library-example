@@ -37,3 +37,18 @@ try:
     event_loop.run_until_complete(main(3))
 finally:
     event_loop.close()
+
+"""
+starting main
+waiting for phases to complete
+in phase 2
+in phase 0
+in phase 1
+done with phase 2
+received answer 'phase 2 result'
+done with phase 1
+received answer 'phase 1 result'
+done with phase 0
+received answer 'phase 0 result'
+results: ['phase 2 result', 'phase 1 result', 'phase 0 result']
+"""

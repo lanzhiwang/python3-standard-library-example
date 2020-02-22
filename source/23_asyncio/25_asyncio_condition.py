@@ -58,3 +58,27 @@ try:
     result = event_loop.run_until_complete(main(event_loop))
 finally:
     event_loop.close()
+
+"""
+starting manipulate_condition
+consumer 0 is waiting
+consumer 3 is waiting
+consumer 4 is waiting
+consumer 1 is waiting
+consumer 2 is waiting
+notifying 1 consumers
+consumer 0 triggered
+ending consumer 0
+notifying 2 consumers
+consumer 3 triggered
+ending consumer 3
+consumer 4 triggered
+ending consumer 4
+notifying remaining consumers
+ending manipulate_condition
+consumer 1 triggered
+ending consumer 1
+consumer 2 triggered
+ending consumer 2
+
+"""

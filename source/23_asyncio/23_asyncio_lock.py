@@ -52,3 +52,16 @@ try:
     event_loop.run_until_complete(main(event_loop))
 finally:
     event_loop.close()
+
+"""
+acquiring the lock before starting coroutines
+lock acquired: True
+waiting for coroutines
+coro1 waiting for the lock
+coro2 waiting for the lock
+callback releasing lock
+coro1 acquired lock
+coro1 released lock
+coro2 acquired lock
+coro2 released lock
+"""

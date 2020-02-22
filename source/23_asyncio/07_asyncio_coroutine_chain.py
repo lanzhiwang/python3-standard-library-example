@@ -2,31 +2,28 @@
 # encoding: utf-8
 #
 # Copyright (c) 2014 Doug Hellmann.  All rights reserved.
-"""Using generators instead of coroutines
+"""Starting one coroutine from within another
 """
 
 #end_pymotw_header
 import asyncio
 
 
-@asyncio.coroutine
-def outer():
+async def outer():
     print('in outer')
     print('waiting for result1')
-    result1 = yield from phase1()
+    result1 = await phase1()
     print('waiting for result2')
-    result2 = yield from phase2(result1)
+    result2 = await phase2(result1)
     return (result1, result2)
 
 
-@asyncio.coroutine
-def phase1():
+async def phase1():
     print('in phase1')
     return 'result1'
 
 
-@asyncio.coroutine
-def phase2(arg):
+async def phase2(arg):
     print('in phase2')
     return 'result2 derived from {}'.format(arg)
 
@@ -37,3 +34,12 @@ try:
     print('return value: {!r}'.format(return_value))
 finally:
     event_loop.close()
+
+"""
+in outer
+waiting for result1
+in phase1
+waiting for result2
+in phase2
+return value: ('result1', 'result2 derived from result1')
+"""

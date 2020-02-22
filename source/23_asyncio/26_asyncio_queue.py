@@ -64,3 +64,36 @@ try:
     event_loop.run_until_complete(main(event_loop, 2))
 finally:
     event_loop.close()
+
+"""
+consumer 0: starting
+consumer 0: waiting for item
+consumer 1: starting
+consumer 1: waiting for item
+producer: starting
+producer: added task 0 to the queue
+producer: added task 1 to the queue
+consumer 0: has item 0
+consumer 1: has item 1
+producer: added task 2 to the queue
+producer: added task 3 to the queue
+consumer 0: waiting for item
+consumer 0: has item 2
+producer: added task 4 to the queue
+consumer 1: waiting for item
+consumer 1: has item 3
+producer: added task 5 to the queue
+producer: adding stop signals to the queue
+consumer 0: waiting for item
+consumer 0: has item 4
+consumer 1: waiting for item
+consumer 1: has item 5
+producer: waiting for queue to empty
+consumer 0: waiting for item
+consumer 0: has item None
+consumer 0: ending
+consumer 1: waiting for item
+consumer 1: has item None
+consumer 1: ending
+producer: ending
+"""

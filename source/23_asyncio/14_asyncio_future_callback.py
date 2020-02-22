@@ -32,3 +32,10 @@ try:
     event_loop.run_until_complete(main(all_done))
 finally:
     event_loop.close()
+
+"""
+registering callbacks on future
+setting result of future
+1: future done: the result
+2: future done: the result
+"""

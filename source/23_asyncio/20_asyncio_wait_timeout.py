@@ -46,3 +46,17 @@ try:
     event_loop.run_until_complete(main(3))
 finally:
     event_loop.close()
+
+"""
+starting main
+waiting 0.1 for phases to complete
+in phase 2
+in phase 0
+in phase 1
+done with phase 0
+1 completed and 2 pending
+canceling tasks
+exiting main
+phase 1 canceled
+phase 2 canceled
+"""

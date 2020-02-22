@@ -28,3 +28,11 @@ try:
     event_loop.run_until_complete(main(event_loop))
 finally:
     event_loop.close()
+
+"""
+creating task
+waiting for <Task pending coro=<task_func() running at 15_asyncio_create_task.py:12>>
+in task_func
+task completed <Task finished coro=<task_func() done, defined at 15_asyncio_create_task.py:12> result='the result'>
+return value: 'the result'
+"""

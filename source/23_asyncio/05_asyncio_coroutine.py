@@ -22,3 +22,10 @@ try:
 finally:
     print('closing event loop')
     event_loop.close()
+
+"""
+starting coroutine
+entering event loop
+in coroutine
+closing event loop
+"""

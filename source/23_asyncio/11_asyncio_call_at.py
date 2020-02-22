@@ -34,3 +34,14 @@ try:
 finally:
     print('closing event loop')
     event_loop.close()
+
+"""
+entering event loop
+clock time: 1582340582.6737978
+loop  time: 0.10887285
+registering callbacks
+callback 3 invoked at 0.108962749
+callback 2 invoked at 0.213985959
+callback 1 invoked at 0.310122497
+closing event loop
+"""

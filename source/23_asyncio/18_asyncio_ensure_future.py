@@ -35,3 +35,14 @@ try:
     result = event_loop.run_until_complete(starter())
 finally:
     event_loop.close()
+
+"""
+entering event loop
+starter: creating task
+starter: waiting for inner
+inner: starting
+inner: waiting for <Task pending coro=<wrapped() running at 18_asyncio_ensure_future.py:12>>
+wrapped
+inner: task returned 'result'
+starter: inner returned
+"""
