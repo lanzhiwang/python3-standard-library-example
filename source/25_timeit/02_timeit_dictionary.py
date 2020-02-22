@@ -85,3 +85,13 @@ t = timeit.Timer(
     setup_statement,
 )
 show_results(t.timeit(number=count))
+
+"""
+1000 items
+1000 iterations
+
+__setitem__:  43.75 usec/pass   0.04 usec/item
+setdefault :  67.91 usec/pass   0.07 usec/item
+KeyError   :  36.50 usec/pass   0.04 usec/item
+"not in"   :  30.54 usec/pass   0.03 usec/item
+"""
