@@ -29,3 +29,8 @@ wrapper = io.TextIOWrapper(input, encoding='utf-8')
 
 # Read from the buffer
 print(wrapper.read())
+
+"""
+b'This goes into the buffer. \xc3\x81\xc3\x87\xc3\x8a'
+Inital value for read buffer with unicode characters ÁÇÊ
+"""

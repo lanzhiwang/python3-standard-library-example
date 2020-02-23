@@ -20,3 +20,8 @@ input = io.BytesIO(b'Inital value for read buffer')
 
 # Read from the buffer
 print(input.read())
+
+"""
+b'This goes into the buffer. \xc3\x81\xc3\x87\xc3\x8a'
+b'Inital value for read buffer'
+"""

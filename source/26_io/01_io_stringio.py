@@ -20,3 +20,9 @@ input = io.StringIO('Inital value for read buffer')
 
 # Read from the buffer
 print(input.read())
+
+"""
+This goes into the buffer. And so does this.
+
+Inital value for read buffer
+"""
