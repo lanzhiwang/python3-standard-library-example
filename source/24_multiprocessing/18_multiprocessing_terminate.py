@@ -29,3 +29,9 @@ if __name__ == '__main__':
 
     p.join()
     print('JOINED:', p, p.is_alive())
+"""
+BEFORE: <Process(Process-1, initial)> False
+DURING: <Process(Process-1, started)> True
+TERMINATED: <Process(Process-1, started)> True
+JOINED: <Process(Process-1, stopped[SIGTERM])> False
+"""

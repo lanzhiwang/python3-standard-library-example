@@ -22,6 +22,7 @@ class MyFancyClass:
 
 
 def worker(q):
+    print(multiprocessing.current_process().name)
     obj = q.get()
     obj.do_something()
 
@@ -38,3 +39,8 @@ if __name__ == '__main__':
     queue.close()
     queue.join_thread()
     p.join()
+
+"""
+Process-1
+Doing something fancy in Process-1 for Fancy Dan!
+"""

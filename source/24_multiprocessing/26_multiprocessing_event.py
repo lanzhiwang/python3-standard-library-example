@@ -45,3 +45,12 @@ if __name__ == '__main__':
     time.sleep(3)
     e.set()
     print('main: event is set')
+
+"""
+main: waiting before calling Event.set()
+wait_for_event: starting
+wait_for_event_timeout: starting
+wait_for_event_timeout: e.is_set()-> False
+main: event is set
+wait_for_event: e.is_set()-> True
+"""

@@ -38,3 +38,8 @@ nw.start()
 
 w.join()
 nw.join()
+
+"""
+Lock acquired via with
+Lock acquired directly
+"""

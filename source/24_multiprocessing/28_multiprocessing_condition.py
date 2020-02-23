@@ -52,3 +52,12 @@ if __name__ == '__main__':
     s1.join()
     for c in s2_clients:
         c.join()
+
+"""
+Starting stage_2[1]
+Starting stage_2[2]
+Starting s1
+s1 done and ready for stage 2
+stage_2[1] running
+stage_2[2] running
+"""

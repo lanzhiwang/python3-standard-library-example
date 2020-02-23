@@ -3,18 +3,28 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Creating and waiting for a process
+"""Passing arguments to threads when they are created
 """
 
 #end_pymotw_header
 import multiprocessing
-import multiprocessing_import_worker
+
+
+def worker(num):
+    """thread worker function"""
+    print('Worker:', num)
+
 
 if __name__ == '__main__':
     jobs = []
     for i in range(5):
-        p = multiprocessing.Process(
-            target=multiprocessing_import_worker.worker,
-        )
+        p = multiprocessing.Process(target=worker, args=(i,))
         jobs.append(p)
         p.start()
+"""
+Worker: 0
+Worker: 1
+Worker: 2
+Worker: 3
+Worker: 4
+"""

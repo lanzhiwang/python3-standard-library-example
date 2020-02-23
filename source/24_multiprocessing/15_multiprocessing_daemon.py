@@ -45,3 +45,8 @@ if __name__ == '__main__':
     d.start()
     time.sleep(1)
     n.start()
+"""
+Starting: daemon 1291
+Starting: non-daemon 1292
+Exiting : non-daemon 1292
+"""

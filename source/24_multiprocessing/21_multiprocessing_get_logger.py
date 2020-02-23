@@ -24,3 +24,10 @@ if __name__ == '__main__':
     p = multiprocessing.Process(target=worker)
     p.start()
     p.join()
+"""
+[INFO/Process-1] child process calling self.run()
+Doing some work
+[INFO/Process-1] process shutting down
+[INFO/Process-1] process exiting with exitcode 0
+[INFO/MainProcess] process shutting down
+"""
