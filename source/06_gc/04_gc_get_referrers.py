@@ -87,3 +87,36 @@ n = gc.collect()
 print('Unreachable objects:', n)
 print('Remaining Garbage:', end=' ')
 pprint.pprint(gc.garbage)
+
+"""
+Linking nodes Graph(one).next = Graph(two)
+Linking nodes Graph(two).next = Graph(three)
+Linking nodes Graph(three).next = Graph(one)
+
+Collecting...
+Unreachable objects: 24
+Remaining Garbage: []
+
+Clearing referrers:
+Looking for references to Graph(one)
+Looking for references to {'name': 'three', 'next': Graph(one)}
+Found referrer: Graph(three)
+Linking nodes Graph(three).next = None
+Looking for references to Graph(two)
+Looking for references to {'name': 'one', 'next': Graph(two)}
+Found referrer: Graph(one)
+Linking nodes Graph(one).next = None
+Looking for references to Graph(three)
+Looking for references to {'name': 'two', 'next': Graph(three)}
+Found referrer: Graph(two)
+Linking nodes Graph(two).next = None
+
+Clearing gc.garbage:
+
+Collecting...
+Unreachable objects: 0
+Remaining Garbage: []
+Graph(one).__del__()
+Graph(two).__del__()
+Graph(three).__del__()
+"""

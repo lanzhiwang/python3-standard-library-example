@@ -52,9 +52,13 @@ while not to_process.empty():
     chain.append(next)
     print('Examining:', repr(next))
     seen.add(id(next))
+
+    print(gc.get_referents(next))
     for r in gc.get_referents(next):
+        print(r)
         if isinstance(r, str) or isinstance(r, type):
             # Ignore strings and classes
+            print('Ignore strings and classes')
             pass
         elif id(r) in seen:
             print()
@@ -63,4 +67,56 @@ while not to_process.empty():
                 print('  {}: '.format(i), end=' ')
                 pprint.pprint(link)
         else:
+            print('to_process.put')
             to_process.put((chain, r))
+
+"""
+Linking nodes Graph(one).next = Graph(two)
+Linking nodes Graph(two).next = Graph(three)
+Linking nodes Graph(three).next = Graph(one)
+
+Examining: Graph(three)
+[{'name': 'three', 'next': Graph(one)}, <class '__main__.Graph'>]
+{'name': 'three', 'next': Graph(one)}
+to_process.put
+<class '__main__.Graph'>
+Ignore strings and classes
+Examining: {'name': 'three', 'next': Graph(one)}
+['three', Graph(one)]
+three
+Ignore strings and classes
+Graph(one)
+to_process.put
+Examining: Graph(one)
+[{'name': 'one', 'next': Graph(two)}, <class '__main__.Graph'>]
+{'name': 'one', 'next': Graph(two)}
+to_process.put
+<class '__main__.Graph'>
+Ignore strings and classes
+Examining: {'name': 'one', 'next': Graph(two)}
+['one', Graph(two)]
+one
+Ignore strings and classes
+Graph(two)
+to_process.put
+Examining: Graph(two)
+[{'name': 'two', 'next': Graph(three)}, <class '__main__.Graph'>]
+{'name': 'two', 'next': Graph(three)}
+to_process.put
+<class '__main__.Graph'>
+Ignore strings and classes
+Examining: {'name': 'two', 'next': Graph(three)}
+['two', Graph(three)]
+two
+Ignore strings and classes
+Graph(three)
+
+Found a cycle to Graph(three):
+  0:  Graph(three)
+  1:  {'name': 'three', 'next': Graph(one)}
+  2:  Graph(one)
+  3:  {'name': 'one', 'next': Graph(two)}
+  4:  Graph(two)
+  5:  {'name': 'two', 'next': Graph(three)}
+
+"""
