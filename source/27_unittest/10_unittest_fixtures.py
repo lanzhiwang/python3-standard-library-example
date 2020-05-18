@@ -51,3 +51,27 @@ class FixturesTest(unittest.TestCase):
     def test2(self):
         print('In test2()')
         self.assertIn(self.value, self.good_range)
+
+"""
+huzhi@bogon 27_unittest % python3 -m unittest -v 10_unittest_fixtures.py
+In setUpModule()
+In setUpClass()
+test1 (10_unittest_fixtures.FixturesTest) ...
+In setUp()
+In test1()
+In tearDown()
+ok
+test2 (10_unittest_fixtures.FixturesTest) ...
+In setUp()
+In test2()
+In tearDown()
+ok
+In tearDownClass()
+In tearDownModule()
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+huzhi@bogon 27_unittest %
+"""

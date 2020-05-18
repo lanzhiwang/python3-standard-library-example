@@ -27,3 +27,15 @@ class ExceptionTest(unittest.TestCase):
             'a',
             b='c',
         )
+
+"""
+huzhi@bogon 27_unittest % python3 -m unittest -v 09_unittest_exception.py
+testAssertRaises (09_unittest_exception.ExceptionTest) ... ok
+testTrapLocally (09_unittest_exception.ExceptionTest) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+huzhi@bogon 27_unittest %
+"""

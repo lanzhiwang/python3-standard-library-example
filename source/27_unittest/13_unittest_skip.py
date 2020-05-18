@@ -25,3 +25,17 @@ class SkippingTest(unittest.TestCase):
 
     def test_raise_skiptest(self):
         raise unittest.SkipTest('skipping via exception')
+
+"""
+huzhi@bogon 27_unittest % python3 -m unittest -v 13_unittest_skip.py
+test (13_unittest_skip.SkippingTest) ... skipped 'always skipped'
+test_macos_only (13_unittest_skip.SkippingTest) ... skipped 'only runs on macOS'
+test_python2_only (13_unittest_skip.SkippingTest) ... skipped 'only runs on python 2'
+test_raise_skiptest (13_unittest_skip.SkippingTest) ... skipped 'skipping via exception'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK (skipped=4)
+huzhi@bogon 27_unittest %
+"""
