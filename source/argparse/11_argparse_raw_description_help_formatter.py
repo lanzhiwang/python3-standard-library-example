@@ -31,3 +31,20 @@ parser.add_argument(
 )
 
 parser.print_help()
+"""
+(venv) huzhi@huzhideMacBook-Pro argparse % python 11_argparse_raw_description_help_formatter.py
+usage: 11_argparse_raw_description_help_formatter.py [-h] [-a]
+
+    description
+        not
+           wrapped
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -a          argument help is wrapped
+
+    epilog
+      not
+         wrapped
+(venv) huzhi@huzhideMacBook-Pro argparse %
+"""

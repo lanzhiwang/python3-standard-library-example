@@ -24,4 +24,4 @@ print(
     parser.parse_args(
         ['--noarg', '--witharg', 'val', '--witharg2=3']
     )
-)
+)  # Namespace(noarg=True, witharg='val', witharg2=3)

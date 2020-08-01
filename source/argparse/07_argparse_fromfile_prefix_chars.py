@@ -19,3 +19,8 @@ parser.add_argument('-b', action="store", dest="b")
 parser.add_argument('-c', action="store", dest="c", type=int)
 
 print(parser.parse_args(['@argparse_fromfile_prefix_chars.txt']))
+"""
+(venv) huzhi@huzhideMacBook-Pro argparse % python 07_argparse_fromfile_prefix_chars.py
+Namespace(a=True, b='2', c=None)
+(venv) huzhi@huzhideMacBook-Pro argparse %
+"""

@@ -26,3 +26,11 @@ argument_list = shlex.split(config_value)
 print('Arg List:', argument_list)
 
 print('Results :', parser.parse_args(argument_list))
+
+"""
+(venv) huzhi@huzhideMacBook-Pro argparse % python 06_argparse_with_shlex.py
+Config  : -a -b 2
+Arg List: ['-a', '-b', '2']
+Results : Namespace(a=True, b='2', c=None)
+(venv) huzhi@huzhideMacBook-Pro argparse %
+"""
