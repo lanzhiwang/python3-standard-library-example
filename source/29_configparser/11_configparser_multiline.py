@@ -15,3 +15,11 @@ config.read([filename])
 message = config['example']['message']
 
 print(message)
+"""
+(venv) huzhi@huzhideMacBook-Pro 29_configparser % python 11_configparser_multiline.py
+This is a multi-line string.
+With two paragraphs.
+
+They are separated by a completely empty line.
+(venv) huzhi@huzhideMacBook-Pro 29_configparser %
+"""

@@ -19,3 +19,23 @@ for section_name in parser:
     for name in section:
         print('  {} = {}'.format(name, section[name]))
     print()
+
+"""
+(venv) huzhi@huzhideMacBook-Pro 29_configparser % python 05_configparser_structure_dict.py
+Section: DEFAULT
+  Options: []
+
+Section: bug_tracker
+  Options: ['url', 'username', 'password']
+  url = http://localhost:8080/bugs/
+  username = dhellmann
+  password = SECRET
+
+Section: wiki
+  Options: ['url', 'username', 'password']
+  url = http://localhost:8080/wiki/
+  username = dhellmann
+  password = SECRET
+
+(venv) huzhi@huzhideMacBook-Pro 29_configparser %
+"""

@@ -26,3 +26,19 @@ for flag in ['turn_feature_on', 'turn_other_feature_on']:
     print('  has_option:', exists)
     if exists:
         print('         get:', parser.get('flags', flag))
+
+"""
+(venv) huzhi@huzhideMacBook-Pro 29_configparser % python 10_configparser_allow_no_value.py
+Could not parse: Source contains parsing errors: 'allow_no_value.ini'
+	[line  2]: 'turn_feature_on\n'
+
+Trying again with allow_no_value=True
+
+ turn_feature_on
+  has_option: True
+         get: None
+
+ turn_other_feature_on
+  has_option: False
+(venv) huzhi@huzhideMacBook-Pro 29_configparser %
+"""

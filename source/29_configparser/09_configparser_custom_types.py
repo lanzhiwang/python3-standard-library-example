@@ -26,3 +26,10 @@ parser.read('custom_types.ini')
 string_value = parser['datetimes']['due_date']
 value = parser.getdatetime('datetimes', 'due_date')
 print('due_date : {!r} -> {!r}'.format(string_value, value))
+
+"""
+(venv) huzhi@huzhideMacBook-Pro 29_configparser % python 09_configparser_custom_types.py
+parse_iso_datetime('2015-11-08T11:30:05.905898')
+due_date : '2015-11-08T11:30:05.905898' -> datetime.datetime(2015, 11, 8, 11, 30, 5, 905898)
+(venv) huzhi@huzhideMacBook-Pro 29_configparser %
+"""

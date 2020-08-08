@@ -21,3 +21,10 @@ missing = set(candidates) - set(found)
 
 print('Found config files:', sorted(found))
 print('Missing files     :', sorted(missing))
+
+"""
+(venv) huzhi@huzhideMacBook-Pro 29_configparser % python 02_configparser_read_many.py
+Found config files: ['multisection.ini', 'simple.ini']
+Missing files     : ['also-does-not-exist.ini', 'does_not_exist.ini']
+(venv) huzhi@huzhideMacBook-Pro 29_configparser %
+"""
