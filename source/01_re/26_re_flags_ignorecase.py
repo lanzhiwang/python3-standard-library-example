@@ -22,3 +22,15 @@ for match in with_case.findall(text):
 print('Case-insensitive:')
 for match in without_case.findall(text):
     print('  {!r}'.format(match))
+
+"""
+Text:
+  'This is some text -- with punctuation.'
+Pattern:
+  \bT\w+
+Case-sensitive:
+  'This'
+Case-insensitive:
+  'This'
+  'text'
+"""

@@ -18,3 +18,10 @@ for match in re.finditer(pattern, text):
     e = match.end()
     print('Found {!r} at {:d}:{:d}'.format(
         text[s:e], s, e))
+
+"""
+huzhi@huzhideMacBook-Pro 01_re % python3 04_re_finditer.py
+Found 'ab' at 0:2
+Found 'ab' at 5:7
+huzhi@huzhideMacBook-Pro 01_re %
+"""

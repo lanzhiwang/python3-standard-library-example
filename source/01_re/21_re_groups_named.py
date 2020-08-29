@@ -28,3 +28,26 @@ for pattern in patterns:
     print('  ', match.groups())
     print('  ', match.groupdict())
     print()
+
+"""
+huzhi@huzhideMacBook-Pro 01_re % python3 21_re_groups_named.py
+This is some text -- with punctuation.
+
+'^(?P<first_word>\w+)'
+   ('This',)
+   {'first_word': 'This'}
+
+'(?P<last_word>\w+)\S*$'
+   ('punctuation',)
+   {'last_word': 'punctuation'}
+
+'(?P<t_word>\bt\w+)\W+(?P<other_word>\w+)'
+   ('text', 'with')
+   {'t_word': 'text', 'other_word': 'with'}
+
+'(?P<ends_with_t>\w+t)\b'
+   ('text',)
+   {'ends_with_t': 'text'}
+
+huzhi@huzhideMacBook-Pro 01_re %
+"""

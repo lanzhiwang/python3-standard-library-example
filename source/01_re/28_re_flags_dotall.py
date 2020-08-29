@@ -22,3 +22,16 @@ for match in no_newlines.findall(text):
 print('Dotall      :')
 for match in dotall.findall(text):
     print('  {!r}'.format(match))
+
+"""
+Text:
+  'This is some text -- with punctuation.\nA second line.'
+Pattern:
+  .+
+No newlines :
+  'This is some text -- with punctuation.'
+  'A second line.'
+Dotall      :
+  'This is some text -- with punctuation.\nA second line.'
+
+"""

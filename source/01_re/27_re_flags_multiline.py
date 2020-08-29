@@ -22,3 +22,18 @@ for match in single_line.findall(text):
 print('Multline    :')
 for match in multiline.findall(text):
     print('  {!r}'.format(match))
+
+"""
+Text:
+  'This is some text -- with punctuation.\nA second line.'
+Pattern:
+  (^\w+)|(\w+\S*$)
+Single Line :
+  ('This', '')
+  ('', 'line.')
+Multline    :
+  ('This', '')
+  ('', 'punctuation.')
+  ('A', '')
+  ('', 'line.')
+"""

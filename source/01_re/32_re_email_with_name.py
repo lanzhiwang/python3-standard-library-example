@@ -57,3 +57,34 @@ for candidate in candidates:
         print('  Email:', match.groupdict()['email'])
     else:
         print('  No match')
+
+"""
+Candidate: first.last@example.com
+  Name : None
+  Email: first.last@example.com
+Candidate: first.last+category@gmail.com
+  Name : None
+  Email: first.last+category@gmail.com
+Candidate: valid-address@mail.example.com
+  Name : None
+  Email: valid-address@mail.example.com
+Candidate: not-valid@example.foo
+  No match
+Candidate: First Last <first.last@example.com>
+  Name : First Last
+  Email: first.last@example.com
+Candidate: No Brackets first.last@example.com
+  Name : None
+  Email: first.last@example.com
+Candidate: First Last
+  No match
+Candidate: First Middle Last <first.last@example.com>
+  Name : First Middle Last
+  Email: first.last@example.com
+Candidate: First M. Last <first.last@example.com>
+  Name : First M. Last
+  Email: first.last@example.com
+Candidate: <first.last@example.com>
+  Name : None
+  Email: first.last@example.com
+"""

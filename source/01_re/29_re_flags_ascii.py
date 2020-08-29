@@ -18,3 +18,10 @@ print('Text    :', text)
 print('Pattern :', pattern)
 print('ASCII   :', list(ascii_pattern.findall(text)))
 print('Unicode :', list(unicode_pattern.findall(text)))
+
+"""
+Text    : Français złoty Österreich
+Pattern : \w+
+ASCII   : ['Fran', 'ais', 'z', 'oty', 'sterreich']
+Unicode : ['Français', 'złoty', 'Österreich']
+"""

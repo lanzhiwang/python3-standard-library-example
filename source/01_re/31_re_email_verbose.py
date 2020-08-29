@@ -30,3 +30,10 @@ for candidate in candidates:
     print('{:<30}  {}'.format(
         candidate, 'Matches' if match else 'No match'),
     )
+
+"""
+first.last@example.com          Matches
+first.last+category@gmail.com   Matches
+valid-address@mail.example.com  Matches
+not-valid@example.foo           No match
+"""

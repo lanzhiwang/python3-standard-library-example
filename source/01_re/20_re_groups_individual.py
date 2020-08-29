@@ -21,3 +21,13 @@ match = regex.search(text)
 print('Entire match          :', match.group(0))
 print('Word starting with "t":', match.group(1))
 print('Word after "t" word   :', match.group(2))
+
+"""
+huzhi@huzhideMacBook-Pro 01_re % python3 20_re_groups_individual.py
+Input text            : This is some text -- with punctuation.
+Pattern               : (\bt\w+)\W+(\w+)
+Entire match          : text -- with
+Word starting with "t": text
+Word after "t" word   : with
+huzhi@huzhideMacBook-Pro 01_re %
+"""

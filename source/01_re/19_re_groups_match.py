@@ -27,3 +27,26 @@ for pattern, desc in patterns:
     print("'{}' ({})\n".format(pattern, desc))
     print('  ', match.groups())
     print()
+
+"""
+huzhi@huzhideMacBook-Pro 01_re % python3 19_re_groups_match.py
+This is some text -- with punctuation.
+
+'^(\w+)' (word at start of string)
+
+   ('This',)
+
+'(\w+)\S*$' (word at end, with optional punctuation)
+
+   ('punctuation',)
+
+'(\bt\w+)\W+(\w+)' (word starting with t, another word)
+
+   ('text', 'with')
+
+'(\w+t)\b' (word ending with t)
+
+   ('text',)
+
+huzhi@huzhideMacBook-Pro 01_re %
+"""

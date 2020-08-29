@@ -16,3 +16,9 @@ regex = re.compile(pattern)
 print('Text      :', text)
 print('Pattern   :', pattern)
 print('Matches   :', regex.findall(text))
+
+"""
+Text      : This is some text -- with punctuation.
+Pattern   : (?i)\bT\w+
+Matches   : ['This', 'text']
+"""
