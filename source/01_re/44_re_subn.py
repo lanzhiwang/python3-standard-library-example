@@ -15,3 +15,15 @@ text = 'Make this **bold**.  This **too**.'
 
 print('Text:', text)
 print('Bold:', bold.subn(r'<b>\1</b>', text))
+
+
+print(bold.findall(text))
+
+
+"""
+Text: Make this **bold**.  This **too**.
+Bold: ('Make this <b>bold</b>.  This <b>too</b>.', 2)
+
+['bold', 'too']
+
+"""

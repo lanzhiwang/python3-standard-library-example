@@ -37,7 +37,6 @@ test_patterns(
 )
 
 """
-huzhi@huzhideMacBook-Pro 01_re % python3 18_re_groups.py
 'a(ab)' (a followed by literal ab)
 
   'abbaaabbbbaaaaa'
@@ -67,5 +66,4 @@ huzhi@huzhideMacBook-Pro 01_re % python3 18_re_groups.py
   'abbaaabbbbaaaaa'
   ....'aab'
 
-huzhi@huzhideMacBook-Pro 01_re %
 """
