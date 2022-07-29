@@ -45,3 +45,17 @@ barrier.abort()
 
 for t in threads:
     t.join()
+
+"""
+% python threading_barrier_abort.py
+worker-0 starting
+worker-0 waiting for barrier with 0 others
+worker-1 starting
+worker-1 waiting for barrier with 1 others
+worker-2 starting
+worker-2 waiting for barrier with 2 others
+worker-0 aborting
+worker-1 aborting
+worker-2 aborting
+%
+"""

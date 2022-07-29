@@ -77,3 +77,31 @@ else:
     print('\nFree space:')
     for r in results:
         print('{Mounted:25}: {Avail}'.format(**r))
+
+"""
+in run_df
+launching process
+process started 24
+read b'Filesystem      Size  Used Avail Use% Mounted on\n'
+read b'overlay          59G   44G   12G  80% /\n'
+read b'tmpfs            64M     0   64M   0% /dev\n'
+read b'shm              64M     0   64M   0% /dev/shm\n'
+read b'grpcfuse        932G  167G  765G  18% /python3-standard-library-example\n'
+read b'/dev/vda1        59G   44G   12G  80% /etc/hosts\n'
+read b'tmpfs           3.9G     0  3.9G   0% /proc/acpi\n'
+read b'tmpfs           3.9G     0  3.9G   0% /sys/firmware\n'
+read b''
+no more output from command
+waiting for process to complete
+return code 0
+parsing results
+
+Free space:
+/                        : 12G
+/dev                     : 64M
+/dev/shm                 : 64M
+/python3-standard-library-example: 765G
+/etc/hosts               : 12G
+/proc/acpi               : 3.9G
+/sys/firmware            : 3.9G
+"""

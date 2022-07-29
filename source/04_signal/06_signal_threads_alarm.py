@@ -4,6 +4,7 @@
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
 """
+虽然可以在任何线程中设置警报，但是他们总是在主线程中接收。
 """
 
 

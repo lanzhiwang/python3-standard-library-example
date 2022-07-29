@@ -50,9 +50,9 @@ finally:
 """
 starting main
 waiting 0.1 for phases to complete
-in phase 2
-in phase 0
 in phase 1
+in phase 0
+in phase 2
 done with phase 0
 1 completed and 2 pending
 canceling tasks

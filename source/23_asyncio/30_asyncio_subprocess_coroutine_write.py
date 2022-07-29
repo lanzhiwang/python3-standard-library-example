@@ -56,3 +56,14 @@ if return_code:
 else:
     print('Original: {!r}'.format(MESSAGE))
     print('Changed : {!r}'.format(results))
+
+"""
+in to_upper
+launching process
+pid 28
+communicating with process
+waiting for process to complete
+return code 0
+Original: '\nThis message will be converted\nto all caps.\n'
+Changed : '\nTHIS MESSAGE WILL BE CONVERTED\nTO ALL CAPS.\n'
+"""

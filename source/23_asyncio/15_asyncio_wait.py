@@ -37,11 +37,11 @@ finally:
 """
 starting main
 waiting for phases to complete
+in phase 1
 in phase 0
 in phase 2
-in phase 1
 done with phase 0
 done with phase 1
 done with phase 2
-results: ['phase 1 result', 'phase 0 result', 'phase 2 result']
+results: ['phase 2 result', 'phase 1 result', 'phase 0 result']
 """

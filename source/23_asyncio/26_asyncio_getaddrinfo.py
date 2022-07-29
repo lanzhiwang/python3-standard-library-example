@@ -35,3 +35,16 @@ try:
     event_loop.run_until_complete(main(event_loop, TARGETS))
 finally:
     event_loop.close()
+
+"""
+pymotw.com          : 185.199.111.153
+pymotw.com          : 185.199.110.153
+pymotw.com          : 185.199.109.153
+pymotw.com          : 185.199.108.153
+pymotw.com          : 2606:50c0:8003::153
+pymotw.com          : 2606:50c0:8001::153
+pymotw.com          : 2606:50c0:8002::153
+pymotw.com          : 2606:50c0:8000::153
+doughellmann.com    : 75.2.60.5
+python.org          : 138.197.63.241
+"""

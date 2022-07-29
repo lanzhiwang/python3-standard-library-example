@@ -42,8 +42,8 @@ finally:
 starting main
 waiting for phases to complete
 in phase 2
-in phase 0
 in phase 1
+in phase 0
 done with phase 2
 received answer 'phase 2 result'
 done with phase 1

@@ -31,8 +31,8 @@ finally:
 
 """
 creating task
-waiting for <Task pending coro=<task_func() running at 15_asyncio_create_task.py:12>>
+waiting for <Task pending name='Task-2' coro=<task_func() running at 11_asyncio_create_task.py:12>>
 in task_func
-task completed <Task finished coro=<task_func() done, defined at 15_asyncio_create_task.py:12> result='the result'>
+task completed <Task finished name='Task-2' coro=<task_func() done, defined at 11_asyncio_create_task.py:12> result='the result'>
 return value: 'the result'
 """

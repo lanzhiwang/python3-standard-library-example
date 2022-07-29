@@ -48,10 +48,10 @@ finally:
 
 """
 event start state: False
-coro1 waiting for event
 coro2 waiting for event
+coro1 waiting for event
 setting event in callback
-coro1 triggered
 coro2 triggered
+coro1 triggered
 event end state: True
 """

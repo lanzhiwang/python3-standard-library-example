@@ -50,10 +50,27 @@ log.debug('starting up on {} port {}'.format(*SERVER_ADDRESS))
 try:
     event_loop.run_forever()
 except KeyboardInterrupt:
-    pass
+    # pass
+    log.debug('KeyboardInterrupt')
 finally:
     log.debug('closing server')
     server.close()
     event_loop.run_until_complete(server.wait_closed())
     log.debug('closing event loop')
     event_loop.close()
+
+"""
+$ python 24_1_asyncio_echo_server_coroutine.py
+asyncio: Using selector: EpollSelector
+main: starting up on localhost port 10000
+
+echo_::1_62100: connection accepted
+echo_::1_62100: received b'This is the message. It will be sent in parts.'
+echo_::1_62100: sent b'This is the message. It will be sent in parts.'
+echo_::1_62100: closing
+
+^Cmain: KeyboardInterrupt
+main: closing server
+main: closing event loop
+
+"""

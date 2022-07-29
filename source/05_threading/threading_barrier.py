@@ -39,3 +39,17 @@ for t in threads:
 
 for t in threads:
     t.join()
+
+"""
+% python threading_barrier.py
+worker-0 starting
+worker-0 waiting for barrier with 0 others
+worker-1 starting
+worker-1 waiting for barrier with 1 others
+worker-2 starting
+worker-2 waiting for barrier with 2 others
+worker-2 after barrier 2
+worker-0 after barrier 0
+worker-1 after barrier 1
+%
+"""

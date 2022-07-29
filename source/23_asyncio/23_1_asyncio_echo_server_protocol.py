@@ -65,3 +65,32 @@ finally:
     event_loop.run_until_complete(server.wait_closed())
     log.debug('closing event loop')
     event_loop.close()
+
+"""
+$ python 23_1_asyncio_echo_server_protocol.py
+asyncio: Using selector: EpollSelector
+main: starting up on localhost port 10000
+
+EchoServer_::1_62098: connection accepted
+
+EchoServer_::1_62098: received b'This is the message. It will be sent in parts.'
+EchoServer_::1_62098: sent b'This is the message. It will be sent in parts.'
+EchoServer_::1_62098: received EOF
+
+EchoServer_::1_62098: closing
+
+^Cmain: closing server
+main: closing event loop
+Traceback (most recent call last):
+  File "23_1_asyncio_echo_server_protocol.py", line 61, in <module>
+    event_loop.run_forever()
+  File "/usr/local/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/local/lib/python3.8/asyncio/base_events.py", line 1823, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/local/lib/python3.8/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+"""
+

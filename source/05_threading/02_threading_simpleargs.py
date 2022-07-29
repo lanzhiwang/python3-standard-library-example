@@ -3,7 +3,10 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Passing arguments to threads when they are created
+"""
+
+能够创建一个线程并且传递给它参数告诉它做什么是很有用的。
+任何对象都可以作为参数传递给线程。这个例子传递了一个数字，然后在线程中打印出来。
 """
 
 #end_pymotw_header

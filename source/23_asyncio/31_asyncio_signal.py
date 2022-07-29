@@ -51,3 +51,19 @@ try:
     event_loop.run_until_complete(send_signals())
 finally:
     event_loop.close()
+
+"""
+starting send_signals for 33
+sending SIGHUP
+yielding control
+signal_handler('SIGHUP')
+sending SIGHUP
+yielding control
+signal_handler('SIGHUP')
+sending SIGUSR1
+yielding control
+signal_handler('SIGUSR1')
+sending SIGINT
+yielding control
+signal_handler('SIGINT')
+"""

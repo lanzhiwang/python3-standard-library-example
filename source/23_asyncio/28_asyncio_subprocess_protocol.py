@@ -94,3 +94,23 @@ else:
     print('\nFree space:')
     for r in results:
         print('{Mounted:25}: {Avail}'.format(**r))
+
+"""
+in run_df
+launching process
+process started 20
+waiting for process to complete
+read 401 bytes from stdout
+process exited
+return code 0
+parsing results
+
+Free space:
+/                        : 12G
+/dev                     : 64M
+/dev/shm                 : 64M
+/python3-standard-library-example: 765G
+/etc/hosts               : 12G
+/proc/acpi               : 3.9G
+/sys/firmware            : 3.9G
+"""

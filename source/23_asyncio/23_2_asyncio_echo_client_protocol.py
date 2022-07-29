@@ -87,3 +87,22 @@ try:
 finally:
     log.debug('closing event loop')
     event_loop.close()
+
+"""
+$ python 23_2_asyncio_echo_client_protocol.py
+asyncio: Using selector: EpollSelector
+main: waiting for client to complete
+
+EchoClient: connecting to ::1 port 10000
+EchoClient: sending b'This is the message. '
+EchoClient: sending b'It will be sent '
+EchoClient: sending b'in parts.'
+
+EchoClient: received b'This is the message. It will be sent in parts.'
+EchoClient: received EOF
+
+EchoClient: server closed connection
+
+main: closing event loop
+
+"""

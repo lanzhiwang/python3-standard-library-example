@@ -60,3 +60,25 @@ if args.verbose:
 
 LOG.info('entering event loop')
 event_loop.run_until_complete(outer(event_loop))
+
+"""
+$ python 34_asyncio_debug.py
+  DEBUG: Using selector: EpollSelector
+   INFO: entering event loop
+   INFO: outer starting
+   INFO: inner starting
+   INFO: inner completed
+   INFO: outer completed
+
+
+$ python 34_asyncio_debug.py -v
+  DEBUG: Using selector: EpollSelector
+   INFO: enabling debugging
+   INFO: entering event loop
+   INFO: outer starting
+   INFO: inner starting
+   INFO: inner completed
+WARNING: Executing <Task finished name='Task-2' coro=<inner() done, defined at 34_asyncio_debug.py:33> result=None created at 34_asyncio_debug.py:43> took 0.104 seconds
+   INFO: outer completed
+
+"""

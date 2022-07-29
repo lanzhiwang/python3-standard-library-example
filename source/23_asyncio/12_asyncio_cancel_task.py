@@ -39,6 +39,6 @@ finally:
 """
 creating task
 canceling task
-canceled task <Task cancelling coro=<task_func() running at 16_asyncio_cancel_task.py:12>>
+canceled task <Task cancelling name='Task-2' coro=<task_func() running at 12_asyncio_cancel_task.py:12>>
 caught error from canceled task
 """

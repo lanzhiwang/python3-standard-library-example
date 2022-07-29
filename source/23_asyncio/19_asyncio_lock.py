@@ -12,7 +12,7 @@ import functools
 
 def unlock(lock):
     print('callback releasing lock')
-    lock.release()
+    lock.release()  # 释放锁
 
 
 async def coro1(lock):
@@ -24,7 +24,7 @@ async def coro1(lock):
 
 async def coro2(lock):
     print('coro2 waiting for the lock')
-    await lock.acquire()
+    await lock.acquire()  # 获取锁
     try:
         print('coro2 acquired lock')
     finally:
@@ -36,7 +36,7 @@ async def main(loop):
     # Create and acquire a shared lock.
     lock = asyncio.Lock()
     print('acquiring the lock before starting coroutines')
-    await lock.acquire()
+    await lock.acquire()  # 获取锁
     print('lock acquired: {}'.format(lock.locked()))
 
     # Schedule a callback to unlock the lock.
@@ -57,11 +57,11 @@ finally:
 acquiring the lock before starting coroutines
 lock acquired: True
 waiting for coroutines
-coro1 waiting for the lock
 coro2 waiting for the lock
+coro1 waiting for the lock
 callback releasing lock
-coro1 acquired lock
-coro1 released lock
 coro2 acquired lock
 coro2 released lock
+coro1 acquired lock
+coro1 released lock
 """
