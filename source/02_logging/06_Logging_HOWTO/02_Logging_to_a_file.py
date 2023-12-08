@@ -1,16 +1,27 @@
 import logging
-# logging.basicConfig(filename='example.log', level=logging.DEBUG, filemode='w')
-logging.basicConfig(filename='example.log', level=logging.DEBUG)
+from logging_tree import printout
+
+logging.basicConfig(
+    filename='example.log',
+    encoding='utf-8',
+    level=logging.DEBUG
+)
 logging.debug('This message should go to the log file')
 logging.info('So should this')
 logging.warning('And this, too')
+logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
+
+print()
+
+printout()
+
 
 """
-# assuming loglevel is bound to the string value obtained from the
-# command line argument. Convert to upper case to allow the user to
-# specify --log=DEBUG or --log=debug
-numeric_level = getattr(logging, loglevel.upper(), None)
-if not isinstance(numeric_level, int):
-    raise ValueError('Invalid log level: %s' % loglevel)
-logging.basicConfig(level=numeric_level, ...)
+$ python 02_Logging_to_a_file.py
+
+<--""
+   Level DEBUG
+   Handler File '/python3-standard-library-example/source/02_logging/06_Logging_HOWTO/example.log'
+     Formatter fmt='%(levelname)s:%(name)s:%(message)s' datefmt=None
+$
 """

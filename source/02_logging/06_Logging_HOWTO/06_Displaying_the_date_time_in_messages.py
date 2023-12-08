@@ -1,15 +1,35 @@
 import logging
+from logging_tree import printout
+
 logging.basicConfig(format='%(asctime)s %(message)s')
 logging.warning('is when this event was logged.')
+print()
 
-"""
-2010-12-12 11:41:42,612 is when this event was logged.
-"""
+printout()
+print()
 
 import logging
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 logging.warning('is when this event was logged.')
+print()
+
+printout()
 
 """
-12/12/2010 11:46:36 AM is when this event was logged.
+$ python 06_Displaying_the_date_time_in_messages.py
+2023-12-08 07:40:17,082 is when this event was logged.
+
+<--""
+   Level WARNING
+   Handler Stream <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+     Formatter fmt='%(asctime)s %(message)s' datefmt=None
+
+2023-12-08 07:40:17,082 is when this event was logged.
+
+<--""
+   Level WARNING
+   Handler Stream <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+     Formatter fmt='%(asctime)s %(message)s' datefmt=None
+$
+
 """

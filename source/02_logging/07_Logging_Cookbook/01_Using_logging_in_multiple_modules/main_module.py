@@ -1,22 +1,20 @@
 import logging
 import auxiliary_module
+from logging_tree import printout
 
 # create logger with 'spam_application'
 logger = logging.getLogger('spam_application')
 logger.setLevel(logging.DEBUG)
-
 # create file handler which logs even debug messages
 fh = logging.FileHandler('spam.log')
 fh.setLevel(logging.DEBUG)
 # create console handler with a higher log level
 ch = logging.StreamHandler()
 ch.setLevel(logging.ERROR)
-
 # create formatter and add it to the handlers
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
-
 # add the handlers to the logger
 logger.addHandler(fh)
 logger.addHandler(ch)
@@ -31,15 +29,29 @@ logger.info('calling auxiliary_module.some_function()')
 auxiliary_module.some_function()
 logger.info('done with auxiliary_module.some_function()')
 
+print()
+
+printout()
+
 """
-2019-10-10 10:29:40,605 - spam_application - INFO - creating an instance of auxiliary_module.Auxiliary
-2019-10-10 10:29:40,605 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
-2019-10-10 10:29:40,605 - spam_application - INFO - created an instance of auxiliary_module.Auxiliary
-2019-10-10 10:29:40,606 - spam_application - INFO - calling auxiliary_module.Auxiliary.do_something
-2019-10-10 10:29:40,606 - spam_application.auxiliary.Auxiliary - INFO - doing something
-2019-10-10 10:29:40,606 - spam_application.auxiliary.Auxiliary - INFO - done doing something
-2019-10-10 10:29:40,606 - spam_application - INFO - finished auxiliary_module.Auxiliary.do_something
-2019-10-10 10:29:40,606 - spam_application - INFO - calling auxiliary_module.some_function()
-2019-10-10 10:29:40,606 - spam_application.auxiliary - INFO - received a call to "some_function"
-2019-10-10 10:29:40,606 - spam_application - INFO - done with auxiliary_module.some_function()
+$ python main_module.py
+
+<--""
+   Level WARNING
+   |
+   o<--"spam_application"
+       Level DEBUG
+       Handler File '/python3-standard-library-example/source/02_logging/07_Logging_Cookbook/01_Using_logging_in_multiple_modules/spam.log'
+         Level DEBUG
+         Formatter fmt='%(asctime)s - %(name)s - %(levelname)s - %(message)s' datefmt=None
+       Handler Stream <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+         Level ERROR
+         Formatter fmt='%(asctime)s - %(name)s - %(levelname)s - %(message)s' datefmt=None
+       |
+       o<--"spam_application.auxiliary"
+           Level NOTSET so inherits level DEBUG
+           |
+           o<--"spam_application.auxiliary.Auxiliary"
+               Level NOTSET so inherits level DEBUG
+$
 """

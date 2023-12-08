@@ -14,3 +14,12 @@ s.send(struct.pack('>L', len(data_to_send)))
 s.send(data_to_send)
 s.close()
 print('complete')
+
+"""
+$ python client.py logging.conf
+connecting...
+sending config...
+complete
+$
+
+"""

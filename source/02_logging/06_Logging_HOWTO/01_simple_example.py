@@ -1,9 +1,21 @@
 import logging
+from logging_tree import printout
+
 logging.warning('Watch out!')  # will print a message to the console
 logging.info('I told you so')  # will not print anything
 
+print()
+
+printout()
+
 """
-[root@huzhi-code 06_Logging_HOWTO]# python 01_simple_example.py
+$ python 01_simple_example.py
 WARNING:root:Watch out!
-[root@huzhi-code 06_Logging_HOWTO]#
+
+<--""
+   Level WARNING
+   Handler Stream <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+     Formatter fmt='%(levelname)s:%(name)s:%(message)s' datefmt=None
+$
+
 """
