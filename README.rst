@@ -41,3 +41,12 @@ similar license to this one.
 
 The source code included here is copyright Doug Hellmann and licensed
 under the BSD license.
+
+```bash
+docker run -ti --rm --name python3-standard-library-example \
+-v ~/work/code/py_code/python3-standard-library-example:/python3-standard-library-example \
+-w /python3-standard-library-example \
+python:3.10-bullseye \
+bash
+
+```

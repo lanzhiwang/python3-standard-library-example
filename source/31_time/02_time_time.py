@@ -10,3 +10,9 @@
 import time
 
 print('The time is:', time.time())
+
+"""
+$ python 02_time_time.py
+The time is: 1753000942.662069
+$
+"""
