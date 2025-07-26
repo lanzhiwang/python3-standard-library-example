@@ -16,3 +16,12 @@ print('\nBefore:', bob)
 bob2 = bob._replace(name='Robert')
 print('After:', bob2)
 print('Same?:', bob is bob2)
+
+"""
+$ python 27_collections_namedtuple_replace.py
+
+Before: Person(name='Bob', age=30)
+After: Person(name='Robert', age=30)
+Same?: False
+$
+"""

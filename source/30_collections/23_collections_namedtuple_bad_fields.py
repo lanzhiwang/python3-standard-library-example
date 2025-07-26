@@ -18,3 +18,10 @@ try:
     collections.namedtuple('Person', 'name age age')
 except ValueError as err:
     print(err)
+
+"""
+$ python 23_collections_namedtuple_bad_fields.py
+Type names and field names cannot be a keyword: 'class'
+Encountered duplicate field name: 'age'
+$
+"""

@@ -18,3 +18,10 @@ two_ages = collections.namedtuple(
     'Person', 'name age age',
     rename=True)
 print(two_ages._fields)
+
+"""
+$ python 24_collections_namedtuple_rename.py
+('name', '_1', 'age')
+('name', 'age', '_2')
+$
+"""

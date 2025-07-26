@@ -30,3 +30,22 @@ for k, v in m.items():
 print()
 
 print('"d" in m: {}'.format(('d' in m)))
+
+"""
+$ python 01_collections_chainmap_read.py
+Individual Values
+a = A
+b = B
+c = C
+
+Keys = ['b', 'c', 'a']
+Values = ['B', 'C', 'A']
+
+Items:
+b = B
+c = C
+a = A
+
+"d" in m: False
+$
+"""

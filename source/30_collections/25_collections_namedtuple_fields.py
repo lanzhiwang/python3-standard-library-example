@@ -12,11 +12,12 @@ import collections
 Person = collections.namedtuple('Person', 'name age')
 
 bob = Person(name='Bob', age=30)
-print('\nRepresentation:', bob)
+print('Representation:', bob)
+print('Fields:', bob._fields)
 
-jane = Person(name='Jane', age=29)
-print('\nField by name:', jane.name)
-
-print('\nFields by index:')
-for p in [bob, jane]:
-    print('{} is {} years old'.format(*p))
+"""
+$ python 25_collections_namedtuple_fields.py
+Representation: Person(name='Bob', age=30)
+Fields: ('name', 'age')
+$
+"""

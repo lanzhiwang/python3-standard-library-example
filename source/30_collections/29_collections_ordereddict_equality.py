@@ -35,3 +35,10 @@ d2['b'] = 'B'
 d2['a'] = 'A'
 
 print(d1 == d2)
+
+"""
+$ python 29_collections_ordereddict_equality.py
+dict       : True
+OrderedDict: False
+$
+"""

@@ -17,3 +17,13 @@ print('Right end:', d[-1])
 
 d.remove('c')
 print('remove(c):', d)
+
+"""
+$ python 14_collections_deque.py
+Deque: deque(['a', 'b', 'c', 'd', 'e', 'f', 'g'])
+Length: 7
+Left end: a
+Right end: g
+remove(c): deque(['a', 'b', 'd', 'e', 'f', 'g'])
+$
+"""

@@ -17,3 +17,11 @@ print('Sequence:', c)
 
 c.update({'a': 1, 'd': 5})
 print('Dict    :', c)
+
+"""
+$ python 08_collections_counter_update.py
+Initial : Counter()
+Sequence: Counter({'a': 3, 'b': 2, 'c': 1, 'd': 1})
+Dict    : Counter({'d': 6, 'a': 4, 'b': 2, 'c': 1})
+$
+"""

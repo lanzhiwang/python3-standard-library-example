@@ -18,3 +18,10 @@ m2 = m1.new_child(c)
 
 print('m1["c"] = {}'.format(m1['c']))
 print('m2["c"] = {}'.format(m2['c']))
+
+"""
+$ python 06_collections_chainmap_new_child_explicit.py
+m1["c"] = C
+m2["c"] = E
+$
+"""

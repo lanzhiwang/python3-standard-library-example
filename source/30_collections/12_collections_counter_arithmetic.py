@@ -26,3 +26,22 @@ print(c1 & c2)
 
 print('\nUnion (taking maximums):')
 print(c1 | c2)
+
+"""
+$ python 12_collections_counter_arithmetic.py
+C1: Counter({'b': 3, 'a': 2, 'c': 1})
+C2: Counter({'a': 2, 'l': 1, 'p': 1, 'h': 1, 'b': 1, 'e': 1, 't': 1})
+
+Combined counts:
+Counter({'a': 4, 'b': 4, 'c': 1, 'l': 1, 'p': 1, 'h': 1, 'e': 1, 't': 1})
+
+Subtraction:
+Counter({'b': 2, 'c': 1})
+
+Intersection (taking positive minimums):
+Counter({'a': 2, 'b': 1})
+
+Union (taking maximums):
+Counter({'b': 3, 'a': 2, 'c': 1, 'l': 1, 'p': 1, 'h': 1, 'e': 1, 't': 1})
+$
+"""

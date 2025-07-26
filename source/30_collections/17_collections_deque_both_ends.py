@@ -37,3 +37,15 @@ right.start()
 
 left.join()
 right.join()
+
+"""
+$ python 17_collections_deque_both_ends.py
+    Left: 0
+   Right: 4
+   Right: 3
+    Left: 1
+   Right: 2
+    Left done
+   Right done
+$
+"""

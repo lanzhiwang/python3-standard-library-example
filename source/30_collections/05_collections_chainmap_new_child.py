@@ -22,3 +22,12 @@ m2['c'] = 'E'
 
 print('m1 after:', m1)
 print('m2 after:', m2)
+
+"""
+$ python 05_collections_chainmap_new_child.py
+m1 before: ChainMap({'a': 'A', 'c': 'C'}, {'b': 'B', 'c': 'D'})
+m2 before: ChainMap({}, {'a': 'A', 'c': 'C'}, {'b': 'B', 'c': 'D'})
+m1 after: ChainMap({'a': 'A', 'c': 'C'}, {'b': 'B', 'c': 'D'})
+m2 after: ChainMap({'c': 'E'}, {'a': 'A', 'c': 'C'}, {'b': 'B', 'c': 'D'})
+$
+"""

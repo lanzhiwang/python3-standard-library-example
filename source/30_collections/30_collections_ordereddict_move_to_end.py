@@ -28,3 +28,22 @@ d.move_to_end('b', last=False)
 print('\nmove_to_end(last=False):')
 for k, v in d.items():
     print(k, v)
+
+"""
+$ python 30_collections_ordereddict_move_to_end.py
+Before:
+a A
+b B
+c C
+
+move_to_end():
+a A
+c C
+b B
+
+move_to_end(last=False):
+b B
+a A
+c C
+$
+"""

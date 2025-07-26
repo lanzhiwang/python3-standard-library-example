@@ -26,3 +26,17 @@ d['c'] = 'C'
 
 for k, v in d.items():
     print(k, v)
+
+"""
+$ python 28_collections_ordereddict_iter.py
+Regular dictionary:
+a A
+b B
+c C
+
+OrderedDict:
+a A
+b B
+c C
+$
+"""

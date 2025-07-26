@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2015 Doug Hellmann.  All rights reserved.
 #
-"""Reading values from a ChainMap after reordering it
+"""Updating values underneath a ChainMap
 """
 
 #end_pymotw_header
@@ -13,12 +13,13 @@ a = {'a': 'A', 'c': 'C'}
 b = {'b': 'B', 'c': 'D'}
 
 m = collections.ChainMap(a, b)
+print('Before: {}'.format(m['c']))
+a['c'] = 'E'
+print('After : {}'.format(m['c']))
 
-print(m.maps)
-print('c = {}\n'.format(m['c']))
-
-# reverse the list
-m.maps = list(reversed(m.maps))
-
-print(m.maps)
-print('c = {}'.format(m['c']))
+"""
+$ python 03_collections_chainmap_update_behind.py
+Before: C
+After : E
+$
+"""

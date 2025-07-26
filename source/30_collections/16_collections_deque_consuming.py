@@ -26,3 +26,13 @@ while True:
     except IndexError:
         break
 print()
+
+"""
+$ python 16_collections_deque_consuming.py
+From the right:
+gfedcba
+
+From the left:
+012345
+$
+"""
