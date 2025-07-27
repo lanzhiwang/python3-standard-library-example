@@ -3,25 +3,22 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Example setting the locale using environment variable(s).
-"""
+"""Example setting the locale using environment variable(s)."""
 
-#end_pymotw_header
+# end_pymotw_header
 import locale
 import os
 import pprint
 
 # Default settings based on the user's environment.
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, "")
 
-print('Environment settings:')
-for env_name in ['LC_ALL', 'LC_CTYPE', 'LANG', 'LANGUAGE']:
-    print('  {} = {}'.format(
-        env_name, os.environ.get(env_name, ''))
-    )
+print("Environment settings:")
+for env_name in ["LC_ALL", "LC_CTYPE", "LANG", "LANGUAGE"]:
+    print("  {} = {}".format(env_name, os.environ.get(env_name, "")))
 
 # What is the locale?
-print('\nLocale from environment:', locale.getlocale())
+print("\nLocale from environment:", locale.getlocale())
 
 template = """
 Numeric formatting:
@@ -50,17 +47,17 @@ Monetary formatting:
 """
 
 sign_positions = {
-    0: 'Surrounded by parentheses',
-    1: 'Before value and symbol',
-    2: 'After value and symbol',
-    3: 'Before value',
-    4: 'After value',
-    locale.CHAR_MAX: 'Unspecified',
+    0: "Surrounded by parentheses",
+    1: "Before value and symbol",
+    2: "After value and symbol",
+    3: "Before value",
+    4: "After value",
+    locale.CHAR_MAX: "Unspecified",
 }
 
 info = {}
 info.update(locale.localeconv())
-info['p_sign_posn'] = sign_positions[info['p_sign_posn']]
-info['n_sign_posn'] = sign_positions[info['n_sign_posn']]
+info["p_sign_posn"] = sign_positions[info["p_sign_posn"]]
+info["n_sign_posn"] = sign_positions[info["n_sign_posn"]]
 
 print(template.format(**info))

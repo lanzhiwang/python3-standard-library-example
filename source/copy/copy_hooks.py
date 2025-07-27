@@ -3,11 +3,9 @@
 #
 # Copyright 2007 Doug Hellmann.
 #
-"""Shallow copy example
+"""Shallow copy example"""
 
-"""
-
-#end_pymotw_header
+# end_pymotw_header
 import copy
 import functools
 
@@ -25,15 +23,15 @@ class MyClass:
         return self.name > other.name
 
     def __copy__(self):
-        print('__copy__()')
+        print("__copy__()")
         return MyClass(self.name)
 
     def __deepcopy__(self, memo):
-        print('__deepcopy__({})'.format(memo))
+        print("__deepcopy__({})".format(memo))
         return MyClass(copy.deepcopy(self.name, memo))
 
 
-a = MyClass('a')
+a = MyClass("a")
 
 sc = copy.copy(a)
 dc = copy.deepcopy(a)

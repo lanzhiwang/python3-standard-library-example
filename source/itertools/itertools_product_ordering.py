@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-#end_pymotw_header
+# end_pymotw_header
 from itertools import *
 import pprint
 
-FACE_CARDS = ('J', 'Q', 'K', 'A')
-SUITS = ('H', 'D', 'C', 'S')
+FACE_CARDS = ("J", "Q", "K", "A")
+SUITS = ("H", "D", "C", "S")
 
 DECK = list(
     product(
@@ -16,6 +16,6 @@ DECK = list(
 )
 
 for card in DECK:
-    print('{:>2}{}'.format(card[1], card[0]), end=' ')
+    print("{:>2}{}".format(card[1], card[0]), end=" ")
     if card[1] == FACE_CARDS[-1]:
         print()

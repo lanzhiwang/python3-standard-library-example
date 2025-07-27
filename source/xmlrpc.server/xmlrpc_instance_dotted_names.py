@@ -3,16 +3,15 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 from xmlrpc.server import SimpleXMLRPCServer
 import os
 import inspect
 
 server = SimpleXMLRPCServer(
-    ('localhost', 9000),
+    ("localhost", 9000),
     logRequests=True,
 )
 
@@ -33,7 +32,7 @@ root.dir = DirectoryService()
 server.register_instance(root, allow_dotted_names=True)
 
 try:
-    print('Use Control-C to exit')
+    print("Use Control-C to exit")
     server.serve_forever()
 except KeyboardInterrupt:
-    print('Exiting')
+    print("Exiting")

@@ -3,8 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Escape codes
-"""
+"""Escape codes"""
 
 import re
 
@@ -22,21 +21,23 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
 test_patterns(
-    'A prime #1 example!',
-    [(r'\d+', 'sequence of digits'),
-     (r'\D+', 'sequence of non-digits'),
-     (r'\s+', 'sequence of whitespace'),
-     (r'\S+', 'sequence of non-whitespace'),
-     (r'\w+', 'alphanumeric characters'),
-     (r'\W+', 'non-alphanumeric')],
+    "A prime #1 example!",
+    [
+        (r"\d+", "sequence of digits"),
+        (r"\D+", "sequence of non-digits"),
+        (r"\s+", "sequence of whitespace"),
+        (r"\S+", "sequence of non-whitespace"),
+        (r"\w+", "alphanumeric characters"),
+        (r"\W+", "non-alphanumeric"),
+    ],
 )
 
 """

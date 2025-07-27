@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Absolute value
-"""
+"""Absolute value"""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 print(math.fabs(-1.1))

@@ -3,19 +3,18 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Client half of echo example
-"""
+"""Client half of echo example"""
 
-#end_pymotw_header
+# end_pymotw_header
 import socket
 import sys
 
 messages = [
-    'This is the message. ',
-    'It will be sent ',
-    'in parts.',
+    "This is the message. ",
+    "It will be sent ",
+    "in parts.",
 ]
-server_address = ('localhost', 10001)
+server_address = ("localhost", 10001)
 
 # Create a TCP/IP socket
 socks = [
@@ -24,8 +23,7 @@ socks = [
 ]
 
 # Connect the socket to the port where the server is listening
-print('connecting to {} port {}'.format(*server_address),
-      file=sys.stderr)
+print("connecting to {} port {}".format(*server_address), file=sys.stderr)
 for s in socks:
     s.connect(server_address)
 
@@ -34,20 +32,17 @@ for message in messages:
 
     # Send messages on both sockets
     for s in socks:
-        print('{}: sending {!r}'.format(s.getsockname(),
-                                        outgoing_data),
-              file=sys.stderr)
+        print(
+            "{}: sending {!r}".format(s.getsockname(), outgoing_data), file=sys.stderr
+        )
         s.send(outgoing_data)
 
     # Read responses on both sockets
     for s in socks:
         data = s.recv(1024)
-        print('{}: received {!r}'.format(s.getsockname(),
-                                         data),
-              file=sys.stderr)
+        print("{}: received {!r}".format(s.getsockname(), data), file=sys.stderr)
         if not data:
-            print('closing socket', s.getsockname(),
-                  file=sys.stderr)
+            print("closing socket", s.getsockname(), file=sys.stderr)
             s.close()
 
 """

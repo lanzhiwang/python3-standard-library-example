@@ -4,14 +4,13 @@
 # Copyright (c) 2016 Doug Hellmann.  All rights reserved.
 # Written for https://pymotw.com
 #
-"""Convenience methods for Path
-"""
+"""Convenience methods for Path"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
 home = pathlib.Path.home()
-print('home: ', home)
+print("home: ", home)
 
 cwd = pathlib.Path.cwd()
-print('cwd : ', cwd)
+print("cwd : ", cwd)

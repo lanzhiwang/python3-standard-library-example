@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Converting from radians to degrees.
-"""
+"""Converting from radians to degrees."""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 INPUTS = [
@@ -20,12 +19,13 @@ INPUTS = [
     (2 * math.pi, 360),
 ]
 
-print('{:^8} {:^8} {:^8}'.format(
-    'Radians', 'Degrees', 'Expected'))
-print('{:-^8} {:-^8} {:-^8}'.format('', '', ''))
+print("{:^8} {:^8} {:^8}".format("Radians", "Degrees", "Expected"))
+print("{:-^8} {:-^8} {:-^8}".format("", "", ""))
 for rad, expected in INPUTS:
-    print('{:8.2f} {:8.2f} {:8.2f}'.format(
-        rad,
-        math.degrees(rad),
-        expected,
-    ))
+    print(
+        "{:8.2f} {:8.2f} {:8.2f}".format(
+            rad,
+            math.degrees(rad),
+            expected,
+        )
+    )

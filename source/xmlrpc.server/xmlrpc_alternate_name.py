@@ -3,14 +3,13 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 from xmlrpc.server import SimpleXMLRPCServer
 import os
 
-server = SimpleXMLRPCServer(('localhost', 9000))
+server = SimpleXMLRPCServer(("localhost", 9000))
 
 
 def list_contents(dir_name):
@@ -18,10 +17,10 @@ def list_contents(dir_name):
     return os.listdir(dir_name)
 
 
-server.register_function(list_contents, 'dir')
+server.register_function(list_contents, "dir")
 
 try:
-    print('Use Control-C to exit')
+    print("Use Control-C to exit")
     server.serve_forever()
 except KeyboardInterrupt:
-    print('Exiting')
+    print("Exiting")

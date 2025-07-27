@@ -3,22 +3,21 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Initializing a defaultdict.
-"""
+"""Initializing a defaultdict."""
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 
 def default_factory():
-    return 'default value'
+    return "default value"
 
 
-d = collections.defaultdict(default_factory, foo='bar')
-print('d:', d)
-print('foo =>', d['foo'])
-print('bar =>', d['bar'])
-print('d:', d)
+d = collections.defaultdict(default_factory, foo="bar")
+print("d:", d)
+print("foo =>", d["foo"])
+print("bar =>", d["bar"])
+print("d:", d)
 
 """
 $ python 13_collections_defaultdict.py

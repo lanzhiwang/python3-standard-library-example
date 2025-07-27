@@ -3,23 +3,22 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Creating XML documents with lists of nodes
-"""
+"""Creating XML documents with lists of nodes"""
 
-#end_pymotw_header
+# end_pymotw_header
 from xml.etree.ElementTree import (
-    Element, SubElement, tostring, XML,
+    Element,
+    SubElement,
+    tostring,
+    XML,
 )
 from ElementTree_pretty import prettify
 
-top = Element('top')
+top = Element("top")
 
-parent = SubElement(top, 'parent')
+parent = SubElement(top, "parent")
 
-children = XML(
-    '<root><child num="0" /><child num="1" />'
-    '<child num="2" /></root>'
-)
+children = XML('<root><child num="0" /><child num="1" />' '<child num="2" /></root>')
 parent.extend(children)
 
 print(prettify(top))

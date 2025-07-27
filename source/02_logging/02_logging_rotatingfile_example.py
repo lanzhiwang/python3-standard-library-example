@@ -5,16 +5,16 @@ See http://blog.doughellmann.com/2007/05/pymotw-logging.html
 
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import glob
 import logging
 import logging.handlers
 from logging_tree import printout
 
-LOG_FILENAME = 'logging_rotatingfile_example.out'
+LOG_FILENAME = "logging_rotatingfile_example.out"
 
 # Set up a specific logger with our desired output level
-my_logger = logging.getLogger('MyLogger')
+my_logger = logging.getLogger("MyLogger")
 my_logger.setLevel(logging.DEBUG)
 
 # Add the log message handler to the logger
@@ -27,10 +27,10 @@ my_logger.addHandler(handler)
 
 # Log some messages
 for i in range(20):
-    my_logger.debug('i = %d' % i)
+    my_logger.debug("i = %d" % i)
 
 # See what files are created
-logfiles = glob.glob('%s*' % LOG_FILENAME)
+logfiles = glob.glob("%s*" % LOG_FILENAME)
 for filename in sorted(logfiles):
     print(filename)
 

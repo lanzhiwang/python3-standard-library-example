@@ -4,18 +4,17 @@
 # Copyright (c) 2016 Doug Hellmann.  All rights reserved.
 # Written for https://pymotw.com
 #
-"""Removing files
-"""
+"""Removing files"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('touched')
+p = pathlib.Path("touched")
 
 p.touch()
 
-print('exists before removing:', p.exists())
+print("exists before removing:", p.exists())
 
 p.unlink()
 
-print('exists after removing:', p.exists())
+print("exists after removing:", p.exists())

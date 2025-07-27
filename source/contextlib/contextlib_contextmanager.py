@@ -3,31 +3,30 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
-#end_pymotw_header
+""" """
+# end_pymotw_header
 import contextlib
 
 
 @contextlib.contextmanager
 def make_context():
-    print('  entering')
+    print("  entering")
     try:
         yield {}
     except RuntimeError as err:
-        print('  ERROR:', err)
+        print("  ERROR:", err)
     finally:
-        print('  exiting')
+        print("  exiting")
 
 
-print('Normal:')
+print("Normal:")
 with make_context() as value:
-    print('  inside with statement:', value)
+    print("  inside with statement:", value)
 
-print('\nHandled error:')
+print("\nHandled error:")
 with make_context() as value:
-    raise RuntimeError('showing example of handling an error')
+    raise RuntimeError("showing example of handling an error")
 
-print('\nUnhandled error:')
+print("\nUnhandled error:")
 with make_context() as value:
-    raise ValueError('this exception is not handled')
+    raise ValueError("this exception is not handled")

@@ -3,30 +3,27 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Splitting input based on a pattern.
-"""
+"""Splitting input based on a pattern."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-text = '''Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three.'''
+text = """Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three."""
 
-print('With findall:')
-for num, para in enumerate(re.findall(r'(.+?)(\n{2,}|$)',
-                                      text,
-                                      flags=re.DOTALL)):
+print("With findall:")
+for num, para in enumerate(re.findall(r"(.+?)(\n{2,}|$)", text, flags=re.DOTALL)):
     print(num, repr(para))
     print()
 
 print()
-print('With split:')
-for num, para in enumerate(re.split(r'\n{2,}', text)):
+print("With split:")
+for num, para in enumerate(re.split(r"\n{2,}", text)):
     print(num, repr(para))
     print()
 
 
-print(re.findall(r'(.+?)(\n{2,}|$)', text, flags=re.DOTALL))
-print(type(re.findall(r'(.+?)(\n{2,}|$)', text, flags=re.DOTALL)))
+print(re.findall(r"(.+?)(\n{2,}|$)", text, flags=re.DOTALL))
+print(type(re.findall(r"(.+?)(\n{2,}|$)", text, flags=re.DOTALL)))
 
 """
 With findall:

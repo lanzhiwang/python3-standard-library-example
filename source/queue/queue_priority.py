@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""PriorityQueue
-"""
+"""PriorityQueue"""
 
-#end_pymotw_header
+# end_pymotw_header
 import functools
 import queue
 import threading
@@ -18,7 +17,7 @@ class Job:
     def __init__(self, priority, description):
         self.priority = priority
         self.description = description
-        print('New job:', description)
+        print("New job:", description)
         return
 
     def __eq__(self, other):
@@ -36,15 +35,15 @@ class Job:
 
 q = queue.PriorityQueue()
 
-q.put(Job(3, 'Mid-level job'))
-q.put(Job(10, 'Low-level job'))
-q.put(Job(1, 'Important job'))
+q.put(Job(3, "Mid-level job"))
+q.put(Job(10, "Low-level job"))
+q.put(Job(1, "Important job"))
 
 
 def process_job(q):
     while True:
         next_job = q.get()
-        print('Processing job:', next_job.description)
+        print("Processing job:", next_job.description)
         q.task_done()
 
 

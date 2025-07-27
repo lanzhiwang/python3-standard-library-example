@@ -3,14 +3,13 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Positive look-ahead assertion
-"""
+"""Positive look-ahead assertion"""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 address = re.compile(
-    '''
+    """
     # A name is made up of letters, and may include "."
     # for title abbreviations and middle initials.
     ((?P<name>
@@ -38,21 +37,22 @@ address = re.compile(
     )
 
     >? # optional closing angle bracket
-    ''',
-    re.VERBOSE)
+    """,
+    re.VERBOSE,
+)
 
 candidates = [
-    u'First Last <first.last@example.com>',
-    u'No Brackets first.last@example.com',
-    u'Open Bracket <first.last@example.com',
-    u'Close Bracket first.last@example.com>',
+    "First Last <first.last@example.com>",
+    "No Brackets first.last@example.com",
+    "Open Bracket <first.last@example.com",
+    "Close Bracket first.last@example.com>",
 ]
 
 for candidate in candidates:
-    print('Candidate:', candidate)
+    print("Candidate:", candidate)
     match = address.search(candidate)
     if match:
-        print('  Name :', match.groupdict()['name'])
-        print('  Email:', match.groupdict()['email'])
+        print("  Name :", match.groupdict()["name"])
+        print("  Email:", match.groupdict()["email"])
     else:
-        print('  No match')
+        print("  No match")

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # encoding: utf-8
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import enum
 
 
@@ -21,14 +20,10 @@ class BugStatus(enum.Enum):
 actual_state = BugStatus.wont_fix
 desired_state = BugStatus.fix_released
 
-print('Equality:',
-      actual_state == desired_state,
-      actual_state == BugStatus.wont_fix)
-print('Identity:',
-      actual_state is desired_state,
-      actual_state is BugStatus.wont_fix)
-print('Ordered by value:')
+print("Equality:", actual_state == desired_state, actual_state == BugStatus.wont_fix)
+print("Identity:", actual_state is desired_state, actual_state is BugStatus.wont_fix)
+print("Ordered by value:")
 try:
-    print('\n'.join('  ' + s.name for s in sorted(BugStatus)))
+    print("\n".join("  " + s.name for s in sorted(BugStatus)))
 except TypeError as err:
-    print('  Cannot sort: {}'.format(err))
+    print("  Cannot sort: {}".format(err))

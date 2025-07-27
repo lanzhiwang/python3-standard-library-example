@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Simple logging to stderr using different levels.
-"""
+"""Simple logging to stderr using different levels."""
 
-#end_pymotw_header
+# end_pymotw_header
 import logging
 import warnings
 from logging_tree import printout
@@ -11,11 +10,11 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-warnings.warn('This warning is not sent to the logs')
+warnings.warn("This warning is not sent to the logs")
 
 logging.captureWarnings(True)
 
-warnings.warn('This warning is sent to the logs')
+warnings.warn("This warning is sent to the logs")
 
 print()
 
@@ -41,4 +40,3 @@ WARNING:py.warnings:/python3-standard-library-example/source/02_logging/05_loggi
            Handler <NullHandler (NOTSET)>
 $
 """
-

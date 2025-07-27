@@ -3,21 +3,20 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Creating and waiting for a process
-"""
+"""Creating and waiting for a process"""
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 
 
 class Worker(multiprocessing.Process):
 
     def run(self):
-        print('In {}'.format(self.name))
+        print("In {}".format(self.name))
         return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     jobs = []
     for i in range(5):
         p = Worker()

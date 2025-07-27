@@ -49,4 +49,12 @@ docker run -ti --rm --name python3-standard-library-example \
 python:3.10-bullseye \
 bash
 
+pip install "black[jupyter]"
+
+find . -name "*.py" -exec black {} \;
+
+find . -name "*.ipynb" -exec black {} \;
+
+find . -name __pycache__ -exec rm -rf {} \;
+
 ```

@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Remove fragment portion of URL
-"""
+"""Remove fragment portion of URL"""
 
-#end_pymotw_header
+# end_pymotw_header
 from urllib.parse import urldefrag
 
-original = 'http://netloc/path;param?query=arg#frag'
-print('original:', original)
+original = "http://netloc/path;param?query=arg#frag"
+print("original:", original)
 d = urldefrag(original)
-print('url     :', d.url)
-print('fragment:', d.fragment)
+print("url     :", d.url)
+print("fragment:", d.fragment)
 
 """
 original: http://netloc/path;param?query=arg#frag

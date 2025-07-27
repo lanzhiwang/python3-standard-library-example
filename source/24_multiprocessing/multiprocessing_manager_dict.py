@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 import pprint
 
@@ -15,7 +14,7 @@ def worker(d, key, value):
     d[key] = value
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     mgr = multiprocessing.Manager()
     d = mgr.dict()
     jobs = [
@@ -29,4 +28,4 @@ if __name__ == '__main__':
         j.start()
     for j in jobs:
         j.join()
-    print('Results:', d)
+    print("Results:", d)

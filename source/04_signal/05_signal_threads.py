@@ -15,7 +15,7 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import signal
 import threading
 import os
@@ -23,33 +23,37 @@ import time
 
 
 def signal_handler(num, stack):
-    print('Received signal {} in {}'.format(num, threading.currentThread().name))
+    print("Received signal {} in {}".format(num, threading.currentThread().name))
 
 
 signal.signal(signal.SIGUSR1, signal_handler)
 
 
 def wait_for_signal():
-    print('Waiting for signal in', threading.currentThread().name)
+    print("Waiting for signal in", threading.currentThread().name)
     signal.pause()  # signal.pause() 去等待接收一个信号
-    print('Done waiting')
+    print("Done waiting")
 
 
 # Start a thread that will not receive the signal
-receiver = threading.Thread(target=wait_for_signal, name='receiver',)
+receiver = threading.Thread(
+    target=wait_for_signal,
+    name="receiver",
+)
 receiver.start()
 time.sleep(0.1)
 
 
 def send_signal():
-    print('Sending signal in', threading.currentThread().name)
+    print("Sending signal in", threading.currentThread().name)
     os.kill(os.getpid(), signal.SIGUSR1)
 
-sender = threading.Thread(target=send_signal, name='sender')
+
+sender = threading.Thread(target=send_signal, name="sender")
 sender.start()
 
 # Wait for the thread to see the signal (not going to happen!)
-print('Waiting for', receiver.name)
+print("Waiting for", receiver.name)
 signal.alarm(2)
 receiver.join()
 sender.join()

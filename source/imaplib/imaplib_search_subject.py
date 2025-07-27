@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import imaplib
 import imaplib_connect
 from imaplib_list_parse import parse_list_response

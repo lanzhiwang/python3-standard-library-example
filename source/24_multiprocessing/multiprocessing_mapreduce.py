@@ -3,9 +3,8 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
-#end_pymotw_header
+""" """
+# end_pymotw_header
 import collections
 import itertools
 import multiprocessing
@@ -64,9 +63,7 @@ class SimpleMapReduce:
             inputs,
             chunksize=chunksize,
         )
-        partitioned_data = self.partition(
-            itertools.chain(*map_responses)
-        )
+        partitioned_data = self.partition(itertools.chain(*map_responses))
         reduced_values = self.pool.map(
             self.reduce_func,
             partitioned_data,

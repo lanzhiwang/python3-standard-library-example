@@ -3,8 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Anchoring the search
-"""
+"""Anchoring the search"""
 
 
 import re
@@ -23,23 +22,25 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
 test_patterns(
-    'This is some text -- with punctuation.',
-    [(r'^\w+', 'word at start of string'),
-     (r'\A\w+', 'word at start of string'),
-     (r'\w+\S*$', 'word near end of string'),
-     (r'\w+\S*\Z', 'word near end of string'),
-     (r'\w*t\w*', 'word containing t'),
-     (r'\bt\w+', 't at start of word'),
-     (r'\w+t\b', 't at end of word'),
-     (r'\Bt\B', 't, not start or end of word')],
+    "This is some text -- with punctuation.",
+    [
+        (r"^\w+", "word at start of string"),
+        (r"\A\w+", "word at start of string"),
+        (r"\w+\S*$", "word near end of string"),
+        (r"\w+\S*\Z", "word near end of string"),
+        (r"\w*t\w*", "word containing t"),
+        (r"\bt\w+", "t at start of word"),
+        (r"\w+t\b", "t at end of word"),
+        (r"\Bt\B", "t, not start or end of word"),
+    ],
 )
 
 """

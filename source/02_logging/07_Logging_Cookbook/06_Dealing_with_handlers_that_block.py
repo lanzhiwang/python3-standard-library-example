@@ -10,12 +10,12 @@ handler = logging.StreamHandler()
 listener = QueueListener(que, handler)
 root = logging.getLogger()
 root.addHandler(queue_handler)
-formatter = logging.Formatter('%(threadName)s: %(message)s')
+formatter = logging.Formatter("%(threadName)s: %(message)s")
 handler.setFormatter(formatter)
 listener.start()
 # The log output will display the thread which generated
 # the event (the main thread) rather than the internal
 # thread which monitors the internal queue. This is what
 # you want to happen.
-root.warning('Look out!')
+root.warning("Look out!")
 listener.stop()

@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2009 Doug Hellmann.  All rights reserved.
 #
-"""Using tabnanny from your own code
-"""
+"""Using tabnanny from your own code"""
 
-#end_pymotw_header
+# end_pymotw_header
 import sys
 import tabnanny
 

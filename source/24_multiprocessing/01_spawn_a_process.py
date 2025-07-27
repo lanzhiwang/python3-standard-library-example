@@ -3,16 +3,17 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Spawn a Process – Chapter 3: Process Based Parallelism
-"""
-#end_pymotw_header
+"""Spawn a Process – Chapter 3: Process Based Parallelism"""
+# end_pymotw_header
 import multiprocessing
 
+
 def function(i):
-    print ('called function in process: %s' % i)
+    print("called function in process: %s" % i)
     return
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     Process_jobs = []
     for i in range(5):
         p = multiprocessing.Process(target=function, args=(i,))

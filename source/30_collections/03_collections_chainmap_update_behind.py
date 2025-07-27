@@ -3,19 +3,18 @@
 #
 # Copyright (c) 2015 Doug Hellmann.  All rights reserved.
 #
-"""Updating values underneath a ChainMap
-"""
+"""Updating values underneath a ChainMap"""
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
-a = {'a': 'A', 'c': 'C'}
-b = {'b': 'B', 'c': 'D'}
+a = {"a": "A", "c": "C"}
+b = {"b": "B", "c": "D"}
 
 m = collections.ChainMap(a, b)
-print('Before: {}'.format(m['c']))
-a['c'] = 'E'
-print('After : {}'.format(m['c']))
+print("Before: {}".format(m["c"]))
+a["c"] = "E"
+print("After : {}".format(m["c"]))
 
 """
 $ python 03_collections_chainmap_update_behind.py

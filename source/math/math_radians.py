@@ -3,16 +3,13 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Converting from degrees to radians.
-"""
+"""Converting from degrees to radians."""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
-print('{:^7} {:^7} {:^7}'.format(
-    'Degrees', 'Radians', 'Expected'))
-print('{:-^7} {:-^7} {:-^7}'.format(
-    '', '', ''))
+print("{:^7} {:^7} {:^7}".format("Degrees", "Radians", "Expected"))
+print("{:-^7} {:-^7} {:-^7}".format("", "", ""))
 
 INPUTS = [
     (0, 0),
@@ -26,8 +23,10 @@ INPUTS = [
 ]
 
 for deg, expected in INPUTS:
-    print('{:7d} {:7.2f} {:7.2f}'.format(
-        deg,
-        math.radians(deg),
-        expected,
-    ))
+    print(
+        "{:7d} {:7.2f} {:7.2f}".format(
+            deg,
+            math.radians(deg),
+            expected,
+        )
+    )

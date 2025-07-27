@@ -3,11 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Empty module for example.
-"""
+"""Empty module for example."""
 
-#end_pymotw_header
+# end_pymotw_header
 import os
-print('Loaded {} from {}'.format(
-    __name__, __file__[len(os.getcwd()) + 1:])
-)
+
+print("Loaded {} from {}".format(__name__, __file__[len(os.getcwd()) + 1 :]))

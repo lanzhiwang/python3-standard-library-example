@@ -3,16 +3,16 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 # Set up gnureadline as readline if installed.
 try:
     import gnureadline
     import sys
-    sys.modules['readline'] = gnureadline
+
+    sys.modules["readline"] = gnureadline
 except ImportError:
     pass
 
@@ -25,17 +25,21 @@ class HelloWorld(cmd.Cmd):
         if person:
             print("hi,", person)
         else:
-            print('hi')
+            print("hi")
 
     def help_greet(self):
-        print('\n'.join([
-            'greet [person]',
-            'Greet the named person',
-        ]))
+        print(
+            "\n".join(
+                [
+                    "greet [person]",
+                    "Greet the named person",
+                ]
+            )
+        )
 
     def do_EOF(self, line):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HelloWorld().cmdloop()

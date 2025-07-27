@@ -4,18 +4,19 @@ import mylib2
 
 from logging_tree import printout
 
+
 def main():
-    logging.basicConfig(filename='myapp.log', level=logging.INFO)
-    logging.info('Started')
+    logging.basicConfig(filename="myapp.log", level=logging.INFO)
+    logging.info("Started")
     mylib1.do_something()
     mylib2.do_something()
-    logging.info('Finished')
+    logging.info("Finished")
 
     print()
     printout()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 """

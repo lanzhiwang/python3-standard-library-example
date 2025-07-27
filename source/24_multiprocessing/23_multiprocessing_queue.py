@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 
 
@@ -17,8 +16,7 @@ class MyFancyClass:
 
     def do_something(self):
         proc_name = multiprocessing.current_process().name
-        print('Doing something fancy in {} for {}!'.format(
-            proc_name, self.name))
+        print("Doing something fancy in {} for {}!".format(proc_name, self.name))
 
 
 def worker(q):
@@ -27,13 +25,13 @@ def worker(q):
     obj.do_something()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     queue = multiprocessing.Queue()
 
     p = multiprocessing.Process(target=worker, args=(queue,))
     p.start()
 
-    queue.put(MyFancyClass('Fancy Dan'))
+    queue.put(MyFancyClass("Fancy Dan"))
 
     # Wait for the worker to finish
     queue.close()

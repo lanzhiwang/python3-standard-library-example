@@ -3,10 +3,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Simple example using doctest
-"""
+"""Simple example using doctest"""
 
-#end_pymotw_header
+
+# end_pymotw_header
 def my_function(a, b):
     """
     >>> my_function(2, 3)

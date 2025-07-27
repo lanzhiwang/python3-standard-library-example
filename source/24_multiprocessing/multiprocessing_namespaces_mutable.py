@@ -3,26 +3,25 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 
 
 def producer(ns, event):
     # DOES NOT UPDATE GLOBAL VALUE!
-    ns.my_list.append('This is the value')
+    ns.my_list.append("This is the value")
     event.set()
 
 
 def consumer(ns, event):
-    print('Before event:', ns.my_list)
+    print("Before event:", ns.my_list)
     event.wait()
-    print('After event :', ns.my_list)
+    print("After event :", ns.my_list)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     mgr = multiprocessing.Manager()
     namespace = mgr.Namespace()
     namespace.my_list = []

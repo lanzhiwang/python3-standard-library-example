@@ -11,6 +11,7 @@ con = threading.Condition()
 
 num = 0
 
+
 # 生产者
 class Producer(threading.Thread):
 
@@ -35,6 +36,7 @@ class Producer(threading.Thread):
         # 释放锁
         con.release()
 
+
 # 消费者
 class Consumers(threading.Thread):
     def __init__(self):
@@ -55,10 +57,8 @@ class Consumers(threading.Thread):
                 con.wait()
         con.release()
 
+
 p = Producer()
 c = Consumers()
 c.start()
 p.start()
-
-
-

@@ -3,11 +3,10 @@
 #
 # Copyright (c) 2014 Doug Hellmann.  All rights reserved.
 # https://github.com/lanzhiwang/Python_Parallel_Programming/blob/master/Asynchronous_programming/Asyncio_coroutine.py
-# 
-"""Asyncio Finite State Machine
-"""
+#
+"""Asyncio Finite State Machine"""
 
-#end_pymotw_header
+# end_pymotw_header
 import asyncio
 import time
 from random import randint
@@ -15,64 +14,65 @@ from random import randint
 
 @asyncio.coroutine
 def StartState():
-    print ("Start State called")
-    input_value = randint(0,1)
+    print("Start State called")
+    input_value = randint(0, 1)
     time.sleep(1)
-    print('input_value: %s\n' % input_value)
-    if (input_value == 0):
+    print("input_value: %s\n" % input_value)
+    if input_value == 0:
         result = yield from State2(input_value)
-    else :
+    else:
         result = yield from State1(input_value)
     print("StartState result: %s" % result)
-    
-    
+
+
 @asyncio.coroutine
 def State1(transition_value):
-    print('State1')
-    input_value = randint(0,1)
+    print("State1")
+    input_value = randint(0, 1)
     time.sleep(1)
     print("...Evaluating...")
-    print('input_value: %s\n' % input_value)
-    if (input_value == 0):
-        result =  yield from State3(input_value)
-    else :
+    print("input_value: %s\n" % input_value)
+    if input_value == 0:
+        result = yield from State3(input_value)
+    else:
         result = yield from State2(input_value)
-    print('state1 return: %s' % result)
-    return 'state1'
+    print("state1 return: %s" % result)
+    return "state1"
+
 
 @asyncio.coroutine
 def State2(transition_value):
-    print('State2')
-    input_value = randint(0,1)
+    print("State2")
+    input_value = randint(0, 1)
     time.sleep(1)
     print("...Evaluating...")
-    print('input_value: %s\n' % input_value)
-    if (input_value == 0):
+    print("input_value: %s\n" % input_value)
+    if input_value == 0:
         result = yield from State1(input_value)
-    else :
+    else:
         result = yield from State3(input_value)
-    print('state2 return: %s' % result)
-    return 'state2'
+    print("state2 return: %s" % result)
+    return "state2"
 
 
 @asyncio.coroutine
 def State3(transition_value):
-    print('State3')
-    input_value = randint(0,1)
+    print("State3")
+    input_value = randint(0, 1)
     time.sleep(1)
     print("...Evaluating...")
-    print('input_value: %s\n' % input_value)
-    if (input_value == 0):
+    print("input_value: %s\n" % input_value)
+    if input_value == 0:
         result = yield from State1(input_value)
-    else :
+    else:
         result = yield from EndState(input_value)
-    print('state3 return: %s' % result)
-    return 'state3'
+    print("state3 return: %s" % result)
+    return "state3"
 
 
 @asyncio.coroutine
 def EndState(transition_value):
-    print('EndState')
+    print("EndState")
     print("...Stop Computation...")
     return "End State"
 

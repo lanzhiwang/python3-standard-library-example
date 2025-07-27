@@ -3,15 +3,14 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import bz2
 import contextlib
 
-with bz2.BZ2File('example.bz2', 'rb') as input:
-    print('Entire file:')
+with bz2.BZ2File("example.bz2", "rb") as input:
+    print("Entire file:")
     all_data = input.read()
     print(all_data)
 
@@ -22,7 +21,7 @@ with bz2.BZ2File('example.bz2', 'rb') as input:
 
     # move ahead 5 bytes
     input.seek(5)
-    print('Starting at position 5 for 10 bytes:')
+    print("Starting at position 5 for 10 bytes:")
     partial = input.read(10)
     print(partial)
 

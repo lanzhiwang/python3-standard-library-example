@@ -3,11 +3,11 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Regular expression grouping
-"""
+"""Regular expression grouping"""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
+
 
 def test_patterns(text, patterns):
     """Given source text and a list of patterns, look for
@@ -22,18 +22,21 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
+
 test_patterns(
-    'abbaaabbbbaaaaa',
-    [('a(ab)', 'a followed by literal ab'),
-     ('a(a*b*)', 'a followed by 0-n a and 0-n b'),
-     ('a(ab)*', 'a followed by 0-n ab'),
-     ('a(ab)+', 'a followed by 1-n ab')],
+    "abbaaabbbbaaaaa",
+    [
+        ("a(ab)", "a followed by literal ab"),
+        ("a(a*b*)", "a followed by 0-n a and 0-n b"),
+        ("a(ab)*", "a followed by 0-n ab"),
+        ("a(ab)+", "a followed by 1-n ab"),
+    ],
 )
 
 """

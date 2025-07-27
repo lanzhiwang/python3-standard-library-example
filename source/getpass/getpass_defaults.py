@@ -3,15 +3,14 @@
 #
 # Copyright 2007 Doug Hellmann.
 #
-"""Default use of getpass.
-"""
+"""Default use of getpass."""
 
-#end_pymotw_header
+# end_pymotw_header
 import getpass
 
 try:
     p = getpass.getpass()
 except Exception as err:
-    print('ERROR:', err)
+    print("ERROR:", err)
 else:
-    print('You entered:', p)
+    print("You entered:", p)

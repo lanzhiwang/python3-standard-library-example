@@ -3,11 +3,10 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
@@ -19,7 +18,7 @@ class HelloWorld(cmd.Cmd):
         if person:
             print("hi,", person)
         else:
-            print('hi')
+            print("hi")
 
     def do_EOF(self, line):
         return True
@@ -28,5 +27,5 @@ class HelloWorld(cmd.Cmd):
         print()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HelloWorld().cmdloop()

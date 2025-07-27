@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""FIFO Queue
-"""
+"""FIFO Queue"""
 
-#end_pymotw_header
+# end_pymotw_header
 import queue
 
 q = queue.Queue()
@@ -15,5 +14,5 @@ for i in range(5):
     q.put(i)
 
 while not q.empty():
-    print(q.get(), end=' ')
+    print(q.get(), end=" ")
 print()

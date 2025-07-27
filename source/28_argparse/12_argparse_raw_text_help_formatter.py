@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import argparse
 
 parser = argparse.ArgumentParser(
@@ -23,7 +22,8 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    '-a', action="store_true",
+    "-a",
+    action="store_true",
     help="""argument
     help is not
     wrapped

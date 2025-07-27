@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Show the built-in argument actions.
-"""
+"""Show the built-in argument actions."""
 
-#end_pymotw_header
+# end_pymotw_header
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -31,54 +30,71 @@ version 打印程序版本详情然后退出
 """
 
 # store 选择性地转换为一个不同的类型后保存参数值。如果没有特别声明动作时这是默认动作。
-parser.add_argument('-s', action='store',
-                    dest='simple_value',
-                    help='Store a simple value')
+parser.add_argument(
+    "-s", action="store", dest="simple_value", help="Store a simple value"
+)
 
 # store_const 保存一个在参数声明时定义的值，而非解析参数时得到的值。这通常被用于实现非布尔型数值的命令行标志。
-parser.add_argument('-c', action='store_const',
-                    dest='constant_value',
-                    const='value-to-store',
-                    help='Store a constant value')
+parser.add_argument(
+    "-c",
+    action="store_const",
+    dest="constant_value",
+    const="value-to-store",
+    help="Store a constant value",
+)
 
 # store_true / store_false 保存相应的布尔型数值，这个动作被用于实现布尔值开关。
-parser.add_argument('-t', action='store_true',
-                    default=False,
-                    dest='boolean_t',
-                    help='Set a switch to true')
-parser.add_argument('-f', action='store_false',
-                    default=True,
-                    dest='boolean_f',
-                    help='Set a switch to false')
+parser.add_argument(
+    "-t",
+    action="store_true",
+    default=False,
+    dest="boolean_t",
+    help="Set a switch to true",
+)
+parser.add_argument(
+    "-f",
+    action="store_false",
+    default=True,
+    dest="boolean_f",
+    help="Set a switch to false",
+)
 
 # append 将参数值保存在一个列表中。如果参数重复了，那么多个参数值将会被保存。
-parser.add_argument('-a', action='append',
-                    dest='collection',
-                    default=[],
-                    help='Add repeated values to a list')
+parser.add_argument(
+    "-a",
+    action="append",
+    dest="collection",
+    default=[],
+    help="Add repeated values to a list",
+)
 
 # append_const 将参数值保存在参数声明时指定的列表中。
-parser.add_argument('-A', action='append_const',
-                    dest='const_collection',
-                    const='value-1-to-append',
-                    default=[],
-                    help='Add different values to list')
-parser.add_argument('-B', action='append_const',
-                    dest='const_collection',
-                    const='value-2-to-append',
-                    help='Add different values to list')
+parser.add_argument(
+    "-A",
+    action="append_const",
+    dest="const_collection",
+    const="value-1-to-append",
+    default=[],
+    help="Add different values to list",
+)
+parser.add_argument(
+    "-B",
+    action="append_const",
+    dest="const_collection",
+    const="value-2-to-append",
+    help="Add different values to list",
+)
 
 # version 打印程序版本详情然后退出
-parser.add_argument('--version', action='version',
-                    version='%(prog)s 1.0')
+parser.add_argument("--version", action="version", version="%(prog)s 1.0")
 
 results = parser.parse_args()
-print('simple_value     = {!r}'.format(results.simple_value))
-print('constant_value   = {!r}'.format(results.constant_value))
-print('boolean_t        = {!r}'.format(results.boolean_t))
-print('boolean_f        = {!r}'.format(results.boolean_f))
-print('collection       = {!r}'.format(results.collection))
-print('const_collection = {!r}'.format(results.const_collection))
+print("simple_value     = {!r}".format(results.simple_value))
+print("constant_value   = {!r}".format(results.constant_value))
+print("boolean_t        = {!r}".format(results.boolean_t))
+print("boolean_f        = {!r}".format(results.boolean_f))
+print("collection       = {!r}".format(results.collection))
+print("const_collection = {!r}".format(results.const_collection))
 
 """
 huzhi@huzhideMacBook-Pro argparse % python 04_argparse_action.py -h

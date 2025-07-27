@@ -24,8 +24,7 @@
 # ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 # THIS SOFTWARE.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
-DATA = 'This is example A'
+# end_pymotw_header
+DATA = "This is example A"

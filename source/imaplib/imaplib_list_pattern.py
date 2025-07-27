@@ -3,18 +3,17 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import imaplib
 
 from imaplib_connect import open_connection
 
 with open_connection() as c:
-    typ, data = c.list(pattern='*Example*')
+    typ, data = c.list(pattern="*Example*")
 
-print('Response code:', typ)
+print("Response code:", typ)
 
 for line in data:
-    print('Server response:', line)
+    print("Server response:", line)

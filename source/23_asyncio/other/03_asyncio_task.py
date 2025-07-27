@@ -3,21 +3,22 @@
 #
 # Copyright (c) 2014 Doug Hellmann.  All rights reserved.
 # https://github.com/lanzhiwang/Python_Parallel_Programming/blob/master/Asynchronous_programming/asyncio_Task.py
-# 
-"""Asyncio using Asyncio.Task to execute three math function in parallel
-"""
+#
+"""Asyncio using Asyncio.Task to execute three math function in parallel"""
 
-#end_pymotw_header
+# end_pymotw_header
 import asyncio
+
 
 @asyncio.coroutine
 def factorial(number):
     f = 1
-    for i in range(2, number+1):
+    for i in range(2, number + 1):
         print("Asyncio.Task: Compute factorial(%s)" % i)
         yield from asyncio.sleep(1)
         f *= i
     print("Asyncio.Task - factorial(%s) = %s" % (number, f))
+
 
 @asyncio.coroutine
 def fibonacci(number):
@@ -28,19 +29,23 @@ def fibonacci(number):
         a, b = b, a + b
     print("Asyncio.Task - fibonacci(%s) = %s" % (number, a))
 
+
 @asyncio.coroutine
 def binomialCoeff(n, k):
     result = 1
-    for i in range(1, k+1):
-        result = result * (n-i+1) / i
+    for i in range(1, k + 1):
+        result = result * (n - i + 1) / i
         print("Asyncio.Task: Compute binomialCoeff (%s)" % i)
         yield from asyncio.sleep(1)
-    print("Asyncio.Task - binomialCoeff(%s , %s) = %s" % (n,k,result))
+    print("Asyncio.Task - binomialCoeff(%s , %s) = %s" % (n, k, result))
+
 
 if __name__ == "__main__":
-    tasks = [asyncio.Task(factorial(10)),
-             asyncio.Task(fibonacci(10)),
-             asyncio.Task(binomialCoeff(20, 10))]
+    tasks = [
+        asyncio.Task(factorial(10)),
+        asyncio.Task(fibonacci(10)),
+        asyncio.Task(binomialCoeff(20, 10)),
+    ]
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait(tasks))
     loop.close()

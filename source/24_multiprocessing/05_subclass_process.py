@@ -3,17 +3,18 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Spawn a Process – Chapter 3: Process Based Parallelism
-"""
-#end_pymotw_header
+"""Spawn a Process – Chapter 3: Process Based Parallelism"""
+# end_pymotw_header
 import multiprocessing
+
 
 class MyProcess(multiprocessing.Process):
     def run(self):
-        print ('called run method in %s' % self.name)
+        print("called run method in %s" % self.name)
         return
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     jobs = []
 
     for i in range(5):

@@ -4,7 +4,7 @@
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
 
-#end_pymotw_header
+# end_pymotw_header
 import profile
 
 
@@ -29,10 +29,10 @@ def fib_seq(n):
 
 # profile.run('print(fib_seq(20)); print()')
 
-profile.run('print(fib_seq(20)); print()', __file__ + '_stats')
+profile.run("print(fib_seq(20)); print()", __file__ + "_stats")
 # ./gprof2dot.py -f pstats 01_profile_fibonacci_raw.py_stats | dot -Tpng -o output.png
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 方法一
     # profile.run('print(fib_seq(20)); print()')
 

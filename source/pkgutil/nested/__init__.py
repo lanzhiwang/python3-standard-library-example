@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import pkgutil
 
 __path__ = pkgutil.extend_path(__path__, __name__)

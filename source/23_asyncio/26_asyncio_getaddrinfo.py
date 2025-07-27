@@ -2,10 +2,9 @@
 # encoding: utf-8
 #
 # Copyright (c) 2014 Doug Hellmann.  All rights reserved.
-"""Converting hostnames to IP addresses
-"""
+"""Converting hostnames to IP addresses"""
 
-#end_pymotw_header
+# end_pymotw_header
 import asyncio
 import logging
 import socket
@@ -13,9 +12,9 @@ import sys
 
 
 TARGETS = [
-    ('pymotw.com', 'https'),
-    ('doughellmann.com', 'https'),
-    ('python.org', 'https'),
+    ("pymotw.com", "https"),
+    ("doughellmann.com", "https"),
+    ("python.org", "https"),
 ]
 
 
@@ -27,7 +26,7 @@ async def main(loop, targets):
         )
 
         for host in info:
-            print('{:20}: {}'.format(target[0], host[4][0]))
+            print("{:20}: {}".format(target[0], host[4][0]))
 
 
 event_loop = asyncio.get_event_loop()

@@ -3,8 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Repetition of patterns
-"""
+"""Repetition of patterns"""
 
 import re
 
@@ -22,19 +21,21 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
 test_patterns(
-    'abbaabbba',
-    [('a.', 'a followed by any one character'),
-     ('b.', 'b followed by any one character'),
-     ('a.*b', 'a followed by anything, ending in b'),
-     ('a.*?b', 'a followed by anything, ending in b')],
+    "abbaabbba",
+    [
+        ("a.", "a followed by any one character"),
+        ("b.", "b followed by any one character"),
+        ("a.*b", "a followed by anything, ending in b"),
+        ("a.*?b", "a followed by anything, ending in b"),
+    ],
 )
 
 """

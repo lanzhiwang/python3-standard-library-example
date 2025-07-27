@@ -3,12 +3,11 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import platform
 
-print('interpreter:', platform.architecture())
-print('/bin/ls    :', platform.architecture('/bin/ls'))
+print("interpreter:", platform.architecture())
+print("/bin/ls    :", platform.architecture("/bin/ls"))

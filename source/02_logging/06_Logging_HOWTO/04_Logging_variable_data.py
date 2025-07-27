@@ -1,5 +1,6 @@
 import logging
-logging.warning('%s before you %s', 'Look', 'leap!')
+
+logging.warning("%s before you %s", "Look", "leap!")
 var1 = 2
 var2 = [1, 2, 3, 4, 5, 6]
 var3 = "qwe"

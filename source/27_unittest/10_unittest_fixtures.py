@@ -1,35 +1,34 @@
 #!/usr/bin/env python3
-"""A test with fixtures.
-"""
+"""A test with fixtures."""
 
-#end_pymotw_header
+# end_pymotw_header
 import random
 import unittest
 
 
 def setUpModule():
-    print('In setUpModule()')
+    print("In setUpModule()")
 
 
 def tearDownModule():
-    print('In tearDownModule()')
+    print("In tearDownModule()")
 
 
 class FixturesTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        print('In setUpClass()')
+        print("In setUpClass()")
         cls.good_range = range(1, 10)
 
     @classmethod
     def tearDownClass(cls):
-        print('In tearDownClass()')
+        print("In tearDownClass()")
         del cls.good_range
 
     def setUp(self):
         super().setUp()
-        print('\nIn setUp()')
+        print("\nIn setUp()")
         # Pick a number sure to be in the range. The range is
         # defined as not including the "stop" value, so make
         # sure it is not included in the set of allowed values
@@ -40,17 +39,18 @@ class FixturesTest(unittest.TestCase):
         )
 
     def tearDown(self):
-        print('In tearDown()')
+        print("In tearDown()")
         del self.value
         super().tearDown()
 
     def test1(self):
-        print('In test1()')
+        print("In test1()")
         self.assertIn(self.value, self.good_range)
 
     def test2(self):
-        print('In test2()')
+        print("In test2()")
         self.assertIn(self.value, self.good_range)
+
 
 """
 huzhi@bogon 27_unittest % python3 -m unittest -v 10_unittest_fixtures.py

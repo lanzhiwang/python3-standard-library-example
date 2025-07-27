@@ -3,31 +3,29 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Splitting input based on a pattern.
-"""
+"""Splitting input based on a pattern."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-'''Paragraph one
+"""Paragraph one
 on two lines.
 
 Paragraph two.
 
 
-Paragraph three.'''
+Paragraph three."""
 
 
+text = """Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three."""
 
-text = '''Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three.'''
-
-print('With split:')
-for num, para in enumerate(re.split(r'(\n{2,})', text)):
+print("With split:")
+for num, para in enumerate(re.split(r"(\n{2,})", text)):
     print(num, repr(para))
     print()
 
-print(re.split(r'(\n{2,})', text))
-print(type(re.split(r'(\n{2,})', text)))
+print(re.split(r"(\n{2,})", text))
+print(type(re.split(r"(\n{2,})", text)))
 """
 With split:
 0 'Paragraph one\non two lines.'

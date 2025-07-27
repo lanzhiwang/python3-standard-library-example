@@ -4,13 +4,12 @@
 # Copyright (c) 2016 Doug Hellmann.  All rights reserved.
 # Written for https://pymotw.com
 #
-"""pathlib rglob
-"""
+"""pathlib rglob"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('..')
+p = pathlib.Path("..")
 
-for f in p.rglob('pathlib_*.py'):
+for f in p.rglob("pathlib_*.py"):
     print(f)

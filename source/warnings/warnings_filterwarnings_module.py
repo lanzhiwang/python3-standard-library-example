@@ -3,18 +3,17 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 # flake8: noqa
 
-#end_pymotw_header
+# end_pymotw_header
 import warnings
 
 warnings.filterwarnings(
-    'ignore',
-    '.*',
+    "ignore",
+    ".*",
     UserWarning,
-    'warnings_filter',
+    "warnings_filter",
 )
 
 import warnings_filter

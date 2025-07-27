@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 import time
 
@@ -24,11 +23,11 @@ class Consumer(multiprocessing.Process):
             next_task = self.task_queue.get()
             if next_task is None:
                 # Poison pill means shutdown
-                print('{}: Exiting'.format(proc_name))
+                print("{}: Exiting".format(proc_name))
                 self.task_queue.task_done()
                 break
             time.sleep(0.1)
-            print('{}: {}'.format(proc_name, next_task))
+            print("{}: {}".format(proc_name, next_task))
             answer = next_task()
             self.task_queue.task_done()
             self.result_queue.put(answer)
@@ -42,25 +41,23 @@ class Task:
 
     def __call__(self):
         time.sleep(0.1)  # pretend to take time to do the work
-        return '{self.a} * {self.b} = {product}'.format(
-            self=self, product=self.a * self.b)
+        return "{self.a} * {self.b} = {product}".format(
+            self=self, product=self.a * self.b
+        )
 
     def __str__(self):
-        return '{self.a} * {self.b}'.format(self=self)
+        return "{self.a} * {self.b}".format(self=self)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Establish communication queues
     tasks = multiprocessing.JoinableQueue()
     results = multiprocessing.Queue()
 
     # Start consumers
     num_consumers = multiprocessing.cpu_count()
-    print('Creating {} consumers'.format(num_consumers))
-    consumers = [
-        Consumer(tasks, results)
-        for i in range(num_consumers)
-    ]
+    print("Creating {} consumers".format(num_consumers))
+    consumers = [Consumer(tasks, results) for i in range(num_consumers)]
     for w in consumers:
         w.start()
 
@@ -79,7 +76,7 @@ if __name__ == '__main__':
     # Start printing results
     while num_jobs:
         result = results.get()
-        print('Result:', result)
+        print("Result:", result)
         num_jobs -= 1
 
 """

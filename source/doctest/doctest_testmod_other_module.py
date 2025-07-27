@@ -3,12 +3,12 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Run tests for another module we import.
-"""
+"""Run tests for another module we import."""
 
-#end_pymotw_header
+# end_pymotw_header
 import doctest_simple
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod(doctest_simple)

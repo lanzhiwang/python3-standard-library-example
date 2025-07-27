@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Server half of echo example.
-"""
+"""Server half of echo example."""
 
-#end_pymotw_header
+# end_pymotw_header
 import select
 import socket
 import sys
@@ -17,9 +16,8 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setblocking(0)
 
 # Bind the socket to the port
-server_address = ('localhost', 10001)
-print('starting up on {} port {}'.format(*server_address),
-      file=sys.stderr)
+server_address = ("localhost", 10001)
+print("starting up on {} port {}".format(*server_address), file=sys.stderr)
 server.bind(server_address)
 
 # Listen for incoming connections
@@ -38,17 +36,12 @@ while inputs:
 
     # Wait for at least one of the sockets to be
     # ready for processing
-    print('waiting for the next event',
-          file=sys.stderr)
+    print("waiting for the next event", file=sys.stderr)
     timeout = 1
-    readable, writable, exceptional = select.select(inputs,
-                                                    outputs,
-                                                    inputs,
-                                                    timeout)
+    readable, writable, exceptional = select.select(inputs, outputs, inputs, timeout)
 
     if not (readable or writable or exceptional):
-        print('  timed out, do some other work here',
-              file=sys.stderr)
+        print("  timed out, do some other work here", file=sys.stderr)
         continue
 
     # Handle inputs
@@ -58,8 +51,7 @@ while inputs:
             # A "readable" server socket is ready
             # to accept a connection
             connection, client_address = s.accept()
-            print('  connection from', client_address,
-                  file=sys.stderr)
+            print("  connection from", client_address, file=sys.stderr)
             connection.setblocking(0)
             inputs.append(connection)
 
@@ -71,8 +63,9 @@ while inputs:
             data = s.recv(1024)
             if data:
                 # A readable client socket has data
-                print('  received {!r} from {}'.format(
-                    data, s.getpeername()), file=sys.stderr,
+                print(
+                    "  received {!r} from {}".format(data, s.getpeername()),
+                    file=sys.stderr,
                 )
                 message_queues[s].put(data)
                 # Add output channel for response
@@ -81,7 +74,7 @@ while inputs:
 
             else:
                 # Interpret empty result as closed connection
-                print('closing', client_address, file=sys.stderr)
+                print("closing", client_address, file=sys.stderr)
                 # Stop listening for input on the connection
                 if s in outputs:
                     outputs.remove(s)
@@ -98,19 +91,18 @@ while inputs:
         except queue.Empty:
             # No messages waiting so stop checking
             # for writability.
-            print(s.getpeername(), 'queue empty',
-                  file=sys.stderr)
+            print(s.getpeername(), "queue empty", file=sys.stderr)
             outputs.remove(s)
         else:
-            print('  sending {!r} to {}'.format(
-                next_msg, s.getpeername()), file=sys.stderr,
+            print(
+                "  sending {!r} to {}".format(next_msg, s.getpeername()),
+                file=sys.stderr,
             )
             s.send(next_msg)
 
     # Handle "exceptional conditions"
     for s in exceptional:
-        print('  exception condition on', s.getpeername(),
-              file=sys.stderr)
+        print("  exception condition on", s.getpeername(), file=sys.stderr)
         # Stop listening for input on the connection
         inputs.remove(s)
         if s in outputs:

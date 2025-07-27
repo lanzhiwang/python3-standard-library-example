@@ -3,13 +3,12 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import trace
 from trace_example.recurse import recurse
 
 tracer = trace.Trace(count=False, trace=True)
-tracer.run('recurse(2)')
+tracer.run("recurse(2)")

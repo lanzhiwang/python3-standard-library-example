@@ -23,10 +23,10 @@
 # ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 # THIS SOFTWARE.
 
-"""Using character range in patterns.
-"""
+"""Using character range in patterns."""
 
-#end_pymotw_header
+# end_pymotw_header
 import glob
-for name in sorted(glob.glob('dir/*[0-9].*')):
+
+for name in sorted(glob.glob("dir/*[0-9].*")):
     print(name)

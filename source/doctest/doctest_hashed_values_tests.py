@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Demonstrate how insertion order affects dictonaries and sets.
-"""
+"""Demonstrate how insertion order affects dictonaries and sets."""
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 

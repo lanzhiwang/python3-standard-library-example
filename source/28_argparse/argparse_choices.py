@@ -3,17 +3,16 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import argparse
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument(
-    '--mode',
-    choices=('read-only', 'read-write'),
+    "--mode",
+    choices=("read-only", "read-write"),
 )
 
 print(parser.parse_args())

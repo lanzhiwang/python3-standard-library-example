@@ -3,22 +3,21 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Reading a configuration file.
-"""
+"""Reading a configuration file."""
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 import codecs
 
 parser = ConfigParser()
 # Open the file with the correct encoding
-parser.read('unicode.ini', encoding='utf-8')
+parser.read("unicode.ini", encoding="utf-8")
 
-password = parser.get('bug_tracker', 'password')
+password = parser.get("bug_tracker", "password")
 
-print('Password:', password.encode('utf-8'))
-print('Type    :', type(password))
-print('repr()  :', repr(password))
+print("Password:", password.encode("utf-8"))
+print("Type    :", type(password))
+print("repr()  :", repr(password))
 
 """
 (venv) huzhi@huzhideMacBook-Pro 29_configparser % python 03_configparser_unicode.py

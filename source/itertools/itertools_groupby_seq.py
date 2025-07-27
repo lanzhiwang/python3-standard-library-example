@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Grouping sequential values with groupby().
-"""
+"""Grouping sequential values with groupby()."""
 
-#end_pymotw_header
+# end_pymotw_header
 import functools
 from itertools import *
 import operator
@@ -17,7 +16,7 @@ class Point:
         self.y = y
 
     def __repr__(self):
-        return '({}, {})'.format(self.x, self.y)
+        return "({}, {})".format(self.x, self.y)
 
     def __eq__(self, other):
         return (self.x, self.y) == (other.x, other.y)
@@ -27,27 +26,25 @@ class Point:
 
 
 # Create a dataset of Point instances
-data = list(map(Point,
-                cycle(islice(count(), 3)),
-                islice(count(), 7)))
-print('Data:')
+data = list(map(Point, cycle(islice(count(), 3)), islice(count(), 7)))
+print("Data:")
 pprint.pprint(data, width=35)
 print()
 
 # Try to group the unsorted data based on X values
-print('Grouped, unsorted:')
-for k, g in groupby(data, operator.attrgetter('x')):
+print("Grouped, unsorted:")
+for k, g in groupby(data, operator.attrgetter("x")):
     print(k, list(g))
 print()
 
 # Sort the data
 data.sort()
-print('Sorted:')
+print("Sorted:")
 pprint.pprint(data, width=35)
 print()
 
 # Group the sorted data based on X values
-print('Grouped, sorted:')
-for k, g in groupby(data, operator.attrgetter('x')):
+print("Grouped, sorted:")
+for k, g in groupby(data, operator.attrgetter("x")):
     print(k, list(g))
 print()

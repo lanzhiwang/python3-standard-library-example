@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Logarithms
-"""
+"""Logarithms"""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 print(math.log(8))

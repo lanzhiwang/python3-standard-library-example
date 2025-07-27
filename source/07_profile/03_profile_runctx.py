@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 
 import functools
 import profile
@@ -32,9 +31,9 @@ def fib_seq(n):
     return seq
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     profile.runctx(
-        'print(fib_seq(n)); print()',
+        "print(fib_seq(n)); print()",
         globals(),
-        {'n': 20},
+        {"n": 20},
     )

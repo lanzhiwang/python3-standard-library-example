@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Test for near equality
-"""
+"""Test for near equality"""
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
@@ -16,6 +15,7 @@ class AlmostEqualTest(unittest.TestCase):
 
     def testNotAlmostEqual(self):
         self.assertNotAlmostEqual(1.1, 3.3 - 2.0, places=1)
+
 
 """
 huzhi@bogon 27_unittest % python3 -m unittest -v 06_unittest_almostequal.py

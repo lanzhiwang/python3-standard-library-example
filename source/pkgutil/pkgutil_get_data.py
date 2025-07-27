@@ -3,11 +3,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Load package data
-"""
+"""Load package data"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pkgutil
 
-template = pkgutil.get_data('pkgwithdata', 'templates/base.html')
-print(template.decode('utf-8'))
+template = pkgutil.get_data("pkgwithdata", "templates/base.html")
+print(template.decode("utf-8"))

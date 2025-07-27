@@ -3,9 +3,8 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Multiple concurrent access to a resource
-"""
-#end_pymotw_header
+"""Multiple concurrent access to a resource"""
+# end_pymotw_header
 import random
 import multiprocessing
 import time
@@ -36,13 +35,12 @@ def worker(s, pool):
     name = multiprocessing.current_process().name
     with s:
         pool.makeActive(name)
-        print('Activating {} now running {}'.format(
-            name, pool))
+        print("Activating {} now running {}".format(name, pool))
         time.sleep(random.random())
         pool.makeInactive(name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pool = ActivePool()
     s = multiprocessing.Semaphore(3)
     jobs = [
@@ -63,7 +61,7 @@ if __name__ == '__main__':
             if j.is_alive():
                 alive += 1
                 j.join(timeout=0.1)
-                print('Now running {}'.format(pool))
+                print("Now running {}".format(pool))
         if alive == 0:
             # all done
             break

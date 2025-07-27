@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.client import Binary
 import datetime
@@ -44,22 +43,20 @@ class ExampleService:
         """Accepts single Binary argument, and unpacks and
         repacks it to return it."""
         data = bin.data
-        print('send_back_binary({!r})'.format(data))
+        print("send_back_binary({!r})".format(data))
         response = Binary(data)
         return response
 
 
-if __name__ == '__main__':
-    server = SimpleXMLRPCServer(('localhost', 9000),
-                                logRequests=True,
-                                allow_none=True)
+if __name__ == "__main__":
+    server = SimpleXMLRPCServer(("localhost", 9000), logRequests=True, allow_none=True)
     server.register_introspection_functions()
     server.register_multicall_functions()
 
     server.register_instance(ExampleService())
 
     try:
-        print('Use Control-C to exit')
+        print("Use Control-C to exit")
         server.serve_forever()
     except KeyboardInterrupt:
-        print('Exiting')
+        print("Exiting")

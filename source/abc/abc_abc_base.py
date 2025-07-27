@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import abc
 
 
@@ -32,8 +31,6 @@ class SubclassImplementation(PluginBase):
         return output.write(data)
 
 
-if __name__ == '__main__':
-    print('Subclass:', issubclass(SubclassImplementation,
-                                  PluginBase))
-    print('Instance:', isinstance(SubclassImplementation(),
-                                  PluginBase))
+if __name__ == "__main__":
+    print("Subclass:", issubclass(SubclassImplementation, PluginBase))
+    print("Instance:", isinstance(SubclassImplementation(), PluginBase))

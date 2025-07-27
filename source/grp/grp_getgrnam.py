@@ -24,15 +24,14 @@
 # ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 # THIS SOFTWARE.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import grp
 
-name = 'admin'
+name = "admin"
 info = grp.getgrnam(name)
-print('Name    :', info.gr_name)
-print('GID     :', info.gr_gid)
-print('Password:', info.gr_passwd)
-print('Members :', ', '.join(info.gr_mem))
+print("Name    :", info.gr_name)
+print("GID     :", info.gr_gid)
+print("Password:", info.gr_passwd)
+print("Members :", ", ".join(info.gr_mem))

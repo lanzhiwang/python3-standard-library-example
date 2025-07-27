@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import gc
 import weakref
 
@@ -14,10 +13,10 @@ import weakref
 class ExpensiveObject:
 
     def __del__(self):
-        print('(Deleting {})'.format(self))
+        print("(Deleting {})".format(self))
 
     def do_finalize(self):
-        print('do_finalize')
+        print("do_finalize")
 
 
 obj = ExpensiveObject()
@@ -30,4 +29,4 @@ del obj
 
 for o in gc.get_objects():
     if id(o) == obj_id:
-        print('found uncollected object in gc')
+        print("found uncollected object in gc")

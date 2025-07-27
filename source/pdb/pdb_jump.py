@@ -14,5 +14,6 @@ def f(n):
         result.append(j)
     return result
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(f(5))

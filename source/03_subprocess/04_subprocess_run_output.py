@@ -13,12 +13,16 @@ class Popen
 
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
-completed = subprocess.run(['ls', '-1'], stdout=subprocess.PIPE)
-print('returncode:', completed.returncode)
-print('Have {} bytes in stdout:\n{}'.format(len(completed.stdout), completed.stdout.decode('utf-8')))
+completed = subprocess.run(["ls", "-1"], stdout=subprocess.PIPE)
+print("returncode:", completed.returncode)
+print(
+    "Have {} bytes in stdout:\n{}".format(
+        len(completed.stdout), completed.stdout.decode("utf-8")
+    )
+)
 
 """
 [root@huzhi-code subprocess]# python3 04_subprocess_run_output.py

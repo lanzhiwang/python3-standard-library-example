@@ -2,18 +2,17 @@
 # encoding: utf-8
 #
 # Copyright (c) 2015 Doug Hellmann.  All rights reserved.
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import contextlib
 
 
 @contextlib.contextmanager
 def make_context(i):
-    print('{} entering'.format(i))
+    print("{} entering".format(i))
     yield {}
-    print('{} exiting'.format(i))
+    print("{} exiting".format(i))
 
 
 def variable_stack(n, msg):
@@ -23,4 +22,4 @@ def variable_stack(n, msg):
         print(msg)
 
 
-variable_stack(2, 'inside context')
+variable_stack(2, "inside context")

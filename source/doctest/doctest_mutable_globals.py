@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Tests that modify module-level global values.
-"""
+"""Tests that modify module-level global values."""
 
-#end_pymotw_header
+# end_pymotw_header
 _module_data = {}
 
 
@@ -18,7 +17,7 @@ class TestGlobals:
         >>> 'var' in _module_data
         True
         """
-        _module_data['var'] = 'value'
+        _module_data["var"] = "value"
 
     def two(self):
         """

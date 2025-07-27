@@ -3,12 +3,12 @@
 #
 # Copyright (c) 2009 Doug Hellmann.  All rights reserved.
 #
-"""Generate a traceback with more details.
-"""
+"""Generate a traceback with more details."""
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
-cgitb.enable(format='text')
+
+cgitb.enable(format="text")
 
 
 def func1(arg1):
@@ -24,5 +24,6 @@ def func2(arg2):
 def func3(arg3):
     local_var = arg2 / 2  # noqa
     return local_var
+
 
 func1(1)

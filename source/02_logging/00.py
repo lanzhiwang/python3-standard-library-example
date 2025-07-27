@@ -3,11 +3,11 @@
 import logging
 from logging_tree import printout
 
-logging.critical('This is a critical error message')  # 50
-logging.error('This is an error message')  # 40
-logging.warning('This is a warning message')  # 30
-logging.info('This is an info message')  # 20
-logging.debug('This is a debug message')  # 10
+logging.critical("This is a critical error message")  # 50
+logging.error("This is an error message")  # 40
+logging.warning("This is a warning message")  # 30
+logging.info("This is an info message")  # 20
+logging.debug("This is a debug message")  # 10
 
 print()
 

@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Keeping thread-local values
-"""
+"""Keeping thread-local values"""
 
-#end_pymotw_header
+# end_pymotw_header
 import random
 import threading
 import logging
@@ -16,9 +15,9 @@ def show_value(data):
     try:
         val = data.value
     except AttributeError:
-        logging.debug('No value yet')
+        logging.debug("No value yet")
     else:
-        logging.debug('value=%s', val)
+        logging.debug("value=%s", val)
 
 
 def worker(data):
@@ -29,7 +28,7 @@ def worker(data):
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format='(%(threadName)-10s) %(message)s',
+    format="(%(threadName)-10s) %(message)s",
 )
 
 local_data = threading.local()

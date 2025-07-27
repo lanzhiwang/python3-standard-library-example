@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Logarithms close to zero.
-"""
+"""Logarithms close to zero."""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 x = 0.0000000000000000000000001

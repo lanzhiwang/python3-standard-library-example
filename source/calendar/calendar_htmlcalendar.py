@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Sample of TextCalendar output.
-"""
-#end_pymotw_header
+"""Sample of TextCalendar output."""
+# end_pymotw_header
 import calendar
 
 c = calendar.HTMLCalendar(calendar.SUNDAY)

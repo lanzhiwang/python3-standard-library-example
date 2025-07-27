@@ -7,9 +7,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Telling doctest to ignore extra whitespace in test data.
-"""
-#end_pymotw_header
+"""Telling doctest to ignore extra whitespace in test data."""
+
+
+# end_pymotw_header
 def my_function(a, b):
     """Returns a * b.
 

@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Show all matches for a list of patterns.
-"""
+"""Show all matches for a list of patterns."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 
@@ -23,15 +22,20 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
-if __name__ == '__main__':
-    test_patterns('abbaaabbbbaaaaa', [('ab', "'a' followed by 'b'"),])
+if __name__ == "__main__":
+    test_patterns(
+        "abbaaabbbbaaaaa",
+        [
+            ("ab", "'a' followed by 'b'"),
+        ],
+    )
 
 """
 'ab' ('a' followed by 'b')

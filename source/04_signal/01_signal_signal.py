@@ -30,14 +30,14 @@ Unix 信号编程是一项不小的工作。
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import signal
 import os
 import time
 
 
 def receive_signal(signum, stack):
-    print('Received:', signum)
+    print("Received:", signum)
 
 
 # Register signal handlers
@@ -46,10 +46,10 @@ signal.signal(signal.SIGUSR2, receive_signal)
 
 # Print the process ID so it can be used with 'kill'
 # to send this program signals.
-print('My PID is:', os.getpid())
+print("My PID is:", os.getpid())
 
 while True:
-    print('Waiting...')
+    print("Waiting...")
     time.sleep(3)
 
 

@@ -3,20 +3,19 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import array
 import pprint
 
-a = array.array('i', range(3))
-print('Initial :', a)
+a = array.array("i", range(3))
+print("Initial :", a)
 
 a.extend(range(3))
-print('Extended:', a)
+print("Extended:", a)
 
-print('Slice   :', a[2:5])
+print("Slice   :", a[2:5])
 
-print('Iterator:')
+print("Iterator:")
 print(list(enumerate(a)))

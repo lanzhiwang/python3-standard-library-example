@@ -3,22 +3,24 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Match objects.
-"""
+"""Match objects."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-pattern = 'this'
-text = 'Does this text match the pattern?'
+pattern = "this"
+text = "Does this text match the pattern?"
 
 match = re.search(pattern, text)
 
 s = match.start()
 e = match.end()
 
-print('Found "{}"\nin "{}"\nfrom {} to {} ("{}")'.format(
-    match.re.pattern, match.string, s, e, text[s:e]))
+print(
+    'Found "{}"\nin "{}"\nfrom {} to {} ("{}")'.format(
+        match.re.pattern, match.string, s, e, text[s:e]
+    )
+)
 """
 Found "this"
 in "Does this text match the pattern?"

@@ -4,23 +4,22 @@
 # Copyright (c) 2016 Doug Hellmann.  All rights reserved.
 # Written for https://pymotw.com
 #
-"""Building paths with the operator
-"""
+"""Building paths with the operator"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-usr = pathlib.PurePosixPath('/usr')
+usr = pathlib.PurePosixPath("/usr")
 print(usr)
 
-usr_local = usr / 'local'
+usr_local = usr / "local"
 print(usr_local)
 
-usr_share = usr / pathlib.PurePosixPath('share')
+usr_share = usr / pathlib.PurePosixPath("share")
 print(usr_share)
 
-root = usr / '..'
+root = usr / ".."
 print(root)
 
-etc = root / '/etc/'
+etc = root / "/etc/"
 print(etc)

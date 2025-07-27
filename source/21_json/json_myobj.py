@@ -3,10 +3,10 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
+
 
 class MyObj:
 
@@ -14,4 +14,4 @@ class MyObj:
         self.s = s
 
     def __repr__(self):
-        return '<MyObj({})>'.format(self.s)
+        return "<MyObj({})>".format(self.s)

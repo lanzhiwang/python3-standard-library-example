@@ -8,12 +8,12 @@ class Popen
 
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
-completed = subprocess.run(['ls', '-1'])
+completed = subprocess.run(["ls", "-1"])
 print(completed)
-print('returncode:', completed.returncode)
+print("returncode:", completed.returncode)
 
 """
 [root@huzhi-code subprocess]# python3 01_subprocess_os_system.py

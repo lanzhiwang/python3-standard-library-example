@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Square roots
-"""
+"""Square roots"""
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 print(math.sqrt(9.0))
@@ -14,4 +13,4 @@ print(math.sqrt(3))
 try:
     print(math.sqrt(-1))
 except ValueError as err:
-    print('Cannot compute sqrt(-1):', err)
+    print("Cannot compute sqrt(-1):", err)

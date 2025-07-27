@@ -3,14 +3,13 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Match email addresses
-"""
+"""Match email addresses"""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 address = re.compile(
-    '''
+    """
 
     # A name is made up of letters, and may include "."
     # for title abbreviations and middle initials.
@@ -33,30 +32,31 @@ address = re.compile(
     )
 
     >? # optional closing angle bracket
-    ''',
-    re.VERBOSE)
+    """,
+    re.VERBOSE,
+)
 
 candidates = [
-    u'first.last@example.com',
-    u'first.last+category@gmail.com',
-    u'valid-address@mail.example.com',
-    u'not-valid@example.foo',
-    u'First Last <first.last@example.com>',
-    u'No Brackets first.last@example.com',
-    u'First Last',
-    u'First Middle Last <first.last@example.com>',
-    u'First M. Last <first.last@example.com>',
-    u'<first.last@example.com>',
+    "first.last@example.com",
+    "first.last+category@gmail.com",
+    "valid-address@mail.example.com",
+    "not-valid@example.foo",
+    "First Last <first.last@example.com>",
+    "No Brackets first.last@example.com",
+    "First Last",
+    "First Middle Last <first.last@example.com>",
+    "First M. Last <first.last@example.com>",
+    "<first.last@example.com>",
 ]
 
 for candidate in candidates:
-    print('Candidate:', candidate)
+    print("Candidate:", candidate)
     match = address.search(candidate)
     if match:
-        print('  Name :', match.groupdict()['name'])
-        print('  Email:', match.groupdict()['email'])
+        print("  Name :", match.groupdict()["name"])
+        print("  Email:", match.groupdict()["email"])
     else:
-        print('  No match')
+        print("  No match")
 
 """
 Candidate: first.last@example.com

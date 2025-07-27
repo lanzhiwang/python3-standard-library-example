@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Basic sched example
-"""
+"""Basic sched example"""
 
-#end_pymotw_header
+# end_pymotw_header
 import sched
 import threading
 import time
@@ -15,14 +14,14 @@ counter = 0
 
 def increment_counter(name):
     global counter
-    print('EVENT:', time.ctime(time.time()), name)
+    print("EVENT:", time.ctime(time.time()), name)
     counter += 1
-    print('NOW:', counter)
+    print("NOW:", counter)
 
 
-print('START:', time.ctime(time.time()))
-e1 = scheduler.enter(2, 1, increment_counter, ('E1',))
-e2 = scheduler.enter(3, 1, increment_counter, ('E2',))
+print("START:", time.ctime(time.time()))
+e1 = scheduler.enter(2, 1, increment_counter, ("E1",))
+e2 = scheduler.enter(3, 1, increment_counter, ("E2",))
 
 # Start a thread to run the events
 t = threading.Thread(target=scheduler.run)
@@ -34,4 +33,4 @@ scheduler.cancel(e1)
 # Wait for the scheduler to finish running in the thread
 t.join()
 
-print('FINAL:', counter)
+print("FINAL:", counter)

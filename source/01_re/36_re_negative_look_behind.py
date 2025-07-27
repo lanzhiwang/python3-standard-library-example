@@ -3,14 +3,13 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Negative look behind assertion.
-"""
+"""Negative look behind assertion."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 address = re.compile(
-    '''
+    """
     ^
 
     # An address: username@domain.tld
@@ -25,18 +24,19 @@ address = re.compile(
     (com|org|edu)    # limit the allowed top-level domains
 
     $
-    ''',
-    re.VERBOSE)
+    """,
+    re.VERBOSE,
+)
 
 candidates = [
-    u'first.last@example.com',
-    u'noreply@example.com',
+    "first.last@example.com",
+    "noreply@example.com",
 ]
 
 for candidate in candidates:
-    print('Candidate:', candidate)
+    print("Candidate:", candidate)
     match = address.search(candidate)
     if match:
-        print('  Match:', candidate[match.start():match.end()])
+        print("  Match:", candidate[match.start() : match.end()])
     else:
-        print('  No match')
+        print("  No match")

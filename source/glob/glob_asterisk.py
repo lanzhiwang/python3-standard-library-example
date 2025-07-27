@@ -23,10 +23,10 @@
 # ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 # THIS SOFTWARE.
 
-"""The asterisk as wildcard character.
-"""
+"""The asterisk as wildcard character."""
 
-#end_pymotw_header
+# end_pymotw_header
 import glob
-for name in sorted(glob.glob('dir/*')):
+
+for name in sorted(glob.glob("dir/*")):
     print(name)

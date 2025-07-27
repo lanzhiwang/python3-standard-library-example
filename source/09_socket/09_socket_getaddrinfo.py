@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Get address info for a service
-"""
+"""Get address info for a service"""
 
-#end_pymotw_header
+# end_pymotw_header
 import socket
 
 
@@ -14,33 +13,29 @@ def get_constants(prefix):
     """Create a dictionary mapping socket module
     constants to their names.
     """
-    return {
-        getattr(socket, n): n
-        for n in dir(socket)
-        if n.startswith(prefix)
-    }
+    return {getattr(socket, n): n for n in dir(socket) if n.startswith(prefix)}
 
 
-families = get_constants('AF_')
+families = get_constants("AF_")
 print(families)
 print()
-types = get_constants('SOCK_')
+types = get_constants("SOCK_")
 print(types)
 print()
-protocols = get_constants('IPPROTO_')
+protocols = get_constants("IPPROTO_")
 print(protocols)
 print()
 
-for response in socket.getaddrinfo('www.python.org', 'http'):
+for response in socket.getaddrinfo("www.python.org", "http"):
 
     # Unpack the response tuple
     family, socktype, proto, canonname, sockaddr = response
 
-    print('Family        :', families[family])
-    print('Type          :', types[socktype])
-    print('Protocol      :', protocols[proto])
-    print('Canonical name:', canonname)
-    print('Socket address:', sockaddr)
+    print("Family        :", families[family])
+    print("Type          :", types[socktype])
+    print("Protocol      :", protocols[proto])
+    print("Canonical name:", canonname)
+    print("Socket address:", sockaddr)
     print()
 
 """

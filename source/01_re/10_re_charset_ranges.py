@@ -3,8 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Repetition of patterns
-"""
+"""Repetition of patterns"""
 
 import re
 
@@ -22,19 +21,21 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
 test_patterns(
-    'This is some text -- with punctuation.',
-    [('[a-z]+', 'sequences of lowercase letters'),
-     ('[A-Z]+', 'sequences of uppercase letters'),
-     ('[a-zA-Z]+', 'sequences of letters of either case'),
-     ('[A-Z][a-z]+', 'one uppercase followed by lowercase')],
+    "This is some text -- with punctuation.",
+    [
+        ("[a-z]+", "sequences of lowercase letters"),
+        ("[A-Z]+", "sequences of uppercase letters"),
+        ("[a-zA-Z]+", "sequences of letters of either case"),
+        ("[A-Z][a-z]+", "one uppercase followed by lowercase"),
+    ],
 )
 
 """

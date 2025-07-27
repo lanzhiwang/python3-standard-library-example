@@ -3,10 +3,9 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""The names of the paths in a scheme.
-"""
+"""The names of the paths in a scheme."""
 
-#end_pymotw_header
+# end_pymotw_header
 import sysconfig
 
 for name in sysconfig.get_path_names():

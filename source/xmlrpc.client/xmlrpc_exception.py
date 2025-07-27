@@ -3,15 +3,14 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import xmlrpc.client
 
-server = xmlrpc.client.ServerProxy('http://localhost:9000')
+server = xmlrpc.client.ServerProxy("http://localhost:9000")
 try:
-    server.raises_exception('A message')
+    server.raises_exception("A message")
 except Exception as err:
-    print('Fault code:', err.faultCode)
-    print('Message   :', err.faultString)
+    print("Fault code:", err.faultCode)
+    print("Message   :", err.faultString)

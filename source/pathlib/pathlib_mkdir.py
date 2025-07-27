@@ -4,13 +4,12 @@
 # Copyright (c) 2016 Doug Hellmann.  All rights reserved.
 # Written for https://pymotw.com
 #
-"""Creating a directory
-"""
+"""Creating a directory"""
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('example_dir')
+p = pathlib.Path("example_dir")
 
-print('Creating {}'.format(p))
+print("Creating {}".format(p))
 p.mkdir()

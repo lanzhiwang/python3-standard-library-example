@@ -3,19 +3,18 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 try:
-    collections.namedtuple('Person', 'name class age')
+    collections.namedtuple("Person", "name class age")
 except ValueError as err:
     print(err)
 
 try:
-    collections.namedtuple('Person', 'name age age')
+    collections.namedtuple("Person", "name age age")
 except ValueError as err:
     print(err)
 

@@ -3,16 +3,15 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import filecmp
 import pprint
 
-dc = filecmp.dircmp('example/dir1', 'example/dir2')
-print('Left:')
+dc = filecmp.dircmp("example/dir1", "example/dir2")
+print("Left:")
 pprint.pprint(dc.left_list)
 
-print('\nRight:')
+print("\nRight:")
 pprint.pprint(dc.right_list)

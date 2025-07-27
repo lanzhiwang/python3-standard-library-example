@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""Parsing URLs
-"""
+"""Parsing URLs"""
 
-#end_pymotw_header
+# end_pymotw_header
 from urllib.parse import urlparse, urlunparse
 
-original = 'http://netloc/path;param?query=arg#frag'
-print('ORIG  :', original)
+original = "http://netloc/path;param?query=arg#frag"
+print("ORIG  :", original)
 parsed = urlparse(original)
-print('PARSED:', type(parsed), parsed)
+print("PARSED:", type(parsed), parsed)
 t = parsed[:]
-print('TUPLE :', type(t), t)
-print('NEW   :', urlunparse(t))
+print("TUPLE :", type(t), t)
+print("NEW   :", urlunparse(t))
 
 """
 ORIG  : http://netloc/path;param?query=arg#frag

@@ -2,11 +2,10 @@
 #
 # Copyright 2007 Doug Hellmann.
 #
-"""HtmlDiff example
-"""
+"""HtmlDiff example"""
 
 
-#end_pymotw_header
+# end_pymotw_header
 import difflib
 from difflib_data import *
 

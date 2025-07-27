@@ -2,16 +2,15 @@
 #
 # Copyright 2007 Doug Hellmann.
 #
-"""Context diff example
-"""
+"""Context diff example"""
 
-#end_pymotw_header
+# end_pymotw_header
 import difflib
 from difflib_data import *
 
 diff = difflib.context_diff(
     text1_lines,
     text2_lines,
-    lineterm='',
+    lineterm="",
 )
-print('\n'.join(diff))
+print("\n".join(diff))

@@ -18,7 +18,4 @@ class Dictionary:
             key=operator.itemgetter(0),
         )
         # Save arranged sets of words
-        self.by_letter = {
-            group[0][0]: group
-            for group in grouped
-        }
+        self.by_letter = {group[0][0]: group for group in grouped}

@@ -4,60 +4,64 @@
 # Copyright (c) 2014 Doug Hellmann.  All rights reserved.
 # https://github.com/lanzhiwang/Python_Parallel_Programming/blob/master/Asynchronous_programming/asyncio_loop.py
 #
-"""Asyncio.loop - Chapter 4 Asynchronous Programming
-"""
+"""Asyncio.loop - Chapter 4 Asynchronous Programming"""
 
-#end_pymotw_header
+# end_pymotw_header
 import asyncio
 import datetime
 import time
 
+
 def function_1(end_time, loop):
-    print('function_1: ', loop.time())
-    print ("function_1 called")
-    print (end_time)
+    print("function_1: ", loop.time())
+    print("function_1 called")
+    print(end_time)
     if (loop.time() + 1.0) < end_time:
         loop.call_later(1, function_2, end_time, loop)
     else:
         loop.stop()
 
+
 def function_2(end_time, loop):
-    print('function_2: ', loop.time())
-    print ("function_2 called ")
-    print (end_time)
+    print("function_2: ", loop.time())
+    print("function_2 called ")
+    print(end_time)
     if (loop.time() + 1.0) < end_time:
         loop.call_later(1, function_3, end_time, loop)
     else:
         loop.stop()
 
+
 def function_3(end_time, loop):
-    print('function_3: ', loop.time())
-    print ("function_3 called")
-    print (end_time)
+    print("function_3: ", loop.time())
+    print("function_3 called")
+    print(end_time)
     if (loop.time() + 1.0) < end_time:
         loop.call_later(1, function_4, end_time, loop)
     else:
         loop.stop()
 
+
 def function_4(end_time, loop):
-    print('function_4: ', loop.time())
-    print ("function_4 called")
-    print (end_time)
+    print("function_4: ", loop.time())
+    print("function_4 called")
+    print(end_time)
     if (loop.time() + 1.0) < end_time:
         loop.call_later(1, function_1, end_time, loop)
     else:
         loop.stop()
 
+
 loop = asyncio.get_event_loop()
 
 # Schedule the first call to display_date()
-print('main: ', loop.time())
+print("main: ", loop.time())
 end_loop_1 = loop.time() + 9.0
 loop.call_soon(function_1, end_loop_1, loop)
-#loop.call_soon(function_4, end_loop_1, loop)
+# loop.call_soon(function_4, end_loop_1, loop)
 
 # Blocking call interrupted by loop.stop()
-print('run_forever')
+print("run_forever")
 loop.run_forever()
 loop.close()
 

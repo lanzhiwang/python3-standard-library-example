@@ -9,13 +9,13 @@
 任何对象都可以作为参数传递给线程。这个例子传递了一个数字，然后在线程中打印出来。
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import threading
 
 
 def worker(num):
     """thread worker function"""
-    print('Worker: %s' % num)
+    print("Worker: %s" % num)
 
 
 threads = []

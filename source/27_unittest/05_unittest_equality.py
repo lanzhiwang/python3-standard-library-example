@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Test for equality
-"""
+"""Test for equality"""
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
@@ -19,6 +18,7 @@ class EqualityTest(unittest.TestCase):
 
     def testExpectNotEqualFails(self):
         self.assertNotEqual(1, 3 - 2)
+
 
 """
 huzhi@bogon 27_unittest % python3 -m unittest -v 05_unittest_equality.py

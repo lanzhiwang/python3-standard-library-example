@@ -3,9 +3,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Ignoring part of the verification value with ELIPSIS
-"""
-#end_pymotw_header
+"""Ignoring part of the verification value with ELIPSIS"""
+
+
+# end_pymotw_header
 class MyClass:
     pass
 

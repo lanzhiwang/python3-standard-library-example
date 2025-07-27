@@ -3,15 +3,14 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Substitute based on patterns.
-"""
+"""Substitute based on patterns."""
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-bold = re.compile(r'\*{2}(?P<bold_text>.*?)\*{2}')
+bold = re.compile(r"\*{2}(?P<bold_text>.*?)\*{2}")
 
-text = 'Make this **bold**.  This **too**.'
+text = "Make this **bold**.  This **too**."
 
-print('Text:', text)
-print('Bold:', bold.sub(r'<b>\g<bold_text></b>', text))
+print("Text:", text)
+print("Bold:", bold.sub(r"<b>\g<bold_text></b>", text))

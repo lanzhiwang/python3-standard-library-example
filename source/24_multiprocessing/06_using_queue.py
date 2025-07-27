@@ -3,9 +3,8 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Spawn a Process – Chapter 3: Process Based Parallelism
-"""
-#end_pymotw_header
+"""Spawn a Process – Chapter 3: Process Based Parallelism"""
+# end_pymotw_header
 import multiprocessing
 import random
 import time
@@ -16,10 +15,10 @@ class Producer(multiprocessing.Process):
         multiprocessing.Process.__init__(self)
         self.queue = queue
 
-    def run(self) :
+    def run(self):
         for i in range(10):
             item = random.randint(0, 256)
-            self.queue.put(item) 
+            self.queue.put(item)
             print("Process Producer : item %d appended to queue %s" % (item, self.name))
             time.sleep(1)
 
@@ -34,14 +33,16 @@ class Consumer(multiprocessing.Process):
             if self.queue.empty():
                 print("the queue is empty")
                 break
-            else :
+            else:
                 time.sleep(2)
                 item = self.queue.get()
-                print ('Process Consumer : item %d popped from by %s' % (item, self.name))
+                print(
+                    "Process Consumer : item %d popped from by %s" % (item, self.name)
+                )
                 time.sleep(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     queue = multiprocessing.Queue()
     process_producer = Producer(queue)
     process_consumer = Consumer(queue)

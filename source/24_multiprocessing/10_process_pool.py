@@ -3,24 +3,24 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Spawn a Process – Chapter 3: Process Based Parallelism
-"""
-#end_pymotw_header
+"""Spawn a Process – Chapter 3: Process Based Parallelism"""
+# end_pymotw_header
 import multiprocessing
+
 
 def function_square(data):
     result = data * data
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     inputs = list(range(0, 100))
     pool = multiprocessing.Pool(processes=4)
     pool_outputs = pool.map(function_square, inputs)
 
-    pool.close() 
-    pool.join()  
-    print ('Pool:', pool_outputs)
+    pool.close()
+    pool.join()
+    print("Pool:", pool_outputs)
 
 """
 Pool: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 

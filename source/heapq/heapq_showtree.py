@@ -3,15 +3,14 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 from io import StringIO
 
 
-def show_tree(tree, total_width=36, fill=' '):
+def show_tree(tree, total_width=36, fill=" "):
     """Pretty-print a tree."""
     output = StringIO()
     last_row = -1
@@ -21,11 +20,11 @@ def show_tree(tree, total_width=36, fill=' '):
         else:
             row = 0
         if row != last_row:
-            output.write('\n')
-        columns = 2 ** row
+            output.write("\n")
+        columns = 2**row
         col_width = int(math.floor(total_width / columns))
         output.write(str(n).center(col_width, fill))
         last_row = row
     print(output.getvalue())
-    print('-' * total_width)
+    print("-" * total_width)
     print()

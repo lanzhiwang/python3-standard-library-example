@@ -3,9 +3,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Blank lines in the input cause mis-matches.
-"""
-#end_pymotw_header
+"""Blank lines in the input cause mis-matches."""
+
+
+# end_pymotw_header
 def double_space(lines):
     """Prints a list of lines double-spaced.
 

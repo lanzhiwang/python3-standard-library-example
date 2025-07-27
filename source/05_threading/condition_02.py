@@ -3,16 +3,19 @@ import logging
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format='(%(threadName)-10s) %(message)s',
+    format="(%(threadName)-10s) %(message)s",
 )
 
 condition = threading.Condition()
+
+
 def f():
     condition.acquire()
     logging.debug("Waiting for the condition")
     condition.wait()
     logging.debug("Done waiting")
     condition.release()
+
 
 thread1 = threading.Thread(target=f)
 thread2 = threading.Thread(target=f)

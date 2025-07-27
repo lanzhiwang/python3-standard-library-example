@@ -3,19 +3,18 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
-print('write:')
+print("write:")
 proc = subprocess.Popen(
-    ['cat', '-'],
+    ["cat", "-"],
     stdin=subprocess.PIPE,
 )
-proc.communicate('stdin: to stdin\n'.encode('utf-8'))
+proc.communicate("stdin: to stdin\n".encode("utf-8"))
 
 """
 [root@huzhi-code subprocess]# python3 10_subprocess_popen_write.py

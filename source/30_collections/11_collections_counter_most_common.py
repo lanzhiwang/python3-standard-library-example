@@ -3,14 +3,13 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Count the most common letters in words.
-"""
+"""Count the most common letters in words."""
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 c = collections.Counter()
-with open('../words', 'rt') as f:
+with open("../words", "rt") as f:
     for line in f:
         print("line:", line)
         print(line.rstrip().lower())
@@ -18,9 +17,9 @@ with open('../words', 'rt') as f:
 
 print("c:", c)
 
-print('Most common:')
+print("Most common:")
 for letter, count in c.most_common(3):
-    print('{}: {:>7}'.format(letter, count))
+    print("{}: {:>7}".format(letter, count))
 
 """
 $ python 11_collections_counter_most_common.py

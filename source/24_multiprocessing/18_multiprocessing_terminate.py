@@ -3,32 +3,31 @@
 #
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import multiprocessing
 import time
 
 
 def slow_worker():
-    print('Starting worker')
+    print("Starting worker")
     time.sleep(0.1)
-    print('Finished worker')
+    print("Finished worker")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p = multiprocessing.Process(target=slow_worker)
-    print('BEFORE:', p, p.is_alive())
+    print("BEFORE:", p, p.is_alive())
 
     p.start()
-    print('DURING:', p, p.is_alive())
+    print("DURING:", p, p.is_alive())
 
     p.terminate()
-    print('TERMINATED:', p, p.is_alive())
+    print("TERMINATED:", p, p.is_alive())
 
     p.join()
-    print('JOINED:', p, p.is_alive())
+    print("JOINED:", p, p.is_alive())
 """
 BEFORE: <Process(Process-1, initial)> False
 DURING: <Process(Process-1, started)> True

@@ -3,22 +3,21 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""Manipulating the order of items in a deque.
-"""
+"""Manipulating the order of items in a deque."""
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 d = collections.deque(range(10))
-print('Normal        :', d)
+print("Normal        :", d)
 
 d = collections.deque(range(10))
 d.rotate(2)
-print('Right rotation:', d)
+print("Right rotation:", d)
 
 d = collections.deque(range(10))
 d.rotate(-2)
-print('Left rotation :', d)
+print("Left rotation :", d)
 
 """
 $ python 18_collections_deque_rotate.py

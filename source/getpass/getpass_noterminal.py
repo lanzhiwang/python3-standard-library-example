@@ -3,18 +3,16 @@
 #
 # Copyright 2007 Doug Hellmann.
 #
-"""Using read() when there is no tty for getpass() to use.
+"""Using read() when there is no tty for getpass() to use."""
 
-"""
-
-#end_pymotw_header
+# end_pymotw_header
 import getpass
 import sys
 
 if sys.stdin.isatty():
-    p = getpass.getpass('Using getpass: ')
+    p = getpass.getpass("Using getpass: ")
 else:
-    print('Using readline')
+    print("Using readline")
     p = sys.stdin.readline().rstrip()
 
-print('Read: ', p)
+print("Read: ", p)

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
@@ -15,6 +14,7 @@ class Test(unittest.TestCase):
     @unittest.expectedFailure
     def test_always_passes(self):
         self.assertTrue(True)
+
 
 """
 huzhi@bogon 27_unittest % python3 -m unittest -v 14_unittest_expectedfailure.py

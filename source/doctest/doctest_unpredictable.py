@@ -3,10 +3,10 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Unpredictable values in the expected results cause failures.
-"""
+"""Unpredictable values in the expected results cause failures."""
 
-#end_pymotw_header
+
+# end_pymotw_header
 class MyClass:
     pass
 

@@ -3,11 +3,10 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
@@ -20,5 +19,5 @@ class HelloWorld(cmd.Cmd):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HelloWorld().cmdloop()

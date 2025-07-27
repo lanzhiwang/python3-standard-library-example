@@ -3,13 +3,15 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
+""" """
 
-#end_pymotw_header
+# end_pymotw_header
 import warnings
 
-warnings.filterwarnings('ignore', '.*do not.*',)
+warnings.filterwarnings(
+    "ignore",
+    ".*do not.*",
+)
 
-warnings.warn('Show this message')
-warnings.warn('Do not show this message')
+warnings.warn("Show this message")
+warnings.warn("Do not show this message")

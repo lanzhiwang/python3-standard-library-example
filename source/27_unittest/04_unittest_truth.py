@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Test for truth
-"""
+"""Test for truth"""
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
@@ -13,6 +12,7 @@ class TruthTest(unittest.TestCase):
 
     def testAssertFalse(self):
         self.assertFalse(False)
+
 
 """
 huzhi@bogon 27_unittest % python3 -m unittest -v 04_unittest_truth.py

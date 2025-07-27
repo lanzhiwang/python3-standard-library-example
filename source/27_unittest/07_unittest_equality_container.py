@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Test for equality
-"""
+"""Test for equality"""
 
-#end_pymotw_header
+# end_pymotw_header
 import textwrap
 import unittest
 
@@ -17,8 +16,8 @@ class ContainerEqualityTest(unittest.TestCase):
 
     def testDict(self):
         self.assertDictEqual(
-            {'a': 1, 'b': 2},
-            {'a': 1, 'b': 3},
+            {"a": 1, "b": 2},
+            {"a": 1, "b": 3},
         )
 
     def testList(self):
@@ -29,16 +28,20 @@ class ContainerEqualityTest(unittest.TestCase):
 
     def testMultiLineString(self):
         self.assertMultiLineEqual(
-            textwrap.dedent("""
+            textwrap.dedent(
+                """
             This string
             has more than one
             line.
-            """),
-            textwrap.dedent("""
+            """
+            ),
+            textwrap.dedent(
+                """
             This string has
             more than two
             lines.
-            """),
+            """
+            ),
         )
 
     def testSequence(self):
@@ -55,9 +58,10 @@ class ContainerEqualityTest(unittest.TestCase):
 
     def testTuple(self):
         self.assertTupleEqual(
-            (1, 'a'),
-            (1, 'b'),
+            (1, "a"),
+            (1, "b"),
         )
+
 
 """
 

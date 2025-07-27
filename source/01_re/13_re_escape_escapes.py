@@ -3,8 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Escaping escape codes
-"""
+"""Escaping escape codes"""
 
 import re
 
@@ -22,16 +21,16 @@ def test_patterns(text, patterns):
             s = match.start()
             e = match.end()
             substr = text[s:e]
-            n_backslashes = text[:s].count('\\')
-            prefix = '.' * (s + n_backslashes)
+            n_backslashes = text[:s].count("\\")
+            prefix = "." * (s + n_backslashes)
             print("  {}'{}'".format(prefix, substr))
         print()
     return
 
 
 test_patterns(
-    r'\d+ \D+ \s+',
-    [(r'\\.\+', 'escape code')],
+    r"\d+ \D+ \s+",
+    [(r"\\.\+", "escape code")],
 )
 
 """
