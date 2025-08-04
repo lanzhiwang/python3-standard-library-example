@@ -49,7 +49,7 @@ docker run -ti --rm --name python3-standard-library-example \
 python:3.10-bullseye \
 bash
 
-pip install "black[jupyter]"
+pip install "black[jupyter]" mypy
 
 find . -name "*.py" -exec black {} \;
 
