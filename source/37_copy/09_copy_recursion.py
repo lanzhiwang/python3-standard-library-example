@@ -48,3 +48,30 @@ root.add_connection(a)
 root.add_connection(b)
 
 dup = copy.deepcopy(root)
+
+"""
+$ python 09_copy_recursion.py
+
+Calling __deepcopy__ for Graph(name=root, id=140478937808848)
+  Memo dictionary:
+    (empty)
+  Copying to new object Graph(name=root, id=140478937807456)
+
+Calling __deepcopy__ for Graph(name=a, id=140478937808560)
+  Memo dictionary:
+    Graph(name=root, id=140478937808848): Graph(name=root, id=140478937807456)
+  Copying to new object Graph(name=a, id=140478937795600)
+
+Calling __deepcopy__ for Graph(name=root, id=140478937808848)
+  Already copied to Graph(name=root, id=140478937807456)
+
+Calling __deepcopy__ for Graph(name=b, id=140478937808368)
+  Memo dictionary:
+    Graph(name=root, id=140478937808848): Graph(name=root, id=140478937807456)
+    Graph(name=a, id=140478937808560): Graph(name=a, id=140478937795600)
+    140478937808848: Graph(name=root, id=140478937807456)
+    140478937952256: [Graph(name=root, id=140478937808848), Graph(name=a, id=140478937808560)]
+    140478937808560: Graph(name=a, id=140478937795600)
+  Copying to new object Graph(name=b, id=140478937795408)
+$
+"""

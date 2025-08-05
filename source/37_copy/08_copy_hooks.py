@@ -22,14 +22,23 @@ class MyClass:
     def __gt__(self, other):
         return self.name > other.name
 
+    def __copy__(self):
+        print("__copy__()")
+        return MyClass(self.name)
+
+    def __deepcopy__(self, memo):
+        print("__deepcopy__({})".format(memo))
+        return MyClass(copy.deepcopy(self.name, memo))
+
 
 a = MyClass("a")
-my_list = [a]
-dup = copy.copy(my_list)
 
-print("             my_list:", my_list)
-print("                 dup:", dup)
-print("      dup is my_list:", (dup is my_list))
-print("      dup == my_list:", (dup == my_list))
-print("dup[0] is my_list[0]:", (dup[0] is my_list[0]))
-print("dup[0] == my_list[0]:", (dup[0] == my_list[0]))
+sc = copy.copy(a)
+dc = copy.deepcopy(a)
+
+"""
+$ python 08_copy_hooks.py
+__copy__()
+__deepcopy__({})
+$
+"""
