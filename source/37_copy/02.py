@@ -1,5 +1,6 @@
 import copy
 
+
 def changelist(lst):
     lst.append(5)
     lst[0] = 6
