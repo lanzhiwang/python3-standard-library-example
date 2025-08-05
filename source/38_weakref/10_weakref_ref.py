@@ -25,3 +25,14 @@ print("r():", r())
 print("deleting obj")
 del obj
 print("r():", r())
+
+"""
+$ python 10_weakref_ref.py
+obj: <__main__.ExpensiveObject object at 0x7fc071fdffd0>
+ref: <weakref at 0x7fc071ff3380; to 'ExpensiveObject' at 0x7fc071fdffd0>
+r(): <__main__.ExpensiveObject object at 0x7fc071fdffd0>
+deleting obj
+(Deleting <__main__.ExpensiveObject object at 0x7fc071fdffd0>)
+r(): None
+$
+"""

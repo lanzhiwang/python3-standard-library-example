@@ -20,6 +20,14 @@ def on_finalize(*args):
 
 
 obj = ExpensiveObject()
+# finalize 的参数是要跟踪的对象、当对象被垃圾收集时要调用的可调用函数以及要传递给可调用函数的任何位置参数或命名参数
 weakref.finalize(obj, on_finalize, "extra argument")
 
 del obj
+
+"""
+$ python 12_weakref_finalize.py
+(Deleting <__main__.ExpensiveObject object at 0x7f1af0287f40>)
+on_finalize(('extra argument',))
+$
+"""

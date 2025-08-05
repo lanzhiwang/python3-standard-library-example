@@ -27,3 +27,16 @@ print("via ref:", r().name)
 print("via proxy:", p.name)
 del obj
 print("via proxy:", p.name)
+
+"""
+$ python 16_weakref_proxy.py
+via obj: My Object
+via ref: My Object
+via proxy: My Object
+(Deleting <__main__.ExpensiveObject object at 0x7f04e2353fa0>)
+Traceback (most recent call last):
+  File "/python3-standard-library-example/source/38_weakref/16_weakref_proxy.py", line 29, in <module>
+    print("via proxy:", p.name)
+ReferenceError: weakly-referenced object no longer exists
+$
+"""

@@ -30,3 +30,10 @@ del obj
 for o in gc.get_objects():
     if id(o) == obj_id:
         print("found uncollected object in gc")
+
+"""
+$ python 15_weakref_finalize_reference_method.py
+found uncollected object in gc
+(Deleting <__main__.ExpensiveObject object at 0x7efec6bd3fd0>)
+$
+"""

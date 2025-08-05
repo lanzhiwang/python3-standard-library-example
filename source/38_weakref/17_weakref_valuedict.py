@@ -61,3 +61,46 @@ demo(dict)
 print()
 
 demo(weakref.WeakValueDictionary)
+
+"""
+$ python 17_weakref_valuedict.py
+CACHE TYPE: <class 'dict'>
+  all_refs = {'one': ExpensiveObject(one),
+ 'three': ExpensiveObject(three),
+ 'two': ExpensiveObject(two)}
+
+  Before, cache contains: ['one', 'two', 'three']
+    one = ExpensiveObject(one)
+    two = ExpensiveObject(two)
+    three = ExpensiveObject(three)
+
+  Cleanup:
+
+  After, cache contains: ['one', 'two', 'three']
+    one = ExpensiveObject(one)
+    two = ExpensiveObject(two)
+    three = ExpensiveObject(three)
+  demo returning
+    (Deleting ExpensiveObject(one))
+    (Deleting ExpensiveObject(two))
+    (Deleting ExpensiveObject(three))
+
+CACHE TYPE: <class 'weakref.WeakValueDictionary'>
+  all_refs = {'one': ExpensiveObject(one),
+ 'three': ExpensiveObject(three),
+ 'two': ExpensiveObject(two)}
+
+  Before, cache contains: ['one', 'two', 'three']
+    one = ExpensiveObject(one)
+    two = ExpensiveObject(two)
+    three = ExpensiveObject(three)
+
+  Cleanup:
+    (Deleting ExpensiveObject(one))
+    (Deleting ExpensiveObject(two))
+    (Deleting ExpensiveObject(three))
+
+  After, cache contains: []
+  demo returning
+$
+"""

@@ -32,3 +32,15 @@ print("r():", r())
 print("deleting obj")
 del obj
 print("r():", r())
+
+"""
+$ python 11_weakref_ref_callback.py
+obj: <__main__.ExpensiveObject object at 0x7fa7970affd0>
+ref: <weakref at 0x7fa7970c33d0; to 'ExpensiveObject' at 0x7fa7970affd0>
+r(): <__main__.ExpensiveObject object at 0x7fa7970affd0>
+deleting obj
+(Deleting <__main__.ExpensiveObject object at 0x7fa7970affd0>)
+callback(<weakref at 0x7fa7970c33d0; dead>)
+r(): None
+$
+"""
