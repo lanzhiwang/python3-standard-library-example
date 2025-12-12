@@ -43,3 +43,22 @@ objs = [MyObject(x) for x in range(5, 0, -1)]
 
 for o in sorted(objs, key=get_key_wrapper):
     print(o)
+
+"""
+$ python 07_functools_cmp_to_key.py
+key_wrapper(MyObject(5)) -> <functools.KeyWrapper object at 0x7f5e3ae16e60>
+key_wrapper(MyObject(4)) -> <functools.KeyWrapper object at 0x7f5e3ae16e90>
+key_wrapper(MyObject(3)) -> <functools.KeyWrapper object at 0x7f5e3ae16ec0>
+key_wrapper(MyObject(2)) -> <functools.KeyWrapper object at 0x7f5e3ae16ef0>
+key_wrapper(MyObject(1)) -> <functools.KeyWrapper object at 0x7f5e3ae17070>
+comparing MyObject(4) and MyObject(5)
+comparing MyObject(3) and MyObject(4)
+comparing MyObject(2) and MyObject(3)
+comparing MyObject(1) and MyObject(2)
+MyObject(1)
+MyObject(2)
+MyObject(3)
+MyObject(4)
+MyObject(5)
+$
+"""

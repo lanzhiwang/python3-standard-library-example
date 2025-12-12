@@ -46,7 +46,7 @@ under the BSD license.
 docker run -ti --rm --name python3-standard-library-example \
 -v ~/work/code/py_code/python3-standard-library-example:/python3-standard-library-example \
 -w /python3-standard-library-example \
-python:3.10-bullseye \
+python:3.12.1-bullseye \
 bash
 
 pip install "black[jupyter]" mypy

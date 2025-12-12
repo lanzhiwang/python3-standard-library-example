@@ -48,3 +48,34 @@ print()
 
 print("Insufficient arguments:")
 p1()
+
+"""
+$ python 01_functools_partial.py
+myfunc:
+  object: <function myfunc at 0x7f9a69e922a0>
+  __name__: myfunc
+  called myfunc with: ('a', 3)
+
+partial with named default:
+  object: functools.partial(<function myfunc at 0x7f9a69e922a0>, b=4)
+  func: <function myfunc at 0x7f9a69e922a0>
+  args: ()
+  keywords: {'b': 4}
+  called myfunc with: ('passing a', 4)
+  called myfunc with: ('override b', 5)
+
+partial with defaults:
+  object: functools.partial(<function myfunc at 0x7f9a69e922a0>, 'default a', b=99)
+  func: <function myfunc at 0x7f9a69e922a0>
+  args: ('default a',)
+  keywords: {'b': 99}
+  called myfunc with: ('default a', 99)
+  called myfunc with: ('default a', 'override b')
+
+Insufficient arguments:
+Traceback (most recent call last):
+  File "/python3-standard-library-example/source/41_functools/01_functools_partial.py", line 50, in <module>
+    p1()
+TypeError: myfunc() missing 1 required positional argument: 'a'
+$
+"""

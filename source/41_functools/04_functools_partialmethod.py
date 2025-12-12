@@ -41,3 +41,17 @@ try:
     o.method2()
 except TypeError as err:
     print("ERROR: {}".format(err))
+
+"""
+$ python 04_functools_partialmethod.py
+standalone
+  called standalone with: (None, 1, 2)
+
+method1 as partialmethod
+  called standalone with: (<__main__.MyClass object at 0x7f203c7524b0>, 1, 2)
+  self.attr = instance attribute
+
+method2 as partial
+ERROR: standalone() missing 1 required positional argument: 'self'
+$
+"""

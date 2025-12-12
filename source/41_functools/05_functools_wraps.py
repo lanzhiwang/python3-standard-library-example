@@ -62,3 +62,35 @@ def decorated_myfunc(a, b):
 show_details("decorated_myfunc", decorated_myfunc)
 decorated_myfunc()
 decorated_myfunc("args to decorated", 4)
+
+"""
+$ python 05_functools_wraps.py
+myfunc:
+  object: <function myfunc at 0x7f14a2e2dda0>
+  __name__: myfunc
+  __doc__ 'myfunc() is not complicated'
+
+  myfunc: ('unwrapped, default b', 2)
+  myfunc: ('unwrapped, passing b', 3)
+
+wrapped_myfunc:
+  object: <function myfunc at 0x7f14a2e884a0>
+  __name__: myfunc
+  __doc__ 'myfunc() is not complicated'
+
+  decorated: ('decorated defaults', 1)
+     myfunc: ('decorated defaults', 1)
+  decorated: ('args to wrapped', 4)
+     myfunc: ('args to wrapped', 4)
+
+decorated_myfunc:
+  object: <function decorated_myfunc at 0x7f14a2e88b80>
+  __name__: decorated_myfunc
+  __doc__ None
+
+  decorated: ('decorated defaults', 1)
+     myfunc: ('decorated defaults', 1)
+  decorated: ('args to decorated', 4)
+     myfunc: ('args to decorated', 4)
+$
+"""

@@ -40,3 +40,19 @@ p = functools.partial(o, e="default for e", f=8)
 functools.update_wrapper(p, o)
 show_details("instance wrapper", p)
 p()
+
+"""
+$ python 03_functools_callable.py
+instance:
+  object: <__main__.MyClass object at 0x7f859a166330>
+  __name__: (no __name__)
+  __doc__ 'Demonstration class for functools'
+  called object with: (<__main__.MyClass object at 0x7f859a166330>, 'e goes here', 6)
+
+instance wrapper:
+  object: functools.partial(<__main__.MyClass object at 0x7f859a166330>, e='default for e', f=8)
+  __name__: (no __name__)
+  __doc__ 'Demonstration class for functools'
+  called object with: (<__main__.MyClass object at 0x7f859a166330>, 'default for e', 8)
+$
+"""
