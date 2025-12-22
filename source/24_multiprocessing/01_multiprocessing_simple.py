@@ -20,10 +20,13 @@ if __name__ == "__main__":
         p = multiprocessing.Process(target=worker)
         jobs.append(p)
         p.start()
+
 """
+$ python 01_multiprocessing_simple.py
 Worker
 Worker
 Worker
 Worker
 Worker
+$
 """

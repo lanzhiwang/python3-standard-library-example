@@ -29,3 +29,9 @@ if __name__ == "__main__":
     for j in jobs:
         j.join()
     print("Results:", d)
+
+"""
+$ python 19_multiprocessing_manager_dict.py
+Results: {0: 0, 1: 2, 2: 4, 3: 6, 5: 10, 6: 12, 7: 14, 9: 18, 8: 16, 4: 8}
+$
+"""

@@ -46,10 +46,12 @@ if __name__ == "__main__":
     print("main: event is set")
 
 """
+$ python 15_multiprocessing_event.py
 main: waiting before calling Event.set()
 wait_for_event: starting
 wait_for_event_timeout: starting
 wait_for_event_timeout: e.is_set()-> False
 main: event is set
 wait_for_event: e.is_set()-> True
+$
 """

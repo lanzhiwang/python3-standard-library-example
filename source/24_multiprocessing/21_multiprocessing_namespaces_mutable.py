@@ -10,22 +10,22 @@ import multiprocessing
 
 
 def producer(ns, event):
-    ns.value = "This is the value"
+    # DOES NOT UPDATE GLOBAL VALUE!
+    ns.my_list.append("This is the value")
     event.set()
 
 
 def consumer(ns, event):
-    try:
-        print("Before event: {}".format(ns.value))
-    except Exception as err:
-        print("Before event, error:", str(err))
+    print("Before event:", ns.my_list)
     event.wait()
-    print("After event:", ns.value)
+    print("After event :", ns.my_list)
 
 
 if __name__ == "__main__":
     mgr = multiprocessing.Manager()
     namespace = mgr.Namespace()
+    namespace.my_list = []
+
     event = multiprocessing.Event()
     p = multiprocessing.Process(
         target=producer,
@@ -41,3 +41,10 @@ if __name__ == "__main__":
 
     c.join()
     p.join()
+
+"""
+$ python 21_multiprocessing_namespaces_mutable.py
+Before event: []
+After event : []
+$
+"""

@@ -17,10 +17,13 @@ if __name__ == "__main__":
         )
         jobs.append(p)
         p.start()
+
 """
+$ python 03_multiprocessing_import_main.py
 Worker
 Worker
 Worker
 Worker
 Worker
+$
 """

@@ -12,16 +12,20 @@ import sys
 
 
 def daemon():
-    name = multiprocessing.current_process().name
-    print("Starting:", name)
+    p = multiprocessing.current_process()
+    print("Starting:", p.name, p.pid)
+    sys.stdout.flush()
     time.sleep(2)
-    print("Exiting :", name)
+    print("Exiting :", p.name, p.pid)
+    sys.stdout.flush()
 
 
 def non_daemon():
-    name = multiprocessing.current_process().name
-    print("Starting:", name)
-    print("Exiting :", name)
+    p = multiprocessing.current_process()
+    print("Starting:", p.name, p.pid)
+    sys.stdout.flush()
+    print("Exiting :", p.name, p.pid)
+    sys.stdout.flush()
 
 
 if __name__ == "__main__":
@@ -41,11 +45,10 @@ if __name__ == "__main__":
     time.sleep(1)
     n.start()
 
-    d.join()
-    n.join()
 """
-Starting: daemon
-Starting: non-daemon
-Exiting : non-daemon
-Exiting : daemon
+$ python 05_multiprocessing_daemon.py
+Starting: daemon 39
+Starting: non-daemon 40
+Exiting : non-daemon 40
+$
 """

@@ -39,6 +39,8 @@ if __name__ == "__main__":
     p.join()
 
 """
+$ python 13_multiprocessing_queue.py
 Process-1
 Doing something fancy in Process-1 for Fancy Dan!
+$
 """

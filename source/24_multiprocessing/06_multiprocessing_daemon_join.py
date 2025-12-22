@@ -38,14 +38,17 @@ if __name__ == "__main__":
     n.daemon = False
 
     d.start()
+    time.sleep(1)
     n.start()
 
-    d.join(1)
-    print("d.is_alive()", d.is_alive())
+    d.join()
     n.join()
+
 """
+$ python 06_multiprocessing_daemon_join.py
 Starting: daemon
 Starting: non-daemon
 Exiting : non-daemon
-d.is_alive() True
+Exiting : daemon
+$
 """

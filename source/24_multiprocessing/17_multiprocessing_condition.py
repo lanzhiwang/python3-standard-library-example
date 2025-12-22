@@ -51,10 +51,12 @@ if __name__ == "__main__":
         c.join()
 
 """
+$ python 17_multiprocessing_condition.py
 Starting stage_2[1]
 Starting stage_2[2]
 Starting s1
 s1 done and ready for stage 2
 stage_2[1] running
 stage_2[2] running
+$
 """

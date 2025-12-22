@@ -40,11 +40,14 @@ if __name__ == "__main__":
     worker_1.start()
     worker_2.start()
     service.start()
+
 """
+$ python 04_multiprocessing_names.py
 worker 1 Starting
 Process-3 Starting
 my_service Starting
-worker 1 Exiting
 Process-3 Exiting
+worker 1 Exiting
 my_service Exiting
+$
 """

@@ -39,6 +39,8 @@ w.join()
 nw.join()
 
 """
+$ python 16_multiprocessing_lock.py
 Lock acquired via with
 Lock acquired directly
+$
 """

@@ -51,7 +51,9 @@ if __name__ == "__main__":
     for j in jobs:
         j.join()
         print("{:>15}.exitcode = {}".format(j.name, j.exitcode))
+
 """
+$ python 09_multiprocessing_exitcode.py
 Starting process for exit_error
 Starting process for exit_ok
 Starting process for return_value
@@ -62,13 +64,14 @@ Starting process for terminated
    return_value.exitcode = 0
 Process raises:
 Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
     self.run()
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/multiprocessing/process.py", line 99, in run
+  File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
     self._target(*self._args, **self._kwargs)
-  File "19_multiprocessing_exitcode.py", line 28, in raises
-    raise RuntimeError('There was an error!')
+  File "/python3-standard-library-example/source/24_multiprocessing/09_multiprocessing_exitcode.py", line 27, in raises
+    raise RuntimeError("There was an error!")
 RuntimeError: There was an error!
          raises.exitcode = 1
      terminated.exitcode = -15
+$
 """

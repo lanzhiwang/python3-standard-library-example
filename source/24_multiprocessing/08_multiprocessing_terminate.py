@@ -28,9 +28,12 @@ if __name__ == "__main__":
 
     p.join()
     print("JOINED:", p, p.is_alive())
+
 """
-BEFORE: <Process(Process-1, initial)> False
-DURING: <Process(Process-1, started)> True
-TERMINATED: <Process(Process-1, started)> True
-JOINED: <Process(Process-1, stopped[SIGTERM])> False
+$ python 08_multiprocessing_terminate.py
+BEFORE: <Process name='Process-1' parent=51 initial> False
+DURING: <Process name='Process-1' pid=52 parent=51 started> True
+TERMINATED: <Process name='Process-1' pid=52 parent=51 started> True
+JOINED: <Process name='Process-1' pid=52 parent=51 stopped exitcode=-SIGTERM> False
+$
 """

@@ -10,22 +10,22 @@ import multiprocessing
 
 
 def producer(ns, event):
-    # DOES NOT UPDATE GLOBAL VALUE!
-    ns.my_list.append("This is the value")
+    ns.value = "This is the value"
     event.set()
 
 
 def consumer(ns, event):
-    print("Before event:", ns.my_list)
+    try:
+        print("Before event: {}".format(ns.value))
+    except Exception as err:
+        print("Before event, error:", str(err))
     event.wait()
-    print("After event :", ns.my_list)
+    print("After event:", ns.value)
 
 
 if __name__ == "__main__":
     mgr = multiprocessing.Manager()
     namespace = mgr.Namespace()
-    namespace.my_list = []
-
     event = multiprocessing.Event()
     p = multiprocessing.Process(
         target=producer,
@@ -41,3 +41,10 @@ if __name__ == "__main__":
 
     c.join()
     p.join()
+
+"""
+$ python 20_multiprocessing_namespaces.py
+Before event, error: 'Namespace' object has no attribute 'value'
+After event: This is the value
+$
+"""

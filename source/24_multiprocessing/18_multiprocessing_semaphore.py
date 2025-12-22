@@ -65,3 +65,37 @@ if __name__ == "__main__":
         if alive == 0:
             # all done
             break
+
+"""
+$ python 18_multiprocessing_semaphore.py
+Activating 0 now running ['0']
+Activating 3 now running ['0', '3']
+Activating 1 now running ['0', '3', '1']
+Now running ['0', '3', '1']
+Activating 2 now running ['0', '1', '2']
+Now running ['0', '1', '2']
+Now running ['0', '1', '2']
+Now running ['0', '1', '2']
+Now running ['0', '1', '2']
+Now running ['0', '1', '2']
+Activating 4 now running ['0', '2', '4']
+Now running ['0', '2', '4']
+Activating 7 now running ['0', '4', '7']
+Now running ['0', '4', '7']
+Now running ['0', '4', '7']
+Activating 8 now running ['4', '7', '8']
+Now running ['4', '7', '8']
+Now running ['4', '7', '8']
+Activating 5 now running ['4', '7', '5']
+Activating 6 now running ['4', '7', '6']
+Now running ['4', '7', '6']
+Activating 9 now running ['4', '7', '9']
+Now running ['4', '7', '9']
+Now running ['4', '7', '9']
+Now running ['4', '7']
+Now running ['7']
+Now running ['7']
+Now running ['7']
+Now running []
+$
+"""

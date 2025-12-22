@@ -12,20 +12,16 @@ import sys
 
 
 def daemon():
-    p = multiprocessing.current_process()
-    print("Starting:", p.name, p.pid)
-    sys.stdout.flush()
+    name = multiprocessing.current_process().name
+    print("Starting:", name)
     time.sleep(2)
-    print("Exiting :", p.name, p.pid)
-    sys.stdout.flush()
+    print("Exiting :", name)
 
 
 def non_daemon():
-    p = multiprocessing.current_process()
-    print("Starting:", p.name, p.pid)
-    sys.stdout.flush()
-    print("Exiting :", p.name, p.pid)
-    sys.stdout.flush()
+    name = multiprocessing.current_process().name
+    print("Starting:", name)
+    print("Exiting :", name)
 
 
 if __name__ == "__main__":
@@ -42,10 +38,17 @@ if __name__ == "__main__":
     n.daemon = False
 
     d.start()
-    time.sleep(1)
     n.start()
+
+    d.join(1)
+    print("d.is_alive()", d.is_alive())
+    n.join()
+
 """
-Starting: daemon 1291
-Starting: non-daemon 1292
-Exiting : non-daemon 1292
+$ python 07_multiprocessing_daemon_join_timeout.py
+Starting: daemon
+Starting: non-daemon
+Exiting : non-daemon
+d.is_alive() True
+$
 """
