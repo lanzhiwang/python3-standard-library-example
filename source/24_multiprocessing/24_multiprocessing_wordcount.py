@@ -69,7 +69,8 @@ if __name__ == "__main__":
     import operator
     import glob
 
-    input_files = glob.glob("*.rst")
+    input_files = glob.glob("/python3-standard-library-example/*.rst")
+    print("input_files:", input_files)
 
     mapper = SimpleMapReduce(file_to_words, count_words)
     word_counts = mapper(input_files)
@@ -83,3 +84,33 @@ if __name__ == "__main__":
         print(
             "{word:<{len}}: {count:5}".format(len=longest + 1, word=word, count=count)
         )
+
+"""
+$ python 24_multiprocessing_wordcount.py
+input_files: ['/python3-standard-library-example/README.rst']
+ForkPoolWorker-1 reading /python3-standard-library-example/README.rst
+
+TOP 20 WORDS BY FREQUENCY
+
+http     :     8
+pymotw   :     7
+python   :     7
+you      :     6
+library  :     6
+standard :     6
+com      :     6
+example  :     4
+name     :     4
+work     :     4
+exec     :     3
+find     :     3
+black    :     3
+code     :     3
+this     :     3
+license  :     3
+under    :     3
+org      :     3
+rm       :     2
+bash     :     2
+$
+"""
