@@ -46,7 +46,8 @@ Traceback (most recent call last):
 AttributeError: module 'asyncio' has no attribute 'coroutine'. Did you mean: 'coroutines'?
 $
 
-作为一名高级开发人员, 看到这段代码时, 首先要注意到的是: 这段代码使用的是 Python 3.4 - 3.5 时代的"生成器语法(Generator-based Coroutines)".
+作为一名高级开发人员, 看到这段代码时, 首先要注意到的是:
+这段代码使用的是 Python 3.4 - 3.5 时代的"生成器语法(Generator-based Coroutines)".
 在现代 Python(3.7+, 特别是 3.11 之后)中, @asyncio.coroutine 和 yield from 已经被废弃并在最新版本中移除.
 现在的标准是使用 async def 和 await.
 """

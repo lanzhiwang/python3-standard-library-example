@@ -58,21 +58,23 @@ if __name__ == "__main__":
         event_loop.close()
 
 """
-PID    40 run_blocking_tasks: starting
-PID    40 run_blocking_tasks: creating executor tasks
-PID    40 run_blocking_tasks: waiting for executor tasks
-PID    41          blocks(0): running
-PID    42          blocks(1): running
-PID    43          blocks(2): running
-PID    41          blocks(0): done
-PID    43          blocks(2): done
-PID    42          blocks(1): done
-PID    41          blocks(3): running
-PID    43          blocks(4): running
-PID    42          blocks(5): running
-PID    43          blocks(4): done
-PID    41          blocks(3): done
-PID    42          blocks(5): done
-PID    40 run_blocking_tasks: results: [9, 1, 16, 4, 25, 0]
-PID    40 run_blocking_tasks: exiting
+$ python 33_asyncio_executor_process.py
+PID   596 run_blocking_tasks: starting
+PID   596 run_blocking_tasks: creating executor tasks
+PID   596 run_blocking_tasks: waiting for executor tasks
+PID   597          blocks(0): running
+PID   599          blocks(2): running
+PID   598          blocks(1): running
+PID   597          blocks(0): done
+PID   598          blocks(1): done
+PID   599          blocks(2): done
+PID   599          blocks(3): running
+PID   597          blocks(4): running
+PID   598          blocks(5): running
+PID   597          blocks(4): done
+PID   599          blocks(3): done
+PID   598          blocks(5): done
+PID   596 run_blocking_tasks: results: [4, 25, 0, 9, 1, 16]
+PID   596 run_blocking_tasks: exiting
+$
 """

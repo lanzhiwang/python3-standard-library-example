@@ -68,8 +68,7 @@ $ python 34_asyncio_debug.py
    INFO: inner starting
    INFO: inner completed
    INFO: outer completed
-
-
+$
 $ python 34_asyncio_debug.py -v
   DEBUG: Using selector: EpollSelector
    INFO: enabling debugging
@@ -77,7 +76,7 @@ $ python 34_asyncio_debug.py -v
    INFO: outer starting
    INFO: inner starting
    INFO: inner completed
-WARNING: Executing <Task finished name='Task-2' coro=<inner() done, defined at 34_asyncio_debug.py:33> result=None created at 34_asyncio_debug.py:43> took 0.104 seconds
+WARNING: Executing <Task finished name='Task-2' coro=<inner() done, defined at /python3-standard-library-example/source/23_asyncio/34_asyncio_debug.py:32> result=None created at /python3-standard-library-example/source/23_asyncio/34_asyncio_debug.py:42> took 0.101 seconds
    INFO: outer completed
-
+$
 """

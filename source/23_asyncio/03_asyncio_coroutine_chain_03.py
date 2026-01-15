@@ -21,7 +21,7 @@ async def outer():
 
     # 同时启动两个任务
     # 如果 phase1 和 phase2 是独立的, 应该这样写以提高效率:
-    results = await asyncio.gather(phase1(), phase1())
+    results = await asyncio.gather(phase1(), phase2())
     return results
 
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 $ python 03_asyncio_coroutine_chain_03.py
 in outer
 in phase1
-in phase1
-return value: ['result1', 'result1']
+in phase2
+return value: ['result1', 'result2']
 $
 """

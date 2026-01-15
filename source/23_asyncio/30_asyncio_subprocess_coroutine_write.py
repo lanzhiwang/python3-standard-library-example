@@ -57,12 +57,14 @@ else:
     print("Changed : {!r}".format(results))
 
 """
+$ python 30_asyncio_subprocess_coroutine_write.py
 in to_upper
 launching process
-pid 28
+pid 370
 communicating with process
 waiting for process to complete
 return code 0
 Original: '\nThis message will be converted\nto all caps.\n'
 Changed : '\nTHIS MESSAGE WILL BE CONVERTED\nTO ALL CAPS.\n'
+$
 """

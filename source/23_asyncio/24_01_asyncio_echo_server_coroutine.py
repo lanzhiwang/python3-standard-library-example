@@ -9,7 +9,7 @@ import asyncio
 import logging
 import sys
 
-SERVER_ADDRESS = ("localhost", 10000)
+SERVER_ADDRESS = ("127.0.0.1", 10000)
 
 
 async def echo(reader, writer):
@@ -49,8 +49,7 @@ log.debug("starting up on {} port {}".format(*SERVER_ADDRESS))
 try:
     event_loop.run_forever()
 except KeyboardInterrupt:
-    # pass
-    log.debug("KeyboardInterrupt")
+    pass
 finally:
     log.debug("closing server")
     server.close()
@@ -59,17 +58,15 @@ finally:
     event_loop.close()
 
 """
-$ python 24_1_asyncio_echo_server_coroutine.py
+$ python 24_01_asyncio_echo_server_coroutine.py
 asyncio: Using selector: EpollSelector
-main: starting up on localhost port 10000
+main: starting up on 127.0.0.1 port 10000
+echo_127.0.0.1_47212: connection accepted
+echo_127.0.0.1_47212: received b'This is the message. It will be sent in parts.'
+echo_127.0.0.1_47212: sent b'This is the message. It will be sent in parts.'
+echo_127.0.0.1_47212: closing
 
-echo_::1_62100: connection accepted
-echo_::1_62100: received b'This is the message. It will be sent in parts.'
-echo_::1_62100: sent b'This is the message. It will be sent in parts.'
-echo_::1_62100: closing
-
-^Cmain: KeyboardInterrupt
-main: closing server
+^Cmain: closing server
 main: closing event loop
-
+$
 """

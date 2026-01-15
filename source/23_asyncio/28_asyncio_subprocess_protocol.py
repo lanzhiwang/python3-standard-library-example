@@ -90,9 +90,10 @@ else:
         print("{Mounted:25}: {Avail}".format(**r))
 
 """
+$ python 28_asyncio_subprocess_protocol.py
 in run_df
 launching process
-process started 20
+process started 364
 waiting for process to complete
 read 401 bytes from stdout
 process exited
@@ -100,11 +101,12 @@ return code 0
 parsing results
 
 Free space:
-/                        : 12G
+/                        : 44G
 /dev                     : 64M
 /dev/shm                 : 64M
-/python3-standard-library-example: 765G
-/etc/hosts               : 12G
+/python3-standard-library-example: 682G
+/etc/hosts               : 44G
 /proc/acpi               : 3.9G
 /sys/firmware            : 3.9G
+$
 """

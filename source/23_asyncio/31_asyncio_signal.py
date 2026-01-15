@@ -52,7 +52,8 @@ finally:
     event_loop.close()
 
 """
-starting send_signals for 33
+$ python 31_asyncio_signal.py
+starting send_signals for 445
 sending SIGHUP
 yielding control
 signal_handler('SIGHUP')
@@ -65,4 +66,5 @@ signal_handler('SIGUSR1')
 sending SIGINT
 yielding control
 signal_handler('SIGINT')
+$
 """

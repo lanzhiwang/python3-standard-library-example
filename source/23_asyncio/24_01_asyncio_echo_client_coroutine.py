@@ -14,7 +14,7 @@ MESSAGES = [
     b"It will be sent ",
     b"in parts.",
 ]
-SERVER_ADDRESS = ("localhost", 10000)
+SERVER_ADDRESS = ("127.0.0.1", 10000)
 
 
 async def echo_client(address, messages):
@@ -61,15 +61,15 @@ finally:
     event_loop.close()
 
 """
-$ python 24_2_asyncio_echo_client_coroutine.py
+$ python 24_01_asyncio_echo_client_coroutine.py
 asyncio: Using selector: EpollSelector
-echo_client: connecting to localhost port 10000
+echo_client: connecting to 127.0.0.1 port 10000
 echo_client: sending b'This is the message. '
 echo_client: sending b'It will be sent '
 echo_client: sending b'in parts.'
-
 echo_client: waiting for response
 echo_client: received b'This is the message. It will be sent in parts.'
 echo_client: closing
 main: closing event loop
+$
 """

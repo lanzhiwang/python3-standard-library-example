@@ -10,7 +10,7 @@ import logging
 import ssl
 import sys
 
-SERVER_ADDRESS = ("localhost", 10000)
+SERVER_ADDRESS = ("127.0.0.1", 10000)
 
 
 async def echo(reader, writer):
@@ -66,3 +66,21 @@ finally:
     event_loop.run_until_complete(server.wait_closed())
     log.debug("closing event loop")
     event_loop.close()
+
+"""
+$ openssl req -newkey rsa:2048 -nodes -keyout pymotw.key -x509 -days 365 -out pymotw.crt
+
+$ python 25_01_asyncio_echo_server_ssl.py
+asyncio: Using selector: EpollSelector
+main: starting up on 127.0.0.1 port 10000
+echo_127.0.0.1_37914: connection accepted
+echo_127.0.0.1_37914: received b'This is the message. '
+echo_127.0.0.1_37914: sent b'This is the message. '
+echo_127.0.0.1_37914: received b'It will be sent in parts.'
+echo_127.0.0.1_37914: sent b'It will be sent in parts.'
+echo_127.0.0.1_37914: message terminated, closing connection
+
+^Cmain: closing server
+main: closing event loop
+$
+"""

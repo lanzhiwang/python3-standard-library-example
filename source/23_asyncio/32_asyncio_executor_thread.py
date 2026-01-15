@@ -56,6 +56,7 @@ if __name__ == "__main__":
         event_loop.close()
 
 """
+$ python 32_asyncio_executor_thread.py
 MainThread run_blocking_tasks: starting
 MainThread run_blocking_tasks: creating executor tasks
 ThreadPoolExecutor-0_0          blocks(0): running
@@ -63,14 +64,15 @@ ThreadPoolExecutor-0_1          blocks(1): running
 ThreadPoolExecutor-0_2          blocks(2): running
 MainThread run_blocking_tasks: waiting for executor tasks
 ThreadPoolExecutor-0_1          blocks(1): done
-ThreadPoolExecutor-0_1          blocks(3): running
-ThreadPoolExecutor-0_2          blocks(2): done
-ThreadPoolExecutor-0_2          blocks(4): running
 ThreadPoolExecutor-0_0          blocks(0): done
-ThreadPoolExecutor-0_0          blocks(5): running
-ThreadPoolExecutor-0_1          blocks(3): done
-ThreadPoolExecutor-0_2          blocks(4): done
-ThreadPoolExecutor-0_0          blocks(5): done
-MainThread run_blocking_tasks: results: [9, 0, 16, 1, 25, 4]
+ThreadPoolExecutor-0_0          blocks(3): running
+ThreadPoolExecutor-0_1          blocks(4): running
+ThreadPoolExecutor-0_2          blocks(2): done
+ThreadPoolExecutor-0_2          blocks(5): running
+ThreadPoolExecutor-0_1          blocks(4): done
+ThreadPoolExecutor-0_2          blocks(5): done
+ThreadPoolExecutor-0_0          blocks(3): done
+MainThread run_blocking_tasks: results: [16, 4, 25, 0, 1, 9]
 MainThread run_blocking_tasks: exiting
+$
 """

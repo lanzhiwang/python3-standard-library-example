@@ -36,14 +36,19 @@ finally:
     event_loop.close()
 
 """
-pymotw.com          : 185.199.111.153
-pymotw.com          : 185.199.110.153
+$ python 26_asyncio_getaddrinfo.py
 pymotw.com          : 185.199.109.153
-pymotw.com          : 185.199.108.153
-pymotw.com          : 2606:50c0:8003::153
-pymotw.com          : 2606:50c0:8001::153
+pymotw.com          : 185.199.110.153
+pymotw.com          : 185.199.111.153
 pymotw.com          : 2606:50c0:8002::153
+pymotw.com          : 2606:50c0:8003::153
 pymotw.com          : 2606:50c0:8000::153
 doughellmann.com    : 75.2.60.5
-python.org          : 138.197.63.241
+python.org          : 151.101.128.223
+python.org          : 151.101.0.223
+python.org          : 151.101.192.223
+python.org          : 2a04:4e42::223
+python.org          : 2a04:4e42:600::223
+python.org          : 2a04:4e42:400::223
+$
 """
